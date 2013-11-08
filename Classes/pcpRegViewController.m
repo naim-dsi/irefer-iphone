@@ -105,9 +105,7 @@
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
 	
-	NSString *url = [[[[[[[[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] 
-					   stringByAppendingString:@"user/register?last_name="] stringByAppendingString:self.lastNameText.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstNameText.text]
-					  stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&prac_id="] stringByAppendingString:[self.model objectForKey:@"prac_id"]];
+	NSString *url = [[[[[[[[[[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"user/register?doc_id="] stringByAppendingString:[model valueForKey:@"id"] ] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastNameText.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstNameText.text] stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&prac_id="] stringByAppendingString:[self.model objectForKey:@"prac_id"]];
 	
 	NSLog(@"called url : %@",url);
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
@@ -128,12 +126,12 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
+	NSLog(@"NI::String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
 
-	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastNameText.text, @"last_name", self.firstNameText.text, @"first_name", self.email.text, @"email", nil];
+	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastNameText.text, @"last_name", self.firstNameText.text, @"first_name", self.email.text, @"email", [model valueForKey:@"id"], @"doc_id", nil];
 	NSDictionary *practice=[[NSDictionary alloc] initWithObjectsAndKeys:[model objectForKey:@"prac_id"], @"id", [model objectForKey:@"prac_name"], @"name", [model objectForKey:@"add_line_1"], @"add_line1", nil]; 
 	NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, practice];
 	

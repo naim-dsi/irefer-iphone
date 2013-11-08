@@ -29,7 +29,8 @@
 	[self.listTableView setHidden:YES];
 	self.searchBar.placeholder = [self getSearchBarLabel];
 	NSString *serverUrl = [self getInitUrl];
-	serverUrl = [serverUrl stringByAppendingFormat:@"&limit=%d",self.currentLimit];
+	serverUrl = [serverUrl stringByAppendingFormat:@"?limit=%d",self.currentLimit];
+    NSLog([@"NI::URL-" stringByAppendingString:serverUrl]);
 	[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 	
 }
@@ -41,6 +42,7 @@
 	NSString *serverUrl = [self getSearchUrl];
 	serverUrl = [serverUrl stringByAppendingFormat:@"&limit=%d",self.currentLimit];
 	serverUrl = [serverUrl stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+    NSLog([@"NI::Search URL-" stringByAppendingString:serverUrl]);
 	[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];	
 
 }
@@ -68,7 +70,8 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
+	NSLog(@"NI::String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
 	SBJsonStreamParserStatus status = [parser parse:data];
 	
 	if (status == SBJsonStreamParserError) {

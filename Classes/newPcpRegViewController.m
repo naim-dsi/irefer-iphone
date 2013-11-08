@@ -79,10 +79,7 @@
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
 	
-	NSString *url = [[[[[[[[[[[NSString stringWithString:[utils performSelector:@selector(getServerURL)]]
-					 stringByAppendingString:@"user/register?last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
-					  stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&prac_id="] stringByAppendingString:[self.practice objectForKey:@"id"]] 
-					  stringByAppendingString:@"&spec_id="] stringByAppendingString:[self.speciality objectForKey:@"id"]];
+	NSString *url = [[[[[[[[[[[[NSString stringWithString:[utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"user/register?doc_id="] stringByAppendingString:@"&last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text] stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&prac_id="] stringByAppendingString:[self.practice objectForKey:@"id"]] stringByAppendingString:@"&spec_id="] stringByAppendingString:[self.speciality objectForKey:@"id"]];
 	
 	NSLog(@"called url : %@",url);
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
@@ -104,12 +101,13 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
+	NSLog(@"NI::String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
 	
-	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastName.text, @"last_name", self.firstName.text, @"first_name", self.email.text, @"email", nil];
+	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastName.text, @"last_name", self.firstName.text, @"first_name", self.email.text, @"email", @"0", @"doc_id", nil];
 	NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, practice];
 	
 	if (![dao updatePCPUserRegistration:dataSet]) {
