@@ -1,0 +1,2118 @@
+Tirefer2
+v7
+r3
+t348157093.184446
+cCheck dependencies
+cProcessInfoPlistFile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/Info.plist irefer2-Info.plist
+cCompileXIB /Users/anik/Desktop/irefer2/MainWindow.xib
+cCompileXIB /Users/anik/Desktop/irefer2/guestPageViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/aboutViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/activationViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/CustomPCPCell.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/irefer_ddl.sql irefer_ddl.sql
+cCpResource build/Release-iphonesimulator/irefer2.app/bg.png bg.png
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/filterViewController.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/checkbox_ticked.png checkbox_ticked.png
+cCpResource build/Release-iphonesimulator/irefer2.app/checkbox_not_ticked.png checkbox_not_ticked.png
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/customSelectCell.xib
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/CustomDoctorCell.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/doc_icon.png doc_icon.png
+cCpResource build/Release-iphonesimulator/irefer2.app/phone_blue_glow_icon_72.png phone_blue_glow_icon_72.png
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/rank_button.png rank_button.png
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/setupViewController.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/icon-swatch-add.png icon-swatch-add.png
+cCompileXIB /Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib
+cCompileXIB /Users/anik/Desktop/irefer2/customDeleteCell.xib
+cCpResource build/Release-iphonesimulator/irefer2.app/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png ToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red_sync_button.png red_sync_button.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red-undo-icon.png red-undo-icon.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red-people-icon.png red-people-icon.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red_user.png red_user.png
+cCpResource build/Release-iphonesimulator/irefer2.app/576px-Icon_Warning_Red.png 576px-Icon_Warning_Red.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red-group-icon.png red-group-icon.png
+cCpResource build/Release-iphonesimulator/irefer2.app/red_user_coloured.png red_user_coloured.png
+cCpResource build/Release-iphonesimulator/irefer2.app/add.png add.png
+cCpResource build/Release-iphonesimulator/irefer2.app/irefer_icon.png irefer_icon.png
+cProcessPCH /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch.gch irefer2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/main.o /Users/anik/Desktop/irefer2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/guestPageViewController.o /Users/anik/Desktop/irefer2/Classes/guestPageViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/aboutViewController.o /Users/anik/Desktop/irefer2/Classes/aboutViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/activationViewController.o /Users/anik/Desktop/irefer2/Classes/activationViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/utils.o /Users/anik/Desktop/irefer2/Classes/utils.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpListViewController.o /Users/anik/Desktop/irefer2/Classes/pcpListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomPCPCell.o /Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpRegViewController.o /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/practiceListViewController.o /Users/anik/Desktop/irefer2/Classes/practiceListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/specialityListViewController.o /Users/anik/Desktop/irefer2/Classes/specialityListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/newPcpRegViewController.o /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004D8C9CBF0000000000000132
+t1301060799
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/include/sqlite3.h
+c000000004BFDF9FB0000000000041A6F
+t1274935803
+s268911
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/usr/lib/libsqlite3.dylib
+c000000004BFDFA0A0000000000079480
+t1274935818
+s496768
+
+N/Users/anik/Desktop/irefer2/576px-Icon_Warning_Red.png
+c000000004F0EBFBE000000000000F4D3
+t1326366654
+s62675
+
+N/Users/anik/Desktop/irefer2/Classes/BaseDao.h
+c000000004F0FDF3200000000000001DB
+t1326440242
+s475
+i<Foundation/Foundation.h>
+i<sqlite3.h>
+
+N/Users/anik/Desktop/irefer2/Classes/BaseDao.m
+c000000004F103C67000000000000151B
+t1326464103
+s5403
+i"BaseDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/CustomDoctorCell.h
+c000000004F0AA386000000000000023B
+t1326097286
+s571
+i<Foundation/Foundation.h>
+i"utils.h"
+
+N/Users/anik/Desktop/irefer2/Classes/CustomDoctorCell.m
+c000000004F0A9FDC0000000000000360
+t1326096348
+s864
+i"CustomDoctorCell.h"
+
+N/Users/anik/Desktop/irefer2/Classes/CustomListProtocol.h
+c000000004F0760D80000000000000193
+t1325883608
+s403
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/CustomListViewController.h
+c000000004F075F1C0000000000000401
+t1325883164
+s1025
+i<Foundation/Foundation.h>
+i"JSON.h"
+i"utils.h"
+i"CustomListProtocol.h"
+
+N/Users/anik/Desktop/irefer2/Classes/CustomListViewController.m
+c000000004F075F38000000000000173B
+t1325883192
+s5947
+i"CustomListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib
+c000000004F0FDCD4000000000000DF78
+t1326439636
+s57208
+
+N/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.h
+c000000004F0743220000000000000172
+t1325876002
+s370
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m
+c000000004F07432200000000000002BD
+t1325876002
+s701
+i"CustomPCPCell.h"
+
+N/Users/anik/Desktop/irefer2/Classes/DeleteListProtocol.h
+c000000004F0D52C8000000000000012A
+t1326273224
+s298
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/DeleteListViewController.h
+c000000004F10301700000000000004CE
+t1326460951
+s1230
+i<UIKit/UIKit.h>
+i"utils.h"
+i"customDeleteCell.h"
+i"setupDao.h"
+i"DeleteListProtocol.h"
+
+N/Users/anik/Desktop/irefer2/Classes/DeleteListViewController.m
+c000000004F0FE0740000000000000F89
+t1326440564
+s3977
+i"DeleteListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib
+c000000004F0D4AA6000000000000DDBE
+t1326271142
+s56766
+
+N/Users/anik/Desktop/irefer2/Classes/IreferConstraints.h
+c000000004F0D64320000000000000199
+t1326277682
+s409
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/IreferConstraints.m
+c000000004F0D64640000000000000201
+t1326277732
+s513
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/JSON.h
+c000000004F0B4E180000000000000B5B
+t1326140952
+s2907
+i"SBJsonParser.h"
+i"SBJsonWriter.h"
+i"SBJsonStreamWriter.h"
+i"SBJsonStreamParser.h"
+i"SBJsonStreamParserAdapter.h"
+i"NSObject+JSON.h"
+i<JSON/SBJsonParser.h>
+i<JSON/SBJsonWriter.h>
+i<JSON/SBJsonStreamParser.h>
+i<JSON/SBJsonStreamParserAdapter.h>
+i<JSON/SBJsonStreamWriter.h>
+i<JSON/NSObject+JSON.h>
+
+N/Users/anik/Desktop/irefer2/Classes/NSObject+JSON.h
+c000000004F0B4E180000000000000899
+t1326140952
+s2201
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/NSObject+JSON.m
+c000000004F0B4E1800000000000008C2
+t1326140952
+s2242
+i"NSObject+JSON.h"
+i"SBJsonWriter.h"
+i"SBJsonParser.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonParser.h
+c000000004F0B4E180000000000000FCC
+t1326140952
+s4044
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonParser.m
+c000000004F0B4E180000000000000D75
+t1326140952
+s3445
+i"SBJsonParser.h"
+i"SBJsonStreamParser.h"
+i"SBJsonStreamParserAdapter.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParser.h
+c000000004F0B4E180000000000001163
+t1326140952
+s4451
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParser.m
+c000000004F0B4E180000000000001E93
+t1326140952
+s7827
+i"SBJsonStreamParser.h"
+i"SBJsonTokeniser.h"
+i"SBJsonStreamParserState.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserAdapter.h
+c000000004F0B4E180000000000000C3B
+t1326140952
+s3131
+i<Foundation/Foundation.h>
+i"SBJsonStreamParser.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserAdapter.m
+c000000004F0B4E1800000000000011A1
+t1326140952
+s4513
+i"SBJsonStreamParserAdapter.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserState.h
+c000000004F0B4E180000000000000C6F
+t1326140952
+s3183
+i<Foundation/Foundation.h>
+i"SBJsonTokeniser.h"
+i"SBJsonStreamParser.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserState.m
+c000000004F0B4E180000000000002754
+t1326140952
+s10068
+i"SBJsonStreamParserState.h"
+i"SBJsonStreamParser.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriter.h
+c000000004F0B4E1800000000000015C3
+t1326140952
+s5571
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriter.m
+c000000004F0B4E18000000000000280F
+t1326140952
+s10255
+i"SBJsonStreamWriter.h"
+i"SBJsonStreamWriterState.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriterState.h
+c000000004F0B4E180000000000000B5D
+t1326140952
+s2909
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriterState.m
+c000000004F0B4E18000000000000136F
+t1326140952
+s4975
+i"SBJsonStreamWriterState.h"
+i"SBJsonStreamWriter.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonTokeniser.h
+c000000004F0B4E180000000000000923
+t1326140952
+s2339
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonTokeniser.m
+c000000004F0B4E1800000000000027C0
+t1326140952
+s10176
+i"SBJsonTokeniser.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonWriter.h
+c000000004F0B4E1800000000000012F9
+t1326140952
+s4857
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SBJsonWriter.m
+c000000004F0B4E180000000000000C90
+t1326140952
+s3216
+i"SBJsonWriter.h"
+i"SBJsonStreamWriter.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SelectBoxProtocol.h
+c000000004F0743220000000000000136
+t1325876002
+s310
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/SelectListViewController.h
+c000000004F10302100000000000005B5
+t1326460961
+s1461
+i<UIKit/UIKit.h>
+i"JSON.h"
+i"utils.h"
+i"searchDao.h"
+i"SelectBoxProtocol.h"
+i"customSelectCell.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SelectListViewController.m
+c000000004F0DEB3000000000000016CE
+t1326312240
+s5838
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib
+c000000004F0C49DE000000000000D725
+t1326205406
+s55077
+
+N/Users/anik/Desktop/irefer2/Classes/aboutViewController.h
+c000000004F0743220000000000000110
+t1325876002
+s272
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/aboutViewController.m
+c000000004F07432200000000000006D5
+t1325876002
+s1749
+i"aboutViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/aboutViewController.xib
+c000000004F09FB0A0000000000006535
+t1326054154
+s25909
+
+N/Users/anik/Desktop/irefer2/Classes/activationViewController.h
+c000000004F0FD5EA0000000000000447
+t1326437866
+s1095
+i<UIKit/UIKit.h>
+i"utils.h"
+i"JSON.h"
+i"registrationDao.h"
+i"filterViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/activationViewController.m
+c000000004F0FD60E00000000000013EC
+t1326437902
+s5100
+i"activationViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/activationViewController.xib
+c000000004F0743220000000000009857
+t1325876002
+s38999
+
+N/Users/anik/Desktop/irefer2/Classes/commonDao.h
+c000000004F0D70FA0000000000000148
+t1326280954
+s328
+i<Foundation/Foundation.h>
+i"BaseDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/commonDao.m
+c000000004F074322000000000000053A
+t1325876002
+s1338
+i"commonDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/countyListViewController.h
+c000000004F074322000000000000012D
+t1325876002
+s301
+i<Foundation/Foundation.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/countyListViewController.m
+c000000004F0C494C00000000000004EE
+t1326205260
+s1262
+i"countyListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/customDeleteCell.h
+c000000004F0D81540000000000000184
+t1326285140
+s388
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/customDeleteCell.m
+c000000004F0D810C00000000000002C2
+t1326285068
+s706
+i"customDeleteCell.h"
+
+N/Users/anik/Desktop/irefer2/Classes/customSelectCell.h
+c000000004F07432200000000000001C9
+t1325876002
+s457
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/customSelectCell.m
+c000000004F07432200000000000002CE
+t1325876002
+s718
+i"customSelectCell.h"
+
+N/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.h
+c000000004F0B049A000000000000077F
+t1326122138
+s1919
+i<UIKit/UIKit.h>
+i"JSON.h"
+i"utils.h"
+i"searchDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m
+c000000004F0B04E20000000000002996
+t1326122210
+s10646
+i"doctorDetailViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib
+c000000004F0B4E5E000000000000E768
+t1326141022
+s59240
+
+N/Users/anik/Desktop/irefer2/Classes/doctorListViewController.h
+c000000004F0B047000000000000005F8
+t1326122096
+s1528
+i<UIKit/UIKit.h>
+i"JSON.h"
+i"utils.h"
+i"searchDao.h"
+i"CustomDoctorCell.h"
+i"doctorDetailViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/doctorListViewController.m
+c000000004F0B04820000000000001BC1
+t1326122114
+s7105
+i"doctorListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib
+c000000004F09E422000000000000D6B4
+t1326048290
+s54964
+
+N/Users/anik/Desktop/irefer2/Classes/filterViewController.h
+c000000004F0FD16C0000000000000A07
+t1326436716
+s2567
+i<UIKit/UIKit.h>
+i"insuranceListViewController.h"
+i"sptListViewController.h"
+i"SelectBoxProtocol.h"
+i"selHosListViewController.h"
+i"countyListViewController.h"
+i"doctorListViewController.h"
+i"setupViewController.h"
+i"searchDao.h"
+i"aboutViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/filterViewController.m
+c000000004F103038000000000000258D
+t1326460984
+s9613
+i"filterViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/filterViewController.xib
+c000000004F0FDE680000000000015163
+t1326440040
+s86371
+
+N/Users/anik/Desktop/irefer2/Classes/guestPageViewController.h
+c000000004F0ECD1C0000000000000858
+t1326370076
+s2136
+i<UIKit/UIKit.h>
+i"aboutViewController.h"
+i"activationViewController.h"
+i"pcpListViewController.h"
+i"hospitalListViewController.h"
+i"registrationDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/guestPageViewController.m
+c000000004F0ED0C40000000000002093
+t1326371012
+s8339
+i"guestPageViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/hospitalListViewController.h
+c000000004F0749D80000000000000155
+t1325877720
+s341
+i<UIKit/UIKit.h>
+i"CustomListViewController.h"
+i"hospitalistRegViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/hospitalListViewController.m
+c000000004F075F68000000000000045A
+t1325883240
+s1114
+i"hospitalListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.h
+c000000004F07432200000000000003F5
+t1325876002
+s1013
+i<UIKit/UIKit.h>
+i"utils.h"
+i"registrationDao.h"
+i"guestPageViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.m
+c000000004F08A32200000000000019B5
+t1325966114
+s6581
+i"hospitalistRegViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib
+c000000004F074322000000000000F8BD
+t1325876002
+s63677
+
+N/Users/anik/Desktop/irefer2/Classes/insuranceListViewController.h
+c000000004F0743220000000000000132
+t1325876002
+s306
+i<Foundation/Foundation.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/insuranceListViewController.m
+c000000004F0C49140000000000000500
+t1326205204
+s1280
+i"insuranceListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.h
+c000000004F0FCFB600000000000002A8
+t1326436278
+s680
+i<UIKit/UIKit.h>
+i"BaseDao.h"
+i"guestPageViewController.h"
+i"filterViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m
+c000000004F0FCFCC0000000000000ADA
+t1326436300
+s2778
+i"irefer2AppDelegate.h"
+
+N/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.h
+c000000004F074322000000000000049A
+t1325876002
+s1178
+i<UIKit/UIKit.h>
+i"utils.h"
+i"registrationDao.h"
+i"guestPageViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m
+c000000004F08A4FE0000000000001AE1
+t1325966590
+s6881
+i"newPcpRegViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib
+c000000004F0743220000000000010BAB
+t1325876002
+s68523
+
+N/Users/anik/Desktop/irefer2/Classes/pcpListViewController.h
+c000000004F074A3C0000000000000425
+t1325877820
+s1061
+i<UIKit/UIKit.h>
+i"CustomPCPCell.h"
+i"JSON.h"
+i"utils.h"
+i"pcpRegViewController.h"
+i"practiceListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/pcpListViewController.m
+c000000004F07506A0000000000001D62
+t1325879402
+s7522
+i"pcpListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib
+c000000004F0743220000000000009D80
+t1325876002
+s40320
+
+N/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.h
+c000000004F0743220000000000000454
+t1325876002
+s1108
+i<UIKit/UIKit.h>
+i"utils.h"
+i"registrationDao.h"
+i"guestPageViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m
+c000000004F08A44600000000000019ED
+t1325966406
+s6637
+i"pcpRegViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib
+c000000004F074322000000000000C69B
+t1325876002
+s50843
+
+N/Users/anik/Desktop/irefer2/Classes/practiceListViewController.h
+c000000004F074F8A0000000000000153
+t1325879178
+s339
+i<UIKit/UIKit.h>
+i"CustomListViewController.h"
+i"specialityListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/practiceListViewController.m
+c000000004F075F78000000000000046D
+t1325883256
+s1133
+i"practiceListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/registrationDao.h
+c000000004F0D710200000000000001DB
+t1326280962
+s475
+i<Foundation/Foundation.h>
+i"BaseDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/registrationDao.m
+c000000004F0743220000000000002E13
+t1325876002
+s11795
+i"registrationDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/searchDao.h
+c000000004F0B6AC200000000000000EC
+t1326148290
+s236
+i<Foundation/Foundation.h>
+i"BaseDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/searchDao.m
+c000000004F0B6AD800000000000000C4
+t1326148312
+s196
+i"searchDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/selHosListViewController.h
+c000000004F074322000000000000012D
+t1325876002
+s301
+i<Foundation/Foundation.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/selHosListViewController.m
+c000000004F0C492200000000000004F4
+t1326205218
+s1268
+i"selHosListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/setupDao.h
+c000000004F0FDF9000000000000002E5
+t1326440336
+s741
+i<UIKit/UIKit.h>
+i"BaseDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/setupDao.m
+c000000004F0FEDEE0000000000002A42
+t1326444014
+s10818
+i"setupDao.h"
+
+N/Users/anik/Desktop/irefer2/Classes/setupViewController.h
+c000000004F10317C000000000000083A
+t1326461308
+s2106
+i"setupDao.h"
+i"JSON.h"
+i"filterViewController.h"
+i"SelectBoxProtocol.h"
+i"DeleteListProtocol.h"
+i"IreferConstraints.h"
+i"stpPracListViewController.h"
+i"stpPracDelListViewController.h"
+i"stpHosListViewController.h"
+i"stpHosDelListViewController.h"
+i"stpInsListViewController.h"
+i"stpInsDelListViewController.h"
+i"stpSpListViewController.h"
+i"stpSpDelListViewController.h"
+i"stpCntyListViewController.h"
+i"stpCntyDelListViewController.h"
+i"aboutViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/setupViewController.m
+c000000004F103CDB0000000000003689
+t1326464219
+s13961
+i"setupViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/setupViewController.xib
+c000000004F1002E00000000000013D7C
+t1326449376
+s81276
+
+N/Users/anik/Desktop/irefer2/Classes/specialityListViewController.h
+c000000004F075754000000000000019F
+t1325881172
+s415
+i<UIKit/UIKit.h>
+i"CustomListViewController.h"
+i"newPcpRegViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/specialityListViewController.m
+c000000004F07ECD0000000000000050C
+t1325919440
+s1292
+i"specialityListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/sptListViewController.h
+c000000004F074322000000000000011D
+t1325876002
+s285
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/sptListViewController.m
+c000000004F0C490800000000000004FF
+t1326205192
+s1279
+i"sptListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpCntyDelListViewController.h
+c000000004F0D92580000000000000149
+t1326289496
+s329
+i<UIKit/UIKit.h>
+i"DeleteListViewController.h"
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpCntyDelListViewController.m
+c000000004F0D92B60000000000000311
+t1326289590
+s785
+i"stpCntyDelListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpCntyListViewController.h
+c000000004F0D91DE0000000000000126
+t1326289374
+s294
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpCntyListViewController.m
+c000000004F0D92420000000000000452
+t1326289474
+s1106
+i"stpCntyListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpHosDelListViewController.h
+c000000004F0D8CA80000000000000147
+t1326288040
+s327
+i<UIKit/UIKit.h>
+i"DeleteListViewController.h"
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpHosDelListViewController.m
+c000000004F0D91B20000000000000311
+t1326289330
+s785
+i"stpHosDelListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpHosListViewController.h
+c000000004F0D87180000000000000124
+t1326286616
+s292
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpHosListViewController.m
+c000000004F0D873A0000000000000456
+t1326286650
+s1110
+i"stpHosListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpInsDelListViewController.h
+c000000004F0D90840000000000000147
+t1326289028
+s327
+i<UIKit/UIKit.h>
+i"DeleteListViewController.h"
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpInsDelListViewController.m
+c000000004F0D91A40000000000000314
+t1326289316
+s788
+i"stpInsDelListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpInsListViewController.h
+c000000004F0D90460000000000000124
+t1326288966
+s292
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpInsListViewController.m
+c000000004F0D906E0000000000000459
+t1326289006
+s1113
+i"stpInsListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpPracDelListViewController.h
+c000000004F0D8C7A0000000000000154
+t1326287994
+s340
+i<Foundation/Foundation.h>
+i"DeleteListViewController.h"
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpPracDelListViewController.m
+c000000004F0D91C4000000000000030E
+t1326289348
+s782
+i"stpPracDelListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpPracListViewController.h
+c000000004F0C1F2C0000000000000126
+t1326194476
+s294
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpPracListViewController.m
+c000000004F0C495C0000000000000458
+t1326205276
+s1112
+i"stpPracListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpSpDelListViewController.h
+c000000004F0D91420000000000000145
+t1326289218
+s325
+i<UIKit/UIKit.h>
+i"DeleteListViewController.h"
+i"IreferConstraints.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpSpDelListViewController.m
+c000000004F0D91960000000000000316
+t1326289302
+s790
+i"stpSpDelListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpSpListViewController.h
+c000000004F0D90EA0000000000000122
+t1326289130
+s290
+i<UIKit/UIKit.h>
+i"SelectListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/stpSpListViewController.m
+c000000004F0DDFE20000000000000459
+t1326309346
+s1113
+i"stpSpListViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/utils.h
+c000000004F0DE9E2000000000000022D
+t1326311906
+s557
+i<Foundation/Foundation.h>
+
+N/Users/anik/Desktop/irefer2/Classes/utils.m
+c000000004F0DEAF200000000000005CB
+t1326312178
+s1483
+i"utils.h"
+
+N/Users/anik/Desktop/irefer2/CustomDoctorCell.xib
+c000000004F09E2E80000000000006503
+t1326047976
+s25859
+
+N/Users/anik/Desktop/irefer2/CustomPCPCell.xib
+c000000004F0743220000000000004983
+t1325876002
+s18819
+
+N/Users/anik/Desktop/irefer2/MainWindow.xib
+c000000004F0FD05C000000000000959E
+t1326436444
+s38302
+
+N/Users/anik/Desktop/irefer2/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+c000000004F0DEFFA0000000000000CA8
+t1326313466
+s3240
+
+N/Users/anik/Desktop/irefer2/add.png
+c000000004F0ED63E0000000000001817
+t1326372414
+s6167
+
+N/Users/anik/Desktop/irefer2/bg.png
+c000000004F0743220000000000026C64
+t1325876002
+s158820
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app.dSYM
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/576px-Icon_Warning_Red.png
+t1326464290
+s62675
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomDoctorCell.nib
+t1326464289
+s2680
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomListViewController.nib
+t1326464287
+s2617
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomPCPCell.nib
+t1326464286
+s1867
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/DeleteListViewController.nib
+t1326464290
+s2596
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/Info.plist
+t1326464285
+s634
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/MainWindow.nib
+t1326464285
+s1208
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/PkgInfo
+t1326464285
+s8
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/SelectListViewController.nib
+t1326464288
+s2922
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+t1326464290
+s3240
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/aboutViewController.nib
+t1326464286
+s2471
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/activationViewController.nib
+t1326464286
+s3408
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/add.png
+t1326464290
+s6167
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/bg.png
+t1326464287
+s158820
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/checkbox_not_ticked.png
+t1326464288
+s245
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/checkbox_ticked.png
+t1326464288
+s581
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/customDeleteCell.nib
+t1326464290
+s2343
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/customSelectCell.nib
+t1326464289
+s1864
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/doc_icon.png
+t1326464289
+s41553
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/doctorDetailViewController.nib
+t1326464289
+s4705
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/doctorListViewController.nib
+t1326464289
+s2955
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/filterViewController.nib
+t1326464288
+s7755
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/guestPageViewController.nib
+t1326464285
+s5421
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/hospitalistRegViewController.nib
+t1326464288
+s3924
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/icon-swatch-add.png
+t1326464290
+s3519
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/irefer2
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/irefer_ddl.sql
+t1326464287
+s725
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/irefer_icon.png
+t1326464290
+s1682
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/newPcpRegViewController.nib
+t1326464287
+s4379
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/pcpListViewController.nib
+t1326464286
+s3324
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/pcpRegViewController.nib
+t1326464287
+s4488
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/phone_blue_glow_icon_72.png
+t1326464289
+s7705
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/rank_button.png
+t1326464289
+s3419
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red-group-icon.png
+t1326464290
+s18368
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red-people-icon.png
+t1326464290
+s2562
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red-undo-icon.png
+t1326464290
+s2558
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red_sync_button.png
+t1326464290
+s5475
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red_user.png
+t1326464290
+s53115
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/red_user_coloured.png
+t1326464290
+s51126
+
+N/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/setupViewController.nib
+t1326464290
+s6600
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/BaseDao.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomDoctorCell.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomPCPCell.o
+t1326464292
+s36980
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/DeleteListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/IreferConstraints.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/NSObject+JSON.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonParser.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParser.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParserAdapter.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParserState.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamWriter.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamWriterState.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonTokeniser.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonWriter.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SelectListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/aboutViewController.o
+t1326464292
+s35220
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/activationViewController.o
+t1326464292
+s60216
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/commonDao.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/countyListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/customDeleteCell.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/customSelectCell.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/doctorDetailViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/doctorListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/filterViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/guestPageViewController.o
+t1326464292
+s75996
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/hospitalListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/hospitalistRegViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/insuranceListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2.LinkFileList
+c000000004F103D1D0000000000001AB9
+t1326464285
+s6841
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o
+t1326464291
+s51820
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/main.o
+t1326464291
+s6268
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/newPcpRegViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpListViewController.o
+t1326464292
+s66772
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpRegViewController.o
+t1326464292
+s64872
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/practiceListViewController.o
+t1326464292
+s38400
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/registrationDao.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/searchDao.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/selHosListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/setupDao.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/setupViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/specialityListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/sptListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpCntyDelListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpCntyListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpHosDelListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpHosListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpInsDelListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpInsListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpPracDelListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpPracListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpSpDelListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpSpListViewController.o
+t2
+s0
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/utils.o
+t1326464292
+s46684
+
+N/Users/anik/Desktop/irefer2/checkbox_not_ticked.png
+c000000004F07432200000000000000F5
+t1325876002
+s245
+
+N/Users/anik/Desktop/irefer2/checkbox_ticked.png
+c000000004F0743220000000000000245
+t1325876002
+s581
+
+N/Users/anik/Desktop/irefer2/customDeleteCell.xib
+c000000004F0DF1600000000000006FB8
+t1326313824
+s28600
+
+N/Users/anik/Desktop/irefer2/customSelectCell.xib
+c000000004F0C563C0000000000004A9F
+t1326208572
+s19103
+
+N/Users/anik/Desktop/irefer2/doc_icon.png
+c000000004F08BB40000000000000A251
+t1325972288
+s41553
+
+N/Users/anik/Desktop/irefer2/guestPageViewController.xib
+c000000004F0ED080000000000000E98F
+t1326370944
+s59791
+
+N/Users/anik/Desktop/irefer2/icon-swatch-add.png
+c000000004F0B5D520000000000000DBF
+t1326144850
+s3519
+
+N/Users/anik/Desktop/irefer2/irefer2_Prefix.pch
+c000000004F07432200000000000000B7
+t1325876002
+s183
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/irefer_ddl.sql
+c000000004F0D586800000000000002D5
+t1326274664
+s725
+
+N/Users/anik/Desktop/irefer2/irefer_icon.png
+c000000004F0743220000000000000692
+t1325876002
+s1682
+
+N/Users/anik/Desktop/irefer2/main.m
+c000000004F074322000000000000016D
+t1325876002
+s365
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/phone_blue_glow_icon_72.png
+c000000004F0957C20000000000001E19
+t1326012354
+s7705
+
+N/Users/anik/Desktop/irefer2/rank_button.png
+c000000004F0B18D20000000000000D5B
+t1326127314
+s3419
+
+N/Users/anik/Desktop/irefer2/red-group-icon.png
+c000000004F0EC4A800000000000047C0
+t1326367912
+s18368
+
+N/Users/anik/Desktop/irefer2/red-people-icon.png
+c000000004F0EA53A0000000000000A02
+t1326359866
+s2562
+
+N/Users/anik/Desktop/irefer2/red-undo-icon.png
+c000000004F0EA53600000000000009FE
+t1326359862
+s2558
+
+N/Users/anik/Desktop/irefer2/red_sync_button.png
+c000000004F0E93C60000000000001563
+t1326355398
+s5475
+
+N/Users/anik/Desktop/irefer2/red_user.png
+c000000004F0EBFBE000000000000CF7B
+t1326366654
+s53115
+
+N/Users/anik/Desktop/irefer2/red_user_coloured.png
+c000000004F0ECA7C000000000000C7B6
+t1326369404
+s51126
+
+N/var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch.gch
+t1326464291
+s14896144
+
+Nirefer2-Info.plist
+c000000004F074322000000000000039C
+t1325876002
+s924
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies348157085#348157085#0(0"0(0#1#0"8617925728#0"0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/BaseDao.o /Users/anik/Desktop/irefer2/Classes/BaseDao.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomDoctorCell.o /Users/anik/Desktop/irefer2/Classes/CustomDoctorCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomListViewController.o /Users/anik/Desktop/irefer2/Classes/CustomListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomPCPCell.o /Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.417302
+e348157092.541099
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomPCPCell.o
+x/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m: In function '-[CustomPCPCell initWithFrame:reuseIdentifier:]':
+o/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m:17: warning: 'initWithFrame:reuseIdentifier:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:189)
+lSLF07#2@59"Compile /Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m348157092#348157092#0(398"/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m: In function '-[CustomPCPCell initWithFrame:reuseIdentifier:]':/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m:17: warning: 'initWithFrame:reuseIdentifier:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:189)1(22@216"'initWithFrame:reuseIdentifier:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:189)348157092#116#282#0(6@51"/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m347568802#17#0#17#0#33"'*' is deprecated (declared at *)0(0#0#51"/Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m8603551776#1865"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/CustomPCPCell.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/CustomPCPCell.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/DeleteListViewController.o /Users/anik/Desktop/irefer2/Classes/DeleteListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/IreferConstraints.o /Users/anik/Desktop/irefer2/Classes/IreferConstraints.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/NSObject+JSON.o /Users/anik/Desktop/irefer2/Classes/NSObject+JSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonParser.o /Users/anik/Desktop/irefer2/Classes/SBJsonParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParser.o /Users/anik/Desktop/irefer2/Classes/SBJsonStreamParser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParserAdapter.o /Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserAdapter.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamParserState.o /Users/anik/Desktop/irefer2/Classes/SBJsonStreamParserState.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamWriter.o /Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriter.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonStreamWriterState.o /Users/anik/Desktop/irefer2/Classes/SBJsonStreamWriterState.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonTokeniser.o /Users/anik/Desktop/irefer2/Classes/SBJsonTokeniser.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SBJsonWriter.o /Users/anik/Desktop/irefer2/Classes/SBJsonWriter.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/SelectListViewController.o /Users/anik/Desktop/irefer2/Classes/SelectListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/aboutViewController.o /Users/anik/Desktop/irefer2/Classes/aboutViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157091.948437
+e348157092.032333
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/aboutViewController.o
+x/Users/anik/Desktop/irefer2/Classes/aboutViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@65"Compile /Users/anik/Desktop/irefer2/Classes/aboutViewController.m348157091#348157092#0(0"0(0#0#57"/Users/anik/Desktop/irefer2/Classes/aboutViewController.m8609557280#1877"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/aboutViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/aboutViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/activationViewController.o /Users/anik/Desktop/irefer2/Classes/activationViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.032506
+e348157092.289911
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/activationViewController.o
+x/Users/anik/Desktop/irefer2/Classes/activationViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@70"Compile /Users/anik/Desktop/irefer2/Classes/activationViewController.m348157092#348157092#0(0"0(0#0#62"/Users/anik/Desktop/irefer2/Classes/activationViewController.m8619229760#1887"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/activationViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/activationViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/commonDao.o /Users/anik/Desktop/irefer2/Classes/commonDao.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/countyListViewController.o /Users/anik/Desktop/irefer2/Classes/countyListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/customDeleteCell.o /Users/anik/Desktop/irefer2/Classes/customDeleteCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/customSelectCell.o /Users/anik/Desktop/irefer2/Classes/customSelectCell.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/doctorDetailViewController.o /Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/doctorListViewController.o /Users/anik/Desktop/irefer2/Classes/doctorListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/filterViewController.o /Users/anik/Desktop/irefer2/Classes/filterViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/guestPageViewController.o /Users/anik/Desktop/irefer2/Classes/guestPageViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157091.794925
+e348157092.417193
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/guestPageViewController.o
+x/Users/anik/Desktop/irefer2/Classes/guestPageViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/anik/Desktop/irefer2/Classes/guestPageViewController.m348157091#348157092#0(0"0(0#0#61"/Users/anik/Desktop/irefer2/Classes/guestPageViewController.m8616662592#1885"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/guestPageViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/guestPageViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/hospitalListViewController.o /Users/anik/Desktop/irefer2/Classes/hospitalListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/hospitalistRegViewController.o /Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/insuranceListViewController.o /Users/anik/Desktop/irefer2/Classes/insuranceListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157091.733029
+e348157091.948334
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o
+x/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m348157091#348157091#0(0"0(0#0#56"/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m8617343424#1875"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/main.o /Users/anik/Desktop/irefer2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157091.731624
+e348157091.794819
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/main.o
+x/Users/anik/Desktop/irefer2/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@42"Compile /Users/anik/Desktop/irefer2/main.m348157091#348157091#0(0"0(0#0#34"/Users/anik/Desktop/irefer2/main.m8617809568#1839"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/main.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/main.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/newPcpRegViewController.o /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.923448
+e348157093.184377
+r0
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/newPcpRegViewController.o
+x/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@69"Compile /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m348157092#348157093#0(0"0(0#0#61"/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m8612376512#1885"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/newPcpRegViewController.o2#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpListViewController.o /Users/anik/Desktop/irefer2/Classes/pcpListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.397903
+e348157092.817314
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpListViewController.o
+x/Users/anik/Desktop/irefer2/Classes/pcpListViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/anik/Desktop/irefer2/Classes/pcpListViewController.m348157092#348157092#0(0"0(0#0#59"/Users/anik/Desktop/irefer2/Classes/pcpListViewController.m8611086976#1881"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/pcpListViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpListViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpRegViewController.o /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.541206
+e348157092.897055
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpRegViewController.o
+x/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+o/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m: In function '-[pcpRegViewController connection:didReceiveData:]':
+o/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m:127: warning: missing sentinel in function call
+o/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m:138: warning: class 'pcpRegViewController' does not implement the 'UIActionSheetDelegate' protocol
+lSLF07#2@66"Compile /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m348157092#348157092#0(391"/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m: In function '-[pcpRegViewController connection:didReceiveData:]':/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m:127: warning: missing sentinel in function call/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m:138: warning: class 'pcpRegViewController' does not implement the 'UIActionSheetDelegate' protocol2(22@33"Missing sentinel in function call348157092#126#107#0(6@58"/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m347659206#127#0#127#0#0"0(22@84"Class 'pcpRegViewController' does not implement the 'UIActionSheetDelegate' protocol348157092#233#158#0(6@58"/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m347659206#138#0#138#0#45"class '*' does not implement the '*' protocol0(0#0#58"/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m8607370784#1879"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/pcpRegViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/practiceListViewController.o /Users/anik/Desktop/irefer2/Classes/practiceListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.817415
+e348157092.923331
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/practiceListViewController.o
+x/Users/anik/Desktop/irefer2/Classes/practiceListViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@72"Compile /Users/anik/Desktop/irefer2/Classes/practiceListViewController.m348157092#348157092#0(0"0(0#0#64"/Users/anik/Desktop/irefer2/Classes/practiceListViewController.m8619461504#1891"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/practiceListViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/practiceListViewController.o0#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/registrationDao.o /Users/anik/Desktop/irefer2/Classes/registrationDao.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/searchDao.o /Users/anik/Desktop/irefer2/Classes/searchDao.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/selHosListViewController.o /Users/anik/Desktop/irefer2/Classes/selHosListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/setupDao.o /Users/anik/Desktop/irefer2/Classes/setupDao.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/setupViewController.o /Users/anik/Desktop/irefer2/Classes/setupViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/specialityListViewController.o /Users/anik/Desktop/irefer2/Classes/specialityListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.897162
+e348157093.083726
+r0
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/specialityListViewController.o
+x/Users/anik/Desktop/irefer2/Classes/specialityListViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@74"Compile /Users/anik/Desktop/irefer2/Classes/specialityListViewController.m348157092#348157093#0(0"0(0#0#66"/Users/anik/Desktop/irefer2/Classes/specialityListViewController.m8617671104#1895"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/specialityListViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/specialityListViewController.o2#
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/sptListViewController.o /Users/anik/Desktop/irefer2/Classes/sptListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpCntyDelListViewController.o /Users/anik/Desktop/irefer2/Classes/stpCntyDelListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpCntyListViewController.o /Users/anik/Desktop/irefer2/Classes/stpCntyListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpHosDelListViewController.o /Users/anik/Desktop/irefer2/Classes/stpHosDelListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpHosListViewController.o /Users/anik/Desktop/irefer2/Classes/stpHosListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpInsDelListViewController.o /Users/anik/Desktop/irefer2/Classes/stpInsDelListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpInsListViewController.o /Users/anik/Desktop/irefer2/Classes/stpInsListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpPracDelListViewController.o /Users/anik/Desktop/irefer2/Classes/stpPracDelListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpPracListViewController.o /Users/anik/Desktop/irefer2/Classes/stpPracListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpSpDelListViewController.o /Users/anik/Desktop/irefer2/Classes/stpSpDelListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/stpSpListViewController.o /Users/anik/Desktop/irefer2/Classes/stpSpListViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+r0
+
+CCompileC build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/utils.o /Users/anik/Desktop/irefer2/Classes/utils.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157092.290016
+e348157092.397791
+r1
+xCompileC
+xbuild/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/utils.o
+x/Users/anik/Desktop/irefer2/Classes/utils.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@51"Compile /Users/anik/Desktop/irefer2/Classes/utils.m348157092#348157092#0(0"0(0#0#43"/Users/anik/Desktop/irefer2/Classes/utils.m8619001344#1849"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -include /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/utils.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/Objects-normal/i386/utils.o0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib
+s348157087.418871
+e348157087.946693
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib
+o2012-01-13 20:18:07.862 Interface Builder Cocoa Touch Tool[1691:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@47"CompileXIB Classes/CustomListViewController.xib348157087#348157087#0(238"2012-01-13 20:18:07.862 Interface Builder Cocoa Touch Tool[1691:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#64"/Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib8620915456#575"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomListViewController.nib /Users/anik/Desktop/irefer2/Classes/CustomListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib
+s348157090.040393
+e348157090.588894
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib
+o2012-01-13 20:18:10.487 Interface Builder Cocoa Touch Tool[1716:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@47"CompileXIB Classes/DeleteListViewController.xib348157090#348157090#0(238"2012-01-13 20:18:10.487 Interface Builder Cocoa Touch Tool[1716:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#64"/Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib8618015040#575"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/DeleteListViewController.nib /Users/anik/Desktop/irefer2/Classes/DeleteListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib
+s348157088.334744
+e348157088.849307
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib
+o2012-01-13 20:18:08.755 Interface Builder Cocoa Touch Tool[1700:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@47"CompileXIB Classes/SelectListViewController.xib348157088#348157089#0(238"2012-01-13 20:18:08.755 Interface Builder Cocoa Touch Tool[1700:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#64"/Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib8608954816#575"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/SelectListViewController.nib /Users/anik/Desktop/irefer2/Classes/SelectListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/aboutViewController.xib
+s348157085.793253
+e348157086.282776
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/aboutViewController.xib
+o2012-01-13 20:18:06.176 Interface Builder Cocoa Touch Tool[1677:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@42"CompileXIB Classes/aboutViewController.xib348157085#348157086#0(238"2012-01-13 20:18:06.176 Interface Builder Cocoa Touch Tool[1677:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#59"/Users/anik/Desktop/irefer2/Classes/aboutViewController.xib8618653536#565"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/aboutViewController.nib /Users/anik/Desktop/irefer2/Classes/aboutViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/activationViewController.xib
+s348157086.051518
+e348157086.586132
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/activationViewController.xib
+o2012-01-13 20:18:06.473 Interface Builder Cocoa Touch Tool[1680:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@47"CompileXIB Classes/activationViewController.xib348157086#348157086#0(238"2012-01-13 20:18:06.473 Interface Builder Cocoa Touch Tool[1680:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#64"/Users/anik/Desktop/irefer2/Classes/activationViewController.xib8618120032#575"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/activationViewController.nib /Users/anik/Desktop/irefer2/Classes/activationViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib
+s348157089.420565
+e348157090.039221
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib
+o2012-01-13 20:18:09.883 Interface Builder Cocoa Touch Tool[1710:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@49"CompileXIB Classes/doctorDetailViewController.xib348157089#348157090#0(238"2012-01-13 20:18:09.883 Interface Builder Cocoa Touch Tool[1710:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#66"/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib8617781056#579"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/doctorDetailViewController.nib /Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib
+s348157088.849399
+e348157089.416930
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib
+o2012-01-13 20:18:09.313 Interface Builder Cocoa Touch Tool[1704:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@47"CompileXIB Classes/doctorListViewController.xib348157088#348157089#0(238"2012-01-13 20:18:09.313 Interface Builder Cocoa Touch Tool[1704:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#64"/Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib8601992416#575"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/doctorListViewController.nib /Users/anik/Desktop/irefer2/Classes/doctorListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/filterViewController.xib
+s348157087.951696
+e348157088.709522
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/filterViewController.xib
+o2012-01-13 20:18:08.399 Interface Builder Cocoa Touch Tool[1696:1c03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+o/* com.apple.ibtool.document.warnings */
+o/Users/anik/Desktop/irefer2/Classes/filterViewController.xib:9: warning: Tint color is only supported with bar style segmented controls.
+o/Users/anik/Desktop/irefer2/Classes/filterViewController.xib:10: warning: Tint color is only supported with bar style segmented controls.
+lSLF07#2@43"CompileXIB Classes/filterViewController.xib348157087#348157088#0(554"2012-01-13 20:18:08.399 Interface Builder Cocoa Touch Tool[1696:1c03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile./* com.apple.ibtool.document.warnings *//Users/anik/Desktop/irefer2/Classes/filterViewController.xib:9: warning: Tint color is only supported with bar style segmented controls./Users/anik/Desktop/irefer2/Classes/filterViewController.xib:10: warning: Tint color is only supported with bar style segmented controls.2(22@63"Tint color is only supported with bar style segmented controls.348157088#18446744073709551615#0#0(6@60"/Users/anik/Desktop/irefer2/Classes/filterViewController.xib348132840#9#0#9#0#0"0(22@63"Tint color is only supported with bar style segmented controls.348157088#18446744073709551615#0#0(6@60"/Users/anik/Desktop/irefer2/Classes/filterViewController.xib348132840#10#0#10#0#0"0(0#0#60"/Users/anik/Desktop/irefer2/Classes/filterViewController.xib8617712640#567"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/filterViewController.nib /Users/anik/Desktop/irefer2/Classes/filterViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib
+s348157087.612589
+e348157088.331059
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib
+o2012-01-13 20:18:08.112 Interface Builder Cocoa Touch Tool[1692:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@51"CompileXIB Classes/hospitalistRegViewController.xib348157087#348157088#0(238"2012-01-13 20:18:08.112 Interface Builder Cocoa Touch Tool[1692:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#68"/Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib8618207488#583"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/hospitalistRegViewController.nib /Users/anik/Desktop/irefer2/Classes/hospitalistRegViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib
+s348157087.016049
+e348157087.612494
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib
+o2012-01-13 20:18:07.457 Interface Builder Cocoa Touch Tool[1688:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@46"CompileXIB Classes/newPcpRegViewController.xib348157087#348157087#0(238"2012-01-13 20:18:07.457 Interface Builder Cocoa Touch Tool[1688:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#63"/Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib8607463648#573"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/newPcpRegViewController.nib /Users/anik/Desktop/irefer2/Classes/newPcpRegViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib
+s348157086.282897
+e348157086.826136
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib
+o2012-01-13 20:18:06.705 Interface Builder Cocoa Touch Tool[1682:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@44"CompileXIB Classes/pcpListViewController.xib348157086#348157086#0(238"2012-01-13 20:18:06.705 Interface Builder Cocoa Touch Tool[1682:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#61"/Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib8616737216#569"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/pcpListViewController.nib /Users/anik/Desktop/irefer2/Classes/pcpListViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib
+s348157086.826231
+e348157087.418756
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib
+o2012-01-13 20:18:07.276 Interface Builder Cocoa Touch Tool[1687:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@43"CompileXIB Classes/pcpRegViewController.xib348157086#348157087#0(238"2012-01-13 20:18:07.276 Interface Builder Cocoa Touch Tool[1687:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#60"/Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib8608443296#567"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/pcpRegViewController.nib /Users/anik/Desktop/irefer2/Classes/pcpRegViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/Classes/setupViewController.xib
+s348157089.758666
+e348157090.471437
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/Classes/setupViewController.xib
+o2012-01-13 20:18:10.222 Interface Builder Cocoa Touch Tool[1713:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@42"CompileXIB Classes/setupViewController.xib348157089#348157090#0(238"2012-01-13 20:18:10.222 Interface Builder Cocoa Touch Tool[1713:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#59"/Users/anik/Desktop/irefer2/Classes/setupViewController.xib8619335008#565"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/setupViewController.nib /Users/anik/Desktop/irefer2/Classes/setupViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/CustomDoctorCell.xib
+s348157089.244827
+e348157089.757554
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/CustomDoctorCell.xib
+o2012-01-13 20:18:09.666 Interface Builder Cocoa Touch Tool[1709:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@31"CompileXIB CustomDoctorCell.xib348157089#348157089#0(238"2012-01-13 20:18:09.666 Interface Builder Cocoa Touch Tool[1709:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#48"/Users/anik/Desktop/irefer2/CustomDoctorCell.xib8619147520#551"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomDoctorCell.nib /Users/anik/Desktop/irefer2/CustomDoctorCell.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/CustomPCPCell.xib
+s348157086.586227
+e348157087.015886
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/CustomPCPCell.xib
+o2012-01-13 20:18:06.933 Interface Builder Cocoa Touch Tool[1684:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@28"CompileXIB CustomPCPCell.xib348157086#348157087#0(238"2012-01-13 20:18:06.933 Interface Builder Cocoa Touch Tool[1684:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#45"/Users/anik/Desktop/irefer2/CustomPCPCell.xib8614092544#545"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/CustomPCPCell.nib /Users/anik/Desktop/irefer2/CustomPCPCell.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/MainWindow.xib
+s348157085.371488
+e348157085.793161
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/MainWindow.xib
+o2012-01-13 20:18:05.749 Interface Builder Cocoa Touch Tool[1674:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@25"CompileXIB MainWindow.xib348157085#348157085#0(238"2012-01-13 20:18:05.749 Interface Builder Cocoa Touch Tool[1674:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#42"/Users/anik/Desktop/irefer2/MainWindow.xib8618072384#539"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/MainWindow.nib /Users/anik/Desktop/irefer2/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/customDeleteCell.xib
+s348157090.471604
+e348157090.937983
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/customDeleteCell.xib
+o2012-01-13 20:18:10.860 Interface Builder Cocoa Touch Tool[1728:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@31"CompileXIB customDeleteCell.xib348157090#348157090#0(238"2012-01-13 20:18:10.860 Interface Builder Cocoa Touch Tool[1728:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#48"/Users/anik/Desktop/irefer2/customDeleteCell.xib8604384960#551"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/customDeleteCell.nib /Users/anik/Desktop/irefer2/customDeleteCell.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/customSelectCell.xib
+s348157088.709684
+e348157089.244730
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/customSelectCell.xib
+o2012-01-13 20:18:09.106 Interface Builder Cocoa Touch Tool[1703:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@31"CompileXIB customSelectCell.xib348157088#348157089#0(238"2012-01-13 20:18:09.106 Interface Builder Cocoa Touch Tool[1703:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#48"/Users/anik/Desktop/irefer2/customSelectCell.xib8602822848#551"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/customSelectCell.nib /Users/anik/Desktop/irefer2/customSelectCell.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/guestPageViewController.xib
+s348157085.372235
+e348157086.051423
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/guestPageViewController.xib
+o2012-01-13 20:18:05.828 Interface Builder Cocoa Touch Tool[1675:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@38"CompileXIB guestPageViewController.xib348157085#348157086#0(238"2012-01-13 20:18:05.828 Interface Builder Cocoa Touch Tool[1675:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#55"/Users/anik/Desktop/irefer2/guestPageViewController.xib8617938368#565"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/guestPageViewController.nib /Users/anik/Desktop/irefer2/guestPageViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/576px-Icon_Warning_Red.png 576px-Icon_Warning_Red.png
+s348157090.600718
+e348157090.612106
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/576px-Icon_Warning_Red.png
+x576px-Icon_Warning_Red.png
+lSLF07#2@31"Copy 576px-Icon_Warning_Red.png348157090#348157090#0(0"0(0#0#54"/Users/anik/Desktop/irefer2/576px-Icon_Warning_Red.png8618390016#460"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/576px-Icon_Warning_Red.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png ToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+s348157090.588991
+e348157090.607644
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+xToonSystem_lnx-Icons-48X48-delete.png-48x48.png
+lSLF07#2@52"Copy ToonSystem_lnx-Icons-48X48-delete.png-48x48.png348157090#348157090#0(0"0(0#0#75"/Users/anik/Desktop/irefer2/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png8619765824#481"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/ToonSystem_lnx-Icons-48X48-delete.png-48x48.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/add.png add.png
+s348157090.605371
+e348157090.616721
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/add.png
+xadd.png
+lSLF07#2@12"Copy add.png348157090#348157090#0(0"0(0#0#35"/Users/anik/Desktop/irefer2/add.png8617575200#441"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/add.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/bg.png bg.png
+s348157087.947818
+e348157087.956967
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/bg.png
+xbg.png
+lSLF07#2@11"Copy bg.png348157087#348157087#0(0"0(0#0#34"/Users/anik/Desktop/irefer2/bg.png8617810048#440"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/bg.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/checkbox_not_ticked.png checkbox_not_ticked.png
+s348157088.332152
+e348157088.340806
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/checkbox_not_ticked.png
+xcheckbox_not_ticked.png
+lSLF07#2@28"Copy checkbox_not_ticked.png348157088#348157088#0(0"0(0#0#51"/Users/anik/Desktop/irefer2/checkbox_not_ticked.png8611086368#457"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/checkbox_not_ticked.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/checkbox_ticked.png checkbox_ticked.png
+s348157088.331158
+e348157088.340673
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/checkbox_ticked.png
+xcheckbox_ticked.png
+lSLF07#2@24"Copy checkbox_ticked.png348157088#348157088#0(0"0(0#0#47"/Users/anik/Desktop/irefer2/checkbox_ticked.png8612347040#453"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/checkbox_ticked.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/doc_icon.png doc_icon.png
+s348157089.417025
+e348157089.423488
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/doc_icon.png
+xdoc_icon.png
+lSLF07#2@17"Copy doc_icon.png348157089#348157089#0(0"0(0#0#40"/Users/anik/Desktop/irefer2/doc_icon.png8618223744#446"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/doc_icon.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/icon-swatch-add.png icon-swatch-add.png
+s348157090.039326
+e348157090.052888
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/icon-swatch-add.png
+xicon-swatch-add.png
+lSLF07#2@24"Copy icon-swatch-add.png348157090#348157090#0(0"0(0#0#47"/Users/anik/Desktop/irefer2/icon-swatch-add.png8618232960#453"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/icon-swatch-add.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/irefer_ddl.sql irefer_ddl.sql
+s348157087.946791
+e348157087.979095
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/irefer_ddl.sql
+xirefer_ddl.sql
+lSLF07#2@19"Copy irefer_ddl.sql348157087#348157087#0(0"0(0#0#42"/Users/anik/Desktop/irefer2/irefer_ddl.sql8617968096#448"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/irefer_ddl.sql /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/irefer_icon.png irefer_icon.png
+s348157090.608799
+e348157090.616501
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/irefer_icon.png
+xirefer_icon.png
+lSLF07#2@20"Copy irefer_icon.png348157090#348157090#0(0"0(0#0#43"/Users/anik/Desktop/irefer2/irefer_icon.png8617083776#449"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/irefer_icon.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/phone_blue_glow_icon_72.png phone_blue_glow_icon_72.png
+s348157089.418800
+e348157089.430286
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/phone_blue_glow_icon_72.png
+xphone_blue_glow_icon_72.png
+lSLF07#2@32"Copy phone_blue_glow_icon_72.png348157089#348157089#0(0"0(0#0#55"/Users/anik/Desktop/irefer2/phone_blue_glow_icon_72.png8617986432#461"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/phone_blue_glow_icon_72.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/rank_button.png rank_button.png
+s348157089.757647
+e348157089.773466
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/rank_button.png
+xrank_button.png
+lSLF07#2@20"Copy rank_button.png348157089#348157089#0(0"0(0#0#43"/Users/anik/Desktop/irefer2/rank_button.png8619422208#449"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/rank_button.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red-group-icon.png red-group-icon.png
+s348157090.601528
+e348157090.617707
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red-group-icon.png
+xred-group-icon.png
+lSLF07#2@23"Copy red-group-icon.png348157090#348157090#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/red-group-icon.png8618182400#452"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red-group-icon.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red-people-icon.png red-people-icon.png
+s348157090.594280
+e348157090.608610
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red-people-icon.png
+xred-people-icon.png
+lSLF07#2@24"Copy red-people-icon.png348157090#348157090#0(0"0(0#0#47"/Users/anik/Desktop/irefer2/red-people-icon.png8619006368#453"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red-people-icon.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red-undo-icon.png red-undo-icon.png
+s348157090.590534
+e348157090.608475
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red-undo-icon.png
+xred-undo-icon.png
+lSLF07#2@22"Copy red-undo-icon.png348157090#348157090#0(0"0(0#0#45"/Users/anik/Desktop/irefer2/red-undo-icon.png8619350208#451"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red-undo-icon.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red_sync_button.png red_sync_button.png
+s348157090.589773
+e348157090.607769
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red_sync_button.png
+xred_sync_button.png
+lSLF07#2@24"Copy red_sync_button.png348157090#348157090#0(0"0(0#0#47"/Users/anik/Desktop/irefer2/red_sync_button.png8619539008#453"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red_sync_button.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red_user.png red_user.png
+s348157090.599354
+e348157090.608722
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red_user.png
+xred_user.png
+lSLF07#2@17"Copy red_user.png348157090#348157090#0(0"0(0#0#40"/Users/anik/Desktop/irefer2/red_user.png8618737536#446"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red_user.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CCpResource build/Release-iphonesimulator/irefer2.app/red_user_coloured.png red_user_coloured.png
+s348157090.603592
+e348157090.612227
+r1
+xCpResource
+xbuild/Release-iphonesimulator/irefer2.app/red_user_coloured.png
+xred_user_coloured.png
+lSLF07#2@26"Copy red_user_coloured.png348157090#348157090#0(0"0(0#0#49"/Users/anik/Desktop/irefer2/red_user_coloured.png8617924288#455"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -strip-debug-symbols -resolve-src-symlinks /Users/anik/Desktop/irefer2/red_user_coloured.png /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app0#
+
+CGenerateDSYMFile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app.dSYM /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/irefer2
+r0
+
+CLd /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/irefer2 normal i386
+r0
+
+CProcessInfoPlistFile /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/Info.plist irefer2-Info.plist
+s348157085.366144
+e348157085.371376
+r1
+xProcessInfoPlistFile
+x/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/Info.plist
+xirefer2-Info.plist
+lSLF07#2@26"Process irefer2-Info.plist348157085#348157085#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/irefer2-Info.plist8606891232#450"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility irefer2-Info.plist -genpkginfo /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app/Info.plist0#
+
+CProcessPCH /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch.gch irefer2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s348157090.938111
+e348157091.731431
+r1
+xProcessPCH
+x/var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch.gch
+xirefer2_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@29"Precompile irefer2_Prefix.pch348157090#348157091#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/irefer2_Prefix.pch8619344800#1740"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mdynamic-no-pic -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Release-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Release-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Release-iphonesimulator/irefer2.build/DerivedSources -DNS_BLOCK_ASSERTIONS=1 -c /Users/anik/Desktop/irefer2/irefer2_Prefix.pch -o /var/folders/R9/R9j9CZ9QF14QTKqv7DLPrk+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/irefer2_Prefix-crdzzdzjqwjreccuwkkinxanfskg/irefer2_Prefix.pch.gch0#
+
+CTouch /Users/anik/Desktop/irefer2/build/Release-iphonesimulator/irefer2.app
+r0
+

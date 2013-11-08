@@ -1,0 +1,407 @@
+TSqlite
+v7
+r0
+t349718038.615381
+cCheck dependencies
+cCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/shell.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c normal armv6 c com.apple.compilers.gcc.4_2
+cCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/sqlite3.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c normal armv6 c com.apple.compilers.gcc.4_2
+cCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/shell.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c normal armv7 c com.apple.compilers.gcc.4_2
+cCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/sqlite3.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c normal armv7 c com.apple.compilers.gcc.4_2
+cLibtool "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a" normal armv6
+cLibtool "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a" normal armv7
+cCreateUniversalBinary "/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/libSqlite.a" normal "armv6 armv7"
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk
+c000000004C5B59520000000000000110
+t1281055058
+s272
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/assert.h
+c000000004BF75A3C0000000000000DCB
+t1274501692
+s3531
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/ctype.h
+c000000004BF75A3C0000000000002C18
+t1274501692
+s11288
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/dlfcn.h
+c000000004C5A13EB0000000000000B1C
+t1280971755
+s2844
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/errno.h
+c000000004BF75A3C00000000000003EB
+t1274501692
+s1003
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/fcntl.h
+c000000004BF75A3C00000000000003EA
+t1274501692
+s1002
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/inttypes.h
+c000000004BF75A3C00000000000027D1
+t1274501692
+s10193
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/libkern/OSAtomic.h
+c000000004BF75A3C0000000000002519
+t1274501692
+s9497
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/malloc/malloc.h
+c000000004BF75A3C00000000000029BF
+t1274501692
+s10687
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/math.h
+c000000004BF4BCB400000000000004F1
+t1274330292
+s1265
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/pthread.h
+c000000004BF75A3D00000000000038F0
+t1274501693
+s14576
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/pwd.h
+c000000004BF75A3C0000000000001629
+t1274501692
+s5673
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/semaphore.h
+c000000004BF75A3C000000000000046F
+t1274501692
+s1135
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/signal.h
+c000000004BF75A3D00000000000014F0
+t1274501693
+s5360
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/stdio.h
+c000000004BF75A3D00000000000040AC
+t1274501693
+s16556
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/stdlib.h
+c000000004BF75A3D0000000000002DF5
+t1274501693
+s11765
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/string.h
+c000000004BF75A3D0000000000001731
+t1274501693
+s5937
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/file.h
+c000000004C5A150E0000000000001024
+t1280972046
+s4132
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/ioctl.h
+c000000004C5A150F000000000000116C
+t1280972047
+s4460
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/mman.h
+c000000004C5A150F0000000000002098
+t1280972047
+s8344
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/mount.h
+c000000004C5A150F0000000000003BA4
+t1280972047
+s15268
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/param.h
+c000000004C5A151000000000000027BE
+t1280972048
+s10174
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/resource.h
+c000000004C5A151000000000000024F7
+t1280972048
+s9463
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/stat.h
+c000000004C5A15110000000000004A1D
+t1280972049
+s18973
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/sysctl.h
+c000000004C5A15110000000000007974
+t1280972049
+s31092
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/time.h
+c000000004C5A15120000000000001E17
+t1280972050
+s7703
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/sys/types.h
+c000000004C5A15130000000000002905
+t1280972051
+s10501
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/time.h
+c000000004BF75A3D000000000000178E
+t1274501693
+s6030
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/unicode/uregex.h
+c000000004BFE0378000000000000ECDA
+t1274938232
+s60634
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/unicode/ustring.h
+c000000004BFE035000000000000122A0
+t1274938192
+s74400
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/unicode/utf16.h
+c000000004BFE03500000000000004958
+t1274938192
+s18776
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/unicode/utypes.h
+c000000004BFE03500000000000008C1D
+t1274938192
+s35869
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/unistd.h
+c000000004BF75A3D000000000000563E
+t1274501693
+s22078
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/include/utime.h
+c000000004BF75A3C0000000000000C93
+t1274501692
+s3219
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/limits.h
+c000000004BCCA1780000000000000C7E
+t1271701880
+s3198
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/stdarg.h
+c000000004BCCA17800000000000010DD
+t1271701880
+s4317
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/stddef.h
+c000000004BCCA1780000000000003197
+t1271701880
+s12695
+
+N/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/stdint.h
+c000000004BCCA2A2000000000000190C
+t1271702178
+s6412
+
+N/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/libSqlite.a
+t1328025238
+s2758424
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/Sqlite.LinkFileList
+c000000004F280E7D00000000000000D6
+t1328025213
+s214
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a
+t1328025237
+s1380792
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/shell.o
+t1328025215
+s85660
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/sqlite3.o
+t1328025236
+s1289160
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/Sqlite.LinkFileList
+c000000004F280E7D00000000000000D6
+t1328025213
+s214
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a
+t1328025238
+s1377584
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/shell.o
+t1328025216
+s85816
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/sqlite3.o
+t1328025238
+s1285800
+
+N/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c
+c000000004F143C960000000000016715
+t1326726294
+s91925
+i<stdlib.h>
+i<string.h>
+i<stdio.h>
+i<assert.h>
+i"sqlite3.h"
+i<ctype.h>
+i<stdarg.h>
+i<signal.h>
+i<pwd.h>
+i<unistd.h>
+i<sys/types.h>
+i<unistd.h>
+i<editline/editline.h>
+i<readline/readline.h>
+i<readline/history.h>
+i<io.h>
+i<sys/time.h>
+i<sys/resource.h>
+i<windows.h>
+
+N/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c
+c000000004F27EB2F000000000047E2C7
+t1328016175
+s4711111
+i"config.h"
+i<stdint.h>
+i<inttypes.h>
+i<tcl.h>
+i<stdarg.h>
+i<stdio.h>
+i<stdlib.h>
+i<string.h>
+i<assert.h>
+i<stddef.h>
+i<windows.h>
+i<os2safe.h>
+i<os2.h>
+i<uconv.h>
+i<ctype.h>
+i<time.h>
+i<sys/sysctl.h>
+i<malloc/malloc.h>
+i<libkern/OSAtomic.h>
+i<malloc.h>
+i<pthread.h>
+i<math.h>
+i<sys/types.h>
+i<sys/stat.h>
+i<fcntl.h>
+i<unistd.h>
+i<sys/time.h>
+i<errno.h>
+i<sys/mman.h>
+i<sys/ioctl.h>
+i<semaphore.h>
+i<limits.h>
+i<sys/file.h>
+i<sys/param.h>
+i<sys/mount.h>
+i<utime.h>
+i<dlfcn.h>
+i<sys/cygwin.h>
+i"sqlite3rtree.h"
+i<unicode/utypes.h>
+i<unicode/uregex.h>
+i<unicode/ustring.h>
+i<unicode/ucol.h>
+i<unicode/ubrk.h>
+i<unicode/utf16.h>
+
+N/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.h
+c000000004F143C96000000000005121B
+t1326726294
+s332315
+i<stdarg.h>
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies349718013#349718013#0(0"0(0#1#0"8676097056#0"0#
+
+CCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/shell.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c normal armv6 c com.apple.compilers.gcc.4_2
+s349718013.570001
+e349718015.403137
+r1
+xCompileC
+xbuild/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/shell.o
+x/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c349718013#349718015#0(0"0(0#0#63"/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c8669575520#1473"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-generated-files.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-own-target-headers.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-all-target-headers.hmap" -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-project-headers.hmap" "-F/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" "-I/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/include" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources/armv6" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources" -DNS_BLOCK_ASSERTIONS=1 -c /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/shell.o"0#
+
+CCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/sqlite3.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c normal armv6 c com.apple.compilers.gcc.4_2
+s349718013.571188
+e349718036.587502
+r1
+xCompileC
+xbuild/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/sqlite3.o
+x/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c
+xnormal
+xarmv6
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c349718013#349718036#0(0"0(0#0#65"/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c8671480544#1477"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv6 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-generated-files.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-own-target-headers.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-all-target-headers.hmap" -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-project-headers.hmap" "-F/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" "-I/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/include" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources/armv6" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources" -DNS_BLOCK_ASSERTIONS=1 -c /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/sqlite3.o"0#
+
+CCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/shell.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c normal armv7 c com.apple.compilers.gcc.4_2
+s349718015.403364
+e349718016.567635
+r1
+xCompileC
+xbuild/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/shell.o
+x/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@71"Compile /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c349718015#349718016#0(0"0(0#0#63"/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c8671530464#1473"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-generated-files.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-own-target-headers.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-all-target-headers.hmap" -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-project-headers.hmap" "-F/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" "-I/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/include" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources/armv7" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources" -DNS_BLOCK_ASSERTIONS=1 -c /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/shell.c -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/shell.o"0#
+
+CCompileC "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/sqlite3.o" /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c normal armv7 c com.apple.compilers.gcc.4_2
+s349718016.567741
+e349718038.344842
+r1
+xCompileC
+xbuild/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/sqlite3.o
+x/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c
+xnormal
+xarmv7
+xc
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@73"Compile /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c349718016#349718038#0(0"0(0#0#65"/Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c8676258336#1477"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/gcc-4.2 -x c -arch armv7 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -Os -Wreturn-type -Wunused-variable -isysroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk -gdwarf-2 -mthumb -miphoneos-version-min=3.0 -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-generated-files.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-own-target-headers.hmap" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-all-target-headers.hmap" -iquote "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Sqlite-project-headers.hmap" "-F/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" "-I/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/include" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources/armv7" "-I/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/DerivedSources" -DNS_BLOCK_ASSERTIONS=1 -c /Users/anik/Desktop/irefer2/sqlite-amalgamation-3071000/sqlite3.c -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/sqlite3.o"0#
+
+CCreateUniversalBinary "/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/libSqlite.a" normal "armv6 armv7"
+s349718038.380453
+e349718038.615321
+r1
+xCreateUniversalBinary
+x/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/libSqlite.a
+xnormal
+xarmv6 armv7
+lSLF07#2@78"CreateUniversalBinary "build/Ad Hoc-iphoneos/libSqlite.a" normal "armv6 armv7"349718038#349718038#0(0"0(0#0#39"/Users/anik/Desktop/irefer2/armv6 armv78670415136#527"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a" "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a" -o "/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos/libSqlite.a"0#
+
+CLibtool "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a" normal armv6
+s349718036.587656
+e349718037.018184
+r1
+xLibtool
+x/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a
+xnormal
+xarmv6
+lSLF07#2@104"Libtool "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a" normal armv6349718036#349718037#0(0"0(0#0#0"8671501312#676"    cd /Users/anik/Desktop/irefer2    setenv IPHONEOS_DEPLOYMENT_TARGET 3.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv6 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk "-L/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" -filelist "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/Sqlite.LinkFileList" -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv6/libSqlite.a"0#
+
+CLibtool "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a" normal armv7
+s349718038.344993
+e349718038.380318
+r1
+xLibtool
+x/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a
+xnormal
+xarmv7
+lSLF07#2@104"Libtool "build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a" normal armv7349718038#349718038#0(0"0(0#0#0"8676102144#676"    cd /Users/anik/Desktop/irefer2    setenv IPHONEOS_DEPLOYMENT_TARGET 3.0    setenv PATH "/Developer/Platforms/iPhoneOS.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/libtool -static -arch_only armv7 -syslibroot /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.0.sdk "-L/Users/anik/Desktop/irefer2/build/Ad Hoc-iphoneos" -filelist "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/Sqlite.LinkFileList" -o "/Users/anik/Desktop/irefer2/build/irefer2.build/Ad Hoc-iphoneos/Sqlite.build/Objects-normal/armv7/libSqlite.a"0#
+

@@ -1,0 +1,40 @@
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController viewDidLoad]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:27: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController doOfflineloading]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:42: warning: incompatible Objective-C types 'struct NSDictionary *', expected 'struct NSMutableDictionary *' when passing argument 1 of 'setDataSource:' from distinct Objective-C type
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:46: warning: 'doctorDetailViewController' may not respond to '-reloadView'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:46: warning: (Messages without a matching method signature
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:46: warning: will be assumed to return 'id' and accept
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:46: warning: '...' as arguments.)
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController connection:didReceiveData:]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:105: warning: 'doctorDetailViewController' may not respond to '-reloadView'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController parser:foundObject:]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:136: warning: incompatible Objective-C types 'struct NSDictionary *', expected 'struct NSMutableDictionary *' when passing argument 1 of 'setDataSource:' from distinct Objective-C type
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController reloadView]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:206: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:210: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:232: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:236: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:240: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:250: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:255: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:259: warning: 'doctorDetailViewController' may not respond to '-processOfficeHour:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:259: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:304: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:306: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:316: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:317: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:326: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:327: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:355: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:372: warning: 'doctorDetailViewController' may not respond to '-createContentLabel:ypos:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController rankUpdateReqThread]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:435: warning: 'doctorDetailViewController' may not respond to '-updateDataSource:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:442: warning: 'doctorDetailViewController' may not respond to '-updateDataSource:'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController callDoctor:]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:479: warning: incompatible Objective-C types 'struct UIView *', expected 'struct UIViewController *' when passing argument 2 of 'dialANumber:view:' from distinct Objective-C type
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: In function '-[doctorDetailViewController saveAndCloseReportPopup:]':
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:517: warning: 'doctorDetailViewController' may not respond to '-getReportContent'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m: At top level:
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:712: warning: incomplete implementation of class 'doctorDetailViewController'
+/Users/anik/Desktop/irefer2/Classes/doctorDetailViewController.m:712: warning: method definition for '-showReportPopupKeyboard:' not found

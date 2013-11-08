@@ -1,0 +1,31 @@
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils dialANumber:view:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:51: warning: 'UIViewController' may not respond to '-addSubview:'
+/Users/anik/Desktop/irefer2/Classes/utils.m:51: warning: (Messages without a matching method signature
+/Users/anik/Desktop/irefer2/Classes/utils.m:51: warning: will be assumed to return 'id' and accept
+/Users/anik/Desktop/irefer2/Classes/utils.m:51: warning: '...' as arguments.)
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils generateRatingBar:value:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:99: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m:112: warning: 'utils' may not respond to '+someDrawImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m:113: warning: 'utils' may not respond to '+someDrawImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils generateLargeRatingBar:value:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:130: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m:143: warning: 'utils' may not respond to '+someDrawLargeImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m:144: warning: 'utils' may not respond to '+someDrawLargeImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils generateCostBar:value:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:162: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m:175: warning: 'utils' may not respond to '+drawDollarImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m:176: warning: 'utils' may not respond to '+drawDollarImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils generateQualityBar:value:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:196: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m:206: warning: 'utils' may not respond to '+drawQualityImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m:207: warning: 'utils' may not respond to '+drawQualityImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils generatePatientExpBar:value:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:227: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m:237: warning: 'utils' may not respond to '+drawPexpImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m:238: warning: 'utils' may not respond to '+drawPexpImageMethod::::'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils getLanguageList:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:257: warning: 'utils' may not respond to '+getLanguages'
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils getDateFromFormatedString:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:344: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast
+/Users/anik/Desktop/irefer2/Classes/utils.m: In function '+[utils getDateFromFormatedString:format:]':
+/Users/anik/Desktop/irefer2/Classes/utils.m:358: warning: comparison of distinct Objective-C types 'struct NSNull *' and 'struct NSString *' lacks a cast

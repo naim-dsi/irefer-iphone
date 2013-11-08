@@ -1,0 +1,26 @@
+/Users/anik/Desktop/irefer2/Classes/commonDao.m: In function '-[commonDao clearUsers]':
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: warning: implicit declaration of function 'sqlite3_open'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: warning: 'commonDao' may not respond to '-dataFilePath'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: warning: (Messages without a matching method signature
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: warning: will be assumed to return 'id' and accept
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: warning: '...' as arguments.)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: error: 'database' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: error: (Each undeclared identifier is reported only once
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: error: for each function it appears in.)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:16: error: 'SQLITE_OK' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:19: error: 'sqlite3_stmt' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:19: error: 'delStmt' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:20: warning: implicit declaration of function 'sqlite3_prepare_v2'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:21: warning: implicit declaration of function 'sqlite3_step'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:21: error: 'SQLITE_DONE' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:23: warning: implicit declaration of function 'sqlite3_finalize'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:24: warning: implicit declaration of function 'sqlite3_close'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:34: warning: control reaches end of non-void function
+/Users/anik/Desktop/irefer2/Classes/commonDao.m: In function '-[commonDao clearPractices]':
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:37: warning: 'commonDao' may not respond to '-dataFilePath'
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:37: error: 'database' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:37: error: 'SQLITE_OK' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:40: error: 'sqlite3_stmt' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:40: error: 'delStmt' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:42: error: 'SQLITE_DONE' undeclared (first use in this function)
+/Users/anik/Desktop/irefer2/Classes/commonDao.m:55: warning: control reaches end of non-void function

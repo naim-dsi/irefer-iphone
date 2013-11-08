@@ -1,0 +1,2 @@
+/Users/anik/Desktop/irefer-src/irefer2/Classes/customDeleteCell.m: In function '-[customDeleteCell initWithFrame:reuseIdentifier:]':
+/Users/anik/Desktop/irefer-src/irefer2/Classes/customDeleteCell.m:18: warning: 'initWithFrame:reuseIdentifier:' is deprecated (declared at /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UITableViewCell.h:189)

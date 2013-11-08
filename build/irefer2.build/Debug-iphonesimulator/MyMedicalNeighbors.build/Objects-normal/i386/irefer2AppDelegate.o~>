@@ -1,0 +1,9 @@
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m: In function '-[irefer2AppDelegate startupSyncThread]':
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:83: warning: initialization makes pointer from integer without a cast
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:93: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:105: warning: assignment makes pointer from integer without a cast
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:115: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:118: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:129: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:136: warning: format not a string literal and no format arguments
+/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m:178: warning: initialization makes integer from pointer without a cast

@@ -1,0 +1,298 @@
+Tirefer2
+v7
+r0
+t346771668.984197
+cCheck dependencies
+cProcessInfoPlistFile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/Info.plist irefer2-Info.plist
+cCompileXIB /Users/anik/Desktop/irefer2/MainWindow.xib
+cCompileXIB /Users/anik/Desktop/irefer2/irefer2ViewController.xib
+cCpResource build/Debug-iphonesimulator/irefer2.app/irefer_icon.png ../irefer_icon.png
+cCpResource build/Debug-iphonesimulator/irefer2.app/bg.png ../bg.png
+cProcessPCH /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch.gch irefer2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/main.o /Users/anik/Desktop/irefer2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2ViewController.o /Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+cLd /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2 normal i386
+cGenerateDSYMFile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app.dSYM /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2
+cTouch /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk
+c000000004C762B6B0000000000000132
+t1282812779
+s306
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/CoreGraphics.framework/CoreGraphics
+c000000004BFDFE39000000000027C7D0
+t1274936889
+s2607056
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Foundation
+c000000004BFDFE7C000000000029D5D0
+t1274936956
+s2741712
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.h
+c000000004BFDFE6E0000000000001466
+t1274936942
+s5222
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.h
+c000000004C0470BB00000000000009CD
+t1275359419
+s2509
+
+N/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk/System/Library/Frameworks/UIKit.framework/UIKit
+c000000004C0471620000000001D47210
+t1275359586
+s30700048
+
+N/Users/anik/Desktop/irefer2/../bg.png
+c000000004EFB18570000000000026C64
+t1325078615
+s158820
+
+N/Users/anik/Desktop/irefer2/../irefer_icon.png
+c000000004EFB18990000000000000692
+t1325078681
+s1682
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.h
+c000000004EFB160D00000000000001E3
+t1325078029
+s483
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m
+c000000004EFB160D0000000000000A8F
+t1325078029
+s2703
+i"irefer2AppDelegate.h"
+i"irefer2ViewController.h"
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2ViewController.h
+c000000004EFB160D00000000000000F2
+t1325078029
+s242
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m
+c000000004EFB160D00000000000005BD
+t1325078029
+s1469
+i"irefer2ViewController.h"
+
+N/Users/anik/Desktop/irefer2/MainWindow.xib
+c000000004EFB160D0000000000004E29
+t1325078029
+s20009
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app
+t1325078868
+s306
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app.dSYM
+t1325078868
+s102
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/Info.plist
+t1325078867
+s641
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/MainWindow.nib
+t1325078867
+s1123
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/PkgInfo
+t1325078867
+s8
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/bg.png
+t1325078867
+s158820
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2
+t1325078868
+s17000
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2ViewController.nib
+t1325078867
+s1043
+
+N/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer_icon.png
+t1325078867
+s1682
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2.LinkFileList
+c000000004EFB1953000000000000016C
+t1325078867
+s364
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o
+t1325078868
+s47708
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2ViewController.o
+t1325078868
+s34376
+
+N/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/main.o
+t1325078868
+s6280
+
+N/Users/anik/Desktop/irefer2/irefer2ViewController.xib
+c000000004EFB193A000000000000406D
+t1325078842
+s16493
+
+N/Users/anik/Desktop/irefer2/irefer2_Prefix.pch
+c000000004EFB160D00000000000000B7
+t1325078029
+s183
+i<Foundation/Foundation.h>
+i<UIKit/UIKit.h>
+
+N/Users/anik/Desktop/irefer2/main.m
+c000000004EFB160D000000000000016D
+t1325078029
+s365
+i<UIKit/UIKit.h>
+
+N/var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch.gch
+t1325078868
+s15232016
+
+Nirefer2-Info.plist
+c000000004EFB195300000000000003A3
+t1325078867
+s931
+
+CCheck dependencies
+r0
+lSLF07#2@18"Check dependencies346771667#346771667#0(0"0(0#1#0"3343187568374212096#0"0#
+
+CCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s346771668.502428
+e346771668.693424
+r1
+xCompileC
+xbuild/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o
+x/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@64"Compile /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m346771668#346771668#0(0"0(0#0#56"/Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m8606684096#1816"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources -include /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/irefer2AppDelegate.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2AppDelegate.o0#
+
+CCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2ViewController.o /Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s346771668.681035
+e346771668.725281
+r1
+xCompileC
+xbuild/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2ViewController.o
+x/Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@67"Compile /Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m346771668#346771668#0(0"0(0#0#59"/Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m8606643296#1822"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources -include /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/Classes/irefer2ViewController.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2ViewController.o0#
+
+CCompileC build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/main.o /Users/anik/Desktop/irefer2/main.m normal i386 objective-c com.apple.compilers.gcc.4_2
+s346771668.501429
+e346771668.680958
+r1
+xCompileC
+xbuild/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/main.o
+x/Users/anik/Desktop/irefer2/main.m
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@42"Compile /Users/anik/Desktop/irefer2/main.m346771668#346771668#0(0"0(0#0#34"/Users/anik/Desktop/irefer2/main.m8607899520#1780"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources -include /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch -c /Users/anik/Desktop/irefer2/main.m -o /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/main.o0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/MainWindow.xib
+s346771667.466770
+e346771667.832920
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/MainWindow.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+o2011-12-28 19:27:47.725 Interface Builder Cocoa Touch Tool[489:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@25"CompileXIB MainWindow.xib346771667#346771667#0(321"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)2011-12-28 19:27:47.725 Interface Builder Cocoa Touch Tool[489:1b03] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#42"/Users/anik/Desktop/irefer2/MainWindow.xib8606282304#537"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/MainWindow.nib /Users/anik/Desktop/irefer2/MainWindow.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCompileXIB /Users/anik/Desktop/irefer2/irefer2ViewController.xib
+s346771667.468170
+e346771667.839980
+r1
+xCompileXIB
+x/Users/anik/Desktop/irefer2/irefer2ViewController.xib
+oCouldn't open shared capabilities memory GSCapabilities (No such file or directory)
+o2011-12-28 19:27:47.728 Interface Builder Cocoa Touch Tool[488:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.
+lSLF07#2@36"CompileXIB irefer2ViewController.xib346771667#346771667#0(321"Couldn't open shared capabilities memory GSCapabilities (No such file or directory)2011-12-28 19:27:47.728 Interface Builder Cocoa Touch Tool[488:1903] CFPreferences: user home directory at file://localhost/Users/anik/Library/Application%20Support/iPhone%20Simulator/User/ is unavailable. User domains will be volatile.0(0#0#53"/Users/anik/Desktop/irefer2/irefer2ViewController.xib8606232160#559"    cd /Users/anik/Desktop/irefer2    setenv IBC_MINIMUM_COMPATIBILITY_VERSION 4.0    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/ibtool --errors --warnings --notices --output-format human-readable-text --compile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2ViewController.nib /Users/anik/Desktop/irefer2/irefer2ViewController.xib --sdk /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk0#
+
+CCpResource build/Debug-iphonesimulator/irefer2.app/bg.png ../bg.png
+s346771667.833697
+e346771667.849310
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/irefer2.app/bg.png
+x../bg.png
+lSLF07#2@14"Copy ../bg.png346771667#346771667#0(0"0(0#0#37"/Users/anik/Desktop/irefer2/../bg.png8607902272#420"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/anik/Desktop/irefer2/../bg.png /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app0#
+
+CCpResource build/Debug-iphonesimulator/irefer2.app/irefer_icon.png ../irefer_icon.png
+s346771667.833009
+e346771667.847446
+r1
+xCpResource
+xbuild/Debug-iphonesimulator/irefer2.app/irefer_icon.png
+x../irefer_icon.png
+lSLF07#2@23"Copy ../irefer_icon.png346771667#346771667#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/../irefer_icon.png8606681312#429"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/anik/Desktop/irefer2/../irefer_icon.png /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app0#
+
+CGenerateDSYMFile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app.dSYM /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2
+s346771668.930742
+e346771668.966335
+r1
+xGenerateDSYMFile
+x/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app.dSYM
+x/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2
+lSLF07#2@109"GenerateDSYMFile build/Debug-iphonesimulator/irefer2.app.dSYM build/Debug-iphonesimulator/irefer2.app/irefer2346771668#346771668#0(0"0(0#0#75"/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer28605872608#350"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2 -o /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app.dSYM0#
+
+CLd /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2 normal i386
+s346771668.725369
+e346771668.930567
+r1
+xLd
+x/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2
+xnormal
+xi386
+lSLF07#2@80"Link /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer2346771668#346771668#0(0"0(0#0#0"8599728640#845"    cd /Users/anik/Desktop/irefer2    setenv MACOSX_DEPLOYMENT_TARGET 10.6    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -L/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -F/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -filelist /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/Objects-normal/i386/irefer2.LinkFileList -mmacosx-version-min=10.6 -Xlinker -objc_abi_version -Xlinker 2 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/irefer20#
+
+CProcessInfoPlistFile /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/Info.plist irefer2-Info.plist
+s346771667.436859
+e346771667.466704
+r1
+xProcessInfoPlistFile
+x/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/Info.plist
+xirefer2-Info.plist
+lSLF07#2@26"Process irefer2-Info.plist346771667#346771667#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/irefer2-Info.plist32088624093986912#446"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    builtin-infoPlistUtility irefer2-Info.plist -genpkginfo /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/PkgInfo -expandbuildsettings -format binary -platform iphonesimulator -o /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app/Info.plist0#
+
+CProcessPCH /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch.gch irefer2_Prefix.pch normal i386 objective-c com.apple.compilers.gcc.4_2
+s346771667.849409
+e346771668.501320
+r1
+xProcessPCH
+x/var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch.gch
+xirefer2_Prefix.pch
+xnormal
+xi386
+xobjective-c
+xcom.apple.compilers.gcc.4_2
+lSLF07#2@29"Precompile irefer2_Prefix.pch346771667#346771668#0(0"0(0#0#46"/Users/anik/Desktop/irefer2/irefer2_Prefix.pch8603380512#1683"    cd /Users/anik/Desktop/irefer2    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30200 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator4.0.sdk -fvisibility=hidden -mmacosx-version-min=10.6 -gdwarf-2 -fobjc-abi-version=2 -fobjc-legacy-dispatch -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-generated-files.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-own-target-headers.hmap -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-all-target-headers.hmap -iquote /Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/irefer2-project-headers.hmap -F/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator -I/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/include -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources/i386 -I/Users/anik/Desktop/irefer2/build/irefer2.build/Debug-iphonesimulator/irefer2.build/DerivedSources -c /Users/anik/Desktop/irefer2/irefer2_Prefix.pch -o /var/folders/oU/oUSPXMB4HoykPQmnlr+Mb++++Tc/-Caches-/com.apple.Xcode.506/SharedPrecompiledHeaders/irefer2_Prefix-auvxjwtwfowyivervohchwjvcbko/irefer2_Prefix.pch.gch0#
+
+CTouch /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app
+s346771668.966473
+e346771668.984135
+r1
+xTouch
+x/Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app
+lSLF07#2@73"Touch /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app346771668#346771668#0(0"0(0#0#0"8608271744#256"    cd /Users/anik/Desktop/irefer2    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/anik/Desktop/irefer2/build/Debug-iphonesimulator/irefer2.app0#
+
