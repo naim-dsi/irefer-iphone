@@ -23,7 +23,7 @@
 }
 
 -(NSString *) getSearchUrl{
-	return [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"speciality/jsonLite&code="] stringByAppendingString:[self getSearchContent]];
+	return [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"speciality/jsonLite?code="] stringByAppendingString:[self getSearchContent]];
 }
 
 -(void) selectionTriggered: (NSDictionary *)rowDataSet{

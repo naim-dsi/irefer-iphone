@@ -23,7 +23,7 @@
 	
 	
 	[self.listTableView setHidden:YES];
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/json&limit=%d",self.currentLimit];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/json?limit=%d",self.currentLimit];
 	[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 
 }
@@ -40,7 +40,7 @@
 
 - (NSString *)getSearchURL{
 	
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/json&code=%@", self.searchBar.text];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/json?code=%@", self.searchBar.text];
 	return serverUrl;
 }
 

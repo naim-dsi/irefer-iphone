@@ -80,7 +80,7 @@
 	self.spinnerBg.hidden = NO;
 	
 	NSString *url = [[[[[[[[[[[NSString stringWithString:[utils performSelector:@selector(getServerURL)]]
-					 stringByAppendingString:@"user/register&last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
+					 stringByAppendingString:@"user/register?last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
 					  stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&prac_id="] stringByAppendingString:[self.practice objectForKey:@"id"]] 
 					  stringByAppendingString:@"&spec_id="] stringByAppendingString:[self.speciality objectForKey:@"id"]];
 	

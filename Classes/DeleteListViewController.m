@@ -183,7 +183,7 @@ int actionType = 0;
 	
 	NSDictionary *rowData = [self.dataSource objectAtIndex:delId];
 	NSDictionary *user = [dao getCurrentUser];
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"paUser/req&prac_id=%@&user_id=%@",[rowData objectForKey:@"id"],[user objectForKey:@"id"]];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"paUser/req?prac_id=%@&user_id=%@",[rowData objectForKey:@"id"],[user objectForKey:@"id"]];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 	NSURLResponse *response = nil;
 	NSError *error = nil;

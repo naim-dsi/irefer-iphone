@@ -23,7 +23,7 @@
 	if (self.isSearchFromOnline) {
 		
 		[self.listTableView setHidden:YES];
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/json&limit=%d",self.currentLimit];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/json?limit=%d",self.currentLimit];
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
 	}else{
@@ -53,7 +53,7 @@
 
 - (NSString *)getSearchURL{
 	
-	NSString *serverUrl = [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"county/json&code="] stringByAppendingString:[self.searchBar text]];
+	NSString *serverUrl = [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"county/json?code="] stringByAppendingString:[self.searchBar text]];
 	return serverUrl;
 }
 

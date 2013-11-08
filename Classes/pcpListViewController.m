@@ -51,7 +51,7 @@
 	[utils roundUpView:[[self.spinnerBg subviews] objectAtIndex:0]];
 
 	[self.listTableView setHidden:YES];
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite&prac_ids=1&limit=%d",self.currentLimit];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite?prac_ids=1&limit=%d",self.currentLimit];
 	[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 }
 
@@ -59,7 +59,7 @@
 	
 	NSLog(@"inside searchContentChanged......");
 	self.currentLimit = 50;
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite&prac_ids=1&doc_name=%@&limit=%d", self.searchBar.text, self.currentLimit];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite?prac_ids=1&doc_name=%@&limit=%d", self.searchBar.text, self.currentLimit];
 	[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];	
 }
 
@@ -207,7 +207,7 @@
 		viewMoreCell *cell = (viewMoreCell *)[tableView cellForRowAtIndexPath:indexPath];
 		[cell setUserInteractionEnabled:NO];
 		self.currentLimit += 50;
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite&prac_ids=1&doc_name=%@&limit=%d",self.searchBar.text, self.currentLimit];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/jsonLite?prac_ids=1&doc_name=%@&limit=%d",self.searchBar.text, self.currentLimit];
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
 	}else if ([rowData objectForKey:@"name"] != NULL && ![[rowData objectForKey:@"name"] isEqual:@""] ) {

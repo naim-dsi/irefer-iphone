@@ -67,7 +67,7 @@
 	self.spinnerBg.hidden = NO;
 	
 	NSString *url = [[[[[[[[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] 
-							stringByAppendingString:@"user/register&last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
+							stringByAppendingString:@"user/register?last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
 						stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&hosp_id="] stringByAppendingString:[self.hospital objectForKey:@"id"]];
 	
 	NSLog(@"called url : %@",url);

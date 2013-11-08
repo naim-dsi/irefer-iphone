@@ -19,7 +19,7 @@
 int docId,rankVal;
 
 - (NSString *) getDoctorSearchUrl{
-	NSString *url = [NSString stringWithFormat:@"%@doctor/search&prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours];
+	NSString *url = [NSString stringWithFormat:@"%@doctor/search?prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours];
 	return url;
 }
 
@@ -490,7 +490,7 @@ int docId,rankVal;
 	NSDictionary *user = [dao getCurrentUser];
 	
 	if(self.isSearchFromOnline){
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], [alert getRank]];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], [alert getRank]];
 		NSLog(@"url :%@",serverUrl);
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		NSURLResponse *response = nil;

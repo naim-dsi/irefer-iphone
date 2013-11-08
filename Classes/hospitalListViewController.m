@@ -20,7 +20,7 @@
 }
 
 -(NSString *) getSearchUrl{
-	return [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"hospital/json&code="] stringByAppendingString:[self getSearchContent]];
+	return [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"hospital/json?code="] stringByAppendingString:[self getSearchContent]];
 }
 
 - (void) selectionTriggered: (NSDictionary *)rowDataSet{

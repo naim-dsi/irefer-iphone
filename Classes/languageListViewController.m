@@ -51,7 +51,7 @@
 	
 	if (self.isSearchFromOnline) {
 		/*
-		NSString *serverUrl = [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"county/json&code="] stringByAppendingString:[self.searchBar text]];
+		NSString *serverUrl = [[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingString:@"county/json?code="] stringByAppendingString:[self.searchBar text]];
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];	
 		*/
 	}else {

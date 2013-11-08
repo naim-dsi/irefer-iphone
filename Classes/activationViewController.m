@@ -69,7 +69,7 @@
 	}
 	
 	NSString *url = [NSString stringWithString: [utils performSelector:@selector(getServerURL)]];
-	url = [[[[url stringByAppendingString:@"user/activate&email="] stringByAppendingString:[email text]] stringByAppendingString:@"&code="] stringByAppendingString:[code text]];
+	url = [[[[url stringByAppendingString:@"user/activate?email="] stringByAppendingString:[email text]] stringByAppendingString:@"&code="] stringByAppendingString:[code text]];
 	
 	[self.spinner startAnimating];
 	self.spinner.hidden = NO;

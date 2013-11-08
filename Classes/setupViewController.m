@@ -660,7 +660,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Hospitals.." waitUntilDone:NO];
 		
 		//for hospital
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"hospital/jsonTmpl&prac_id=%@",[self.userData objectForKey:@"id"]];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"hospital/jsonTmpl?prac_id=%@",[self.userData objectForKey:@"id"]];
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		NSURLResponse *response = nil;
 		NSError *error = nil;
@@ -677,7 +677,7 @@ int actionSheetType = 0;
 		
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Insurances.." waitUntilDone:NO];
 		//for insurance
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"insurance/jsonTmpl&prac_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"insurance/jsonTmpl?prac_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -692,7 +692,7 @@ int actionSheetType = 0;
 
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Counties.." waitUntilDone:NO];
 		//for county
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/jsonTmpl&prac_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/jsonTmpl?prac_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -708,7 +708,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Specialities.." waitUntilDone:NO];
 
 		//for speciality
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"speciality/jsonTmpl&prac_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"speciality/jsonTmpl?prac_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -732,7 +732,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Practices.." waitUntilDone:NO];
 
 		//for hospital
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonTmpl&hosp_id=%@",[self.userData objectForKey:@"id"]];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonTmpl?hosp_id=%@",[self.userData objectForKey:@"id"]];
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		NSURLResponse *response = nil;
 		NSError *error = nil;
@@ -750,7 +750,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Insurances.." waitUntilDone:NO];
 
 		//for insurance
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"insurance/jsonTmpl&hosp_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"insurance/jsonTmpl?hosp_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -766,7 +766,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Counties.." waitUntilDone:NO];
 
 		//for county
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/jsonTmpl&hosp_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"county/jsonTmpl?hosp_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -782,7 +782,7 @@ int actionSheetType = 0;
 		[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Specialities.." waitUntilDone:NO];
 
 		//for speciality
-		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"speciality/jsonTmpl&hosp_id=%@",[self.userData objectForKey:@"id"]];
+		serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"speciality/jsonTmpl?hosp_id=%@",[self.userData objectForKey:@"id"]];
 		request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
 		responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
@@ -841,7 +841,7 @@ int actionSheetType = 0;
 	NSString *limit = @"0,100000";
 	
 	
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty&cnty_id=%@",cntyIds];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty?cnty_id=%@",cntyIds];
 	NSMutableArray *dataList = [utils getDataFromSyncronousURLCall:serverUrl];
 
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Practices.." waitUntilDone:NO];
@@ -852,7 +852,7 @@ int actionSheetType = 0;
 	//[dataList release];
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Hospitals.." waitUntilDone:NO];
 
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"hospital/jsonCounty&cnty_id=%@",cntyIds];
+	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"hospital/jsonCounty?cnty_id=%@",cntyIds];
 	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
 	
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Hospitals.." waitUntilDone:NO];
@@ -885,7 +885,7 @@ int actionSheetType = 0;
 	//[dataList release];
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Doctors.." waitUntilDone:NO];
 	
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/json&prac_ids=1&cnty_ids=%@&limit=%@&user_id=%@", cntyIds, limit, userId];
+	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/json?prac_ids=1&cnty_ids=%@&limit=%@&user_id=%@", cntyIds, limit, userId];
 	NSLog(@"%@",serverUrl);
 	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
 	NSLog(@"total downloaded doctor count : %d", [dataList count]);
@@ -894,7 +894,7 @@ int actionSheetType = 0;
 		NSLog(@"unable to save Doctors data");
 	}
 	//	[dataList release];
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"user/json&user_id=%@",[userData objectForKey:@"uid"]];
+	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"user/json?user_id=%@",[userData objectForKey:@"uid"]];
 	NSLog(serverUrl);
 	NSMutableArray *profileList = [utils getDataFromSyncronousURLCall:serverUrl];
 	if (profileList != NULL && [profileList count] > 0) {

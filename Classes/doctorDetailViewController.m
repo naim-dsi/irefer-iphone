@@ -23,7 +23,7 @@
 	NSDictionary *userData = [dao getCurrentUserPracticeOrHospital];
 	
 	if (self.isSearchFromOnline) {
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/docJson&doc_id=%@&user_id=%@", self.dId, [userData objectForKey:@"uid"]];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/docJson?doc_id=%@&user_id=%@", self.dId, [userData objectForKey:@"uid"]];
 		NSLog(serverUrl);
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
@@ -421,7 +421,7 @@
 	NSDictionary *user = [dao getCurrentUser];
 	
 	if(self.isSearchFromOnline){
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
+		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
 		NSLog(@"url :%@",serverUrl);
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 		NSURLResponse *response = nil;

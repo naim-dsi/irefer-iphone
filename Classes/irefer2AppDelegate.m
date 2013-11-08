@@ -95,7 +95,7 @@
 	NSString *responseStr = @"";
 	
 	if(![content isEqual:@""]){
-		url = [NSString stringWithFormat:@"%@doctorComment/comment2&user_id=%@&var=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
+		url = [NSString stringWithFormat:@"%@doctorComment/comment2?user_id=%@&var=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
 		responseStr = [utils getStringFromSyncronousURLCall:url];
 		[dao updateSyncronizableReports];
 	}
@@ -114,7 +114,7 @@
 	}
 	NSLog(content);
 	if(![content isEqual:@""]){
-		url = [NSString stringWithFormat:@"%@userDocRank/bulkRank&user_id=%@&val=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
+		url = [NSString stringWithFormat:@"%@userDocRank/bulkRank?user_id=%@&val=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
 		NSLog(url);
 		responseStr = [utils getStringFromSyncronousURLCall:url];
 		NSLog(@"response for rank update %@",responseStr);
@@ -125,14 +125,14 @@
 	int count = [dao getSearchCount:1];
 	NSLog(@"uploadable search count %d",count);
 	if( count > 0 ){
-		url = [NSString stringWithFormat:@"%@searchStatistics/setCount&user_id=%@&count=%d",[utils getServerURL], [userData objectForKey:@"uid"], count];
+		url = [NSString stringWithFormat:@"%@searchStatistics/setCount?user_id=%@&count=%d",[utils getServerURL], [userData objectForKey:@"uid"], count];
 		NSLog(url);
 		responseStr = [utils getStringFromSyncronousURLCall:url];
 		NSLog(@"response for statistics upload %@",responseStr);
 	}
 	
 	//downloading profile
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"user/json&user_id=%@",[userData objectForKey:@"uid"]];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"user/json?user_id=%@",[userData objectForKey:@"uid"]];
 	NSLog(serverUrl);
 	NSMutableArray *profileList = [utils getDataFromSyncronousURLCall:serverUrl];
 	if (profileList != NULL && [profileList count] > 0) {

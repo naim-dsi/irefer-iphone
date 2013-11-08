@@ -50,7 +50,7 @@ BOOL isActivated;
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
 	
 	NSDictionary *user = [dao getCurrentUser];
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"paUser/activate&code=%@&user_id=%@&prac_id=%@",self.actText.text, [user objectForKey:@"id"], [practice objectForKey:@"id"]];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"paUser/activate?code=%@&user_id=%@&prac_id=%@",self.actText.text, [user objectForKey:@"id"], [practice objectForKey:@"id"]];
 	NSLog(@"url :%@",serverUrl);
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
 	NSURLResponse *response = nil;
