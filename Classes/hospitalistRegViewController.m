@@ -67,7 +67,7 @@
 	self.spinnerBg.hidden = NO;
 	
 	NSString *url = [[[[[[[[[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] 
-							stringByAppendingString:@"user/register?last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
+							stringByAppendingString:@"user/register?doc_id=&last_name="] stringByAppendingString:self.lastName.text] stringByAppendingString:@"&first_name="] stringByAppendingString:self.firstName.text]
 						stringByAppendingString:@"&email="] stringByAppendingString:self.email.text] stringByAppendingString:@"&hosp_id="] stringByAppendingString:[self.hospital objectForKey:@"id"]];
 	
 	NSLog(@"called url : %@",url);
@@ -90,7 +90,8 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
+	NSString *jsonStr=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"NI::String sent from server %@",jsonStr);
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
@@ -104,7 +105,7 @@
 	
 	[user release];
 	[dataSet release];
-	
+	[jsonStr release];
 	//[self dismissModalViewControllerAnimated:YES];
 	
 	//do successmessage and forwarding
