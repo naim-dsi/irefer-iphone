@@ -824,7 +824,7 @@ int actionSheetType = 0;
 	self.spinner.hidden = NO;
 	self.inactiveBtn.hidden = NO;
 	self.spinnerBg.hidden = NO;
-	self.spinnerText.text = @"Downloading Practices..";
+	self.spinnerText.text = @"Preparing database...";
 	NSLog(@"before doctor thread");
 	
 	[self performSelectorInBackground:@selector(doctorProcessThread) withObject:nil];
@@ -839,9 +839,68 @@ int actionSheetType = 0;
 	NSString *cntyIds = [utils getIdsFromList:[dao getTableRowList:IreferConstraints.countyTableName searchValue:nil]];
 	NSString *userId = [user objectForKey:@"id"];
 	NSString *limit = @"0,100000";
+    
+	NSDate *currDate = [NSDate date];
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+    [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
+    NSString *dateString = [dateFormatter stringFromDate:currDate];
+    NSLog(@"%@",dateString);
+    
 	
-	
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty?cnty_id=%@",cntyIds];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_sync_data_iphone?cnty_id=%@&user_id=%@&slimit=1000&limit=150&dlimit=%@&serverBDFileName=%@",cntyIds,userId,limit,dateString];
+    
+    NSLog(serverUrl);
+        
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *datePath= [NSString stringWithFormat: @"/%@.zip",dateString];
+    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:datePath];
+    
+    NSLog(txtPath);
+    
+    NSString *dbPath = [dao dataFilePath];
+    
+    
+    NSURL *dbUrl = [[NSURL alloc] initWithString:
+                     [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSData *dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
+    
+    
+    
+    if ([fileManager fileExistsAtPath:txtPath] == NO) {
+        [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading database..." waitUntilDone:NO];
+        [dbFile writeToFile:txtPath atomically:YES];
+    }
+    else if ([fileManager fileExistsAtPath:txtPath] == YES) {
+        [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading database..." waitUntilDone:NO];
+        [fileManager removeItemAtPath:txtPath error:&error];
+        [dbFile writeToFile:txtPath atomically:YES];
+    }
+    [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Unzipping database..." waitUntilDone:NO];
+    [dao release];
+    //NSString *zipPath = @"path_to_your_zip_file";
+    //NSString *destinationPath = @"path_to_the_folder_where_you_want_it_unzipped";
+    if ([fileManager fileExistsAtPath:dbPath] == YES) {
+        [fileManager removeItemAtPath:dbPath error:&error];
+    }
+    [SSZipArchive unzipFileAtPath:txtPath toDestination:documentsDirectory];
+    NSString *unzipPath = [documentsDirectory stringByAppendingPathComponent:@"/irefer_db"];
+    [self renameFileFrom:unzipPath to:dbPath];
+    [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Reloading database..." waitUntilDone:NO];
+    dao = [[setupDao alloc] init];
+    if ([fileManager fileExistsAtPath:txtPath] == YES) {
+        [fileManager removeItemAtPath:txtPath error:&error];
+    }
+    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/deletedbfiles?serverBDFileName=%@",dateString];
+    NSLog(serverUrl);
+    dbUrl = [[NSURL alloc] initWithString:
+             [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:dbUrl];
+    [[NSURLConnection alloc] initWithRequest:request delegate:nil];
+    /*
+    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty?prac_ids=1&cnty_ids=%@",cntyIds];
 	NSMutableArray *dataList = [utils getDataFromSyncronousURLCall:serverUrl];
 
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Practices.." waitUntilDone:NO];
@@ -901,7 +960,7 @@ int actionSheetType = 0;
 		NSDictionary *profile = [profileList objectAtIndex:0];
 		[dao updateNotifyDates:[profile objectForKey:@"id"] adminNotifyDate:[profile objectForKey:@"admin_notify_date"] userNotifyDate:[profile objectForKey:@"user_notify_date"]];
 	}
-	
+	*/
 	self.userData = [dao getCurrentUserPracticeOrHospital];
 	
 	[self updateRowCounts];
@@ -915,7 +974,21 @@ int actionSheetType = 0;
 	[pool drain];  
 	
 }
-
+- (BOOL)renameFileFrom:(NSString*)oldPath to:(NSString *)newPath
+{
+    NSString *documentDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                                 NSUserDomainMask, YES) objectAtIndex:0];
+    
+    
+    NSFileManager *fileMan = [NSFileManager defaultManager];
+    NSError *error = nil;
+    if (![fileMan moveItemAtPath:oldPath toPath:newPath error:&error])
+    {
+        NSLog(@"Failed to move '%@' to '%@': %@", oldPath, newPath, [error localizedDescription]);
+        return NO;
+    }
+    return YES;
+}
 - (IBAction) advancedSearchBtnClicked:(id)sender{
 	advancedDocListViewController *advancedDocList = [[advancedDocListViewController alloc] initWithNibName:@"doctorListViewController" bundle:nil];
 	advancedDocList.modalTransitionStyle = UIModalTransitionStyleCoverVertical;

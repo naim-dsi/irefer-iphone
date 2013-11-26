@@ -24,6 +24,7 @@
 #import "stpCntyDelListViewController.h"
 #import "aboutViewController.h"
 #import "advancedDocListViewController.h"
+#import "SSZipArchive.h"
 
 @interface setupViewController : UIViewController<SelectBoxProtocol,DeleteListProtocol,UIActionSheetDelegate> {
 
