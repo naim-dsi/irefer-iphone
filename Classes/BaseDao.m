@@ -306,145 +306,160 @@
 
 
 - (NSMutableArray *)getTableRowList:(NSString *)tableName searchValue:(NSString *)pname{
-	
-	if(pname == nil || [pname isEqual:@""])
-		pname = @"%";
-	else 
-		pname = [[@"%" stringByAppendingString:pname] stringByAppendingString:@"%"];
-	
-	
-	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
-		
-		NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
-		
-		NSString *query = [NSString stringWithFormat: @"SELECT * from %@ where name like '%@' order by name", tableName, pname];
-		NSLog(@"query : %@",query);
-		sqlite3_stmt *statement;
-		
-		if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
-			
-			while(sqlite3_step(statement) == SQLITE_ROW) {
-				
-				NSString *pid = [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)];
-				NSString *name = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
-				
-				NSString *address;
-				int groupId;
-				
-				if( [tableName isEqual:IreferConstraints.specialityTableName] ){
-					groupId = sqlite3_column_int(statement, 2);
-				}else if( [tableName isEqual:IreferConstraints.countyTableName] ){
-					
-					const char *cntNm = sqlite3_column_text(statement, 3);
-					if (cntNm == NULL) {
-						address = @"";
-					}else {
-						address = [NSString stringWithUTF8String:cntNm];
-					}
-					
-				}else {
-					address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
-				}
-				
-				if( [tableName isEqual:IreferConstraints.specialityTableName] ){
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", [NSString stringWithFormat:@"%d", groupId], @"group_id", nil] autorelease]];
-				}else if( [tableName isEqual:IreferConstraints.countyTableName] ){
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"state_code", nil] autorelease]];
-				}else {
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"add_line1", @"", @"add_line2", nil] autorelease]];
-				}
-				
-				
-			}
-			
-		}else {
-			NSLog(@"error on select query [getTableRowList-%@] on setup dao",tableName);
-			sqlite3_finalize(statement);	
-			sqlite3_close(database);
-			return nil;
-		}
-		
-		sqlite3_finalize(statement);	
-		sqlite3_close(database);
-		NSLog(@"irefer DDL successfully done[getTableRowList-%@] on setup dao",tableName);
-		return array;
-	}else {
-		NSLog(@"unable to open database ");
+	@try {
+        if(pname == nil || [pname isEqual:@""])
+            pname = @"%";
+        else 
+            pname = [[@"%" stringByAppendingString:pname] stringByAppendingString:@"%"];
+        
+        
+        if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
+            
+            NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+            
+            NSString *query = [NSString stringWithFormat: @"SELECT * from %@ where name like '%@' order by name", tableName, pname];
+            NSLog(@"query : %@",query);
+            sqlite3_stmt *statement;
+            
+            if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
+                
+                while(sqlite3_step(statement) == SQLITE_ROW) {
+                    
+                    NSString *pid = [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)];
+                    NSString *name = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
+                    
+                    NSString *address;
+                    int groupId;
+                    
+                    if( [tableName isEqual:IreferConstraints.specialityTableName] ){
+                        groupId = sqlite3_column_int(statement, 2);
+                    }else if( [tableName isEqual:IreferConstraints.countyTableName] ){
+                        
+                        const char *cntNm = sqlite3_column_text(statement, 3);
+                        if (cntNm == NULL) {
+                            address = @"";
+                        }else {
+                            address = [NSString stringWithUTF8String:cntNm];
+                        }
+                        
+                    }else {
+                        address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
+                    }
+                    
+                    if( [tableName isEqual:IreferConstraints.specialityTableName] ){
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", [NSString stringWithFormat:@"%d", groupId], @"group_id", nil] autorelease]];
+                    }else if( [tableName isEqual:IreferConstraints.countyTableName] ){
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"state_code", nil] autorelease]];
+                    }else {
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"add_line1", @"", @"add_line2", nil] autorelease]];
+                    }
+                    
+                    
+                }
+                
+            }else {
+                NSLog(@"error on select query [getTableRowList-%@] on setup dao",tableName);
+                sqlite3_finalize(statement);	
+                sqlite3_close(database);
+                return nil;
+            }
+            
+            sqlite3_finalize(statement);	
+            sqlite3_close(database);
+            NSLog(@"irefer DDL successfully done[getTableRowList-%@] on setup dao",tableName);
+            return array;
+        }else {
+            NSLog(@"unable to open database ");
 
-	}
-
+        }
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+    }
 	return nil;
 	
 }
 
 - (NSMutableArray *)getTableRowList:(NSString *)tableName searchValue:(NSString *)pname limit:(int)limit{
-
-	if(pname == nil || [pname isEqual:@""])
-		pname = @"%";
-	else 
-		pname = [[@"%" stringByAppendingString:pname] stringByAppendingString:@"%"];
-	
-	
-	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
-		
-		NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
-		
-		NSString *query = [NSString stringWithFormat: @"SELECT * from %@ where name like '%@' order by name limit %d", tableName, pname, limit];
-		NSLog(@"query : %@",query);
-		sqlite3_stmt *statement;
-		
-		if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
-			
-			while(sqlite3_step(statement) == SQLITE_ROW) {
-				
-				NSString *pid = [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)];
-				NSString *name = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
-				
-				NSString *address;
-				int groupId;
-				
-				if( [tableName isEqual:IreferConstraints.specialityTableName] ){
-					groupId = sqlite3_column_int(statement, 2);
-				}else if( [tableName isEqual:IreferConstraints.countyTableName] ){
-					
-					const char *cntNm = sqlite3_column_text(statement, 3);
-					if (cntNm == NULL) {
-						address = @"";
-					}else {
-						address = [NSString stringWithUTF8String:cntNm];
-					}
-					
-				}else {
-					address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
-				}
-				
-				if( [tableName isEqual:IreferConstraints.specialityTableName] ){
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", [NSString stringWithFormat:@"%d", groupId], @"group_id", nil] autorelease]];
-				}else if( [tableName isEqual:IreferConstraints.countyTableName] ){
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"state_code", nil] autorelease]];
-				}else {
-					[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"add_line1", @"", @"add_line2", nil] autorelease]];
-				}
-				
-				
-			}
-			
-		}else {
-			NSLog(@"error on select query [getTableRowList-%@] on setup dao",tableName);
-			sqlite3_finalize(statement);	
-			sqlite3_close(database);
-			return nil;
-		}
-		
-		sqlite3_finalize(statement);	
-		sqlite3_close(database);
-		NSLog(@"irefer DDL successfully done[getTableRowList-%@] on setup dao",tableName);
-		return array;
-	}else {
-		NSLog(@"unable to open database ");
-		
+    @try {
+        if(pname == nil || [pname isEqual:@""])
+            pname = @"%";
+        else 
+            pname = [[@"%" stringByAppendingString:pname] stringByAppendingString:@"%"];
+        
+        
+        if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
+            
+            NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+            
+            NSString *query = [NSString stringWithFormat: @"SELECT * from %@ where name like '%@' order by name limit %d", tableName, pname, limit];
+            NSLog(@"query : %@",query);
+            sqlite3_stmt *statement;
+            
+            if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
+                
+                while(sqlite3_step(statement) == SQLITE_ROW) {
+                    
+                    NSString *pid = [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)];
+                    NSString *name = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
+                    
+                    NSString *address;
+                    int groupId;
+                    
+                    if( [tableName isEqual:IreferConstraints.specialityTableName] ){
+                        groupId = sqlite3_column_int(statement, 2);
+                    }else if( [tableName isEqual:IreferConstraints.countyTableName] ){
+                        
+                        const char *cntNm = sqlite3_column_text(statement, 3);
+                        if (cntNm == NULL) {
+                            address = @"";
+                        }else {
+                            address = [NSString stringWithUTF8String:cntNm];
+                        }
+                        
+                    }else if( [tableName isEqual:IreferConstraints.insuranceTableName] ){
+                        
+                        address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
+                        
+                    }else if( [tableName isEqual:IreferConstraints.acoTableName] ){
+                        
+                        address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
+                        
+                    }else {
+                        address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
+                    }
+                    
+                    if( [tableName isEqual:IreferConstraints.specialityTableName] ){
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", [NSString stringWithFormat:@"%d", groupId], @"group_id", nil] autorelease]];
+                    }else if( [tableName isEqual:IreferConstraints.countyTableName] ){
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"state_code", nil] autorelease]];
+                    }else {
+                        [array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: pid, @"id", name, @"name", address, @"add_line1", @"", @"add_line2", nil] autorelease]];
+                    }
+                    
+                    
+                }
+                
+            }else {
+                NSLog(@"error on select query [getTableRowList-%@] on setup dao",tableName);
+                sqlite3_finalize(statement);	
+                sqlite3_close(database);
+                return nil;
+            }
+            
+            sqlite3_finalize(statement);	
+            sqlite3_close(database);
+            NSLog(@"irefer DDL successfully done[getTableRowList-%@] on setup dao",tableName);
+            return array;
+        }else {
+            NSLog(@"unable to open database ");
+            
+        }
 	}
-	
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+    }
+
 	return nil;
 	
 }

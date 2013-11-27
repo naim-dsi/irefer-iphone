@@ -11,7 +11,7 @@
 
 @implementation searchDao
 
-- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit{
+- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds acoIds:(NSString *)acoIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit{
 	
 	limit++;//sqlite3 exclude the upper bound so increasing one to get the exact result
 	if(docName == nil || [docName isEqual:@""])
@@ -23,21 +23,96 @@
 	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
 		
 		NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];	
-	
+        
 		NSString *additionalPrac = @"";
 		NSString *whereClause = [NSString stringWithFormat:@"WHERE (doc.first_name like \"%@\" OR doc.mid_name like \"%@\" OR doc.last_name like \"%@\")", docName, docName, docName];
 		
 		if (![insIds isEqual:@""]) {
-			whereClause = [whereClause stringByAppendingFormat:@" AND doc.ins_id in (%@)",insIds];
-		}	
+            NSString *insWhereClause = @"";
+            int count = 0;
+            NSArray *tokens = [insIds componentsSeparatedByString:@","];
+			for( NSString *insId in tokens ){
+                if(count==0){
+                    insWhereClause = [insWhereClause stringByAppendingFormat:@" AND ( doc.insu_ids LIKE \"%@\"",[[@"%," stringByAppendingString:insId] stringByAppendingString:@",%"]];
+                }
+                else{
+                    insWhereClause = [insWhereClause stringByAppendingFormat:@" or doc.insu_ids LIKE \"%@\"",[[@"%," stringByAppendingString:insId] stringByAppendingString:@",%"]];
+                }
+			}
+            if (![insWhereClause isEqual:@""]) {
+                insWhereClause = [insWhereClause stringByAppendingFormat:@" )"];
+                whereClause = [whereClause stringByAppendingFormat:@" %@",insWhereClause];
+            }
+		}
+        if (![acoIds isEqual:@""]) {
+            NSString *acoWhereClause = @"";
+            int count = 0;
+            NSArray *tokens = [acoIds componentsSeparatedByString:@","];
+			for( NSString *acoId in tokens ){
+                if(count==0){
+                    acoWhereClause = [acoWhereClause stringByAppendingFormat:@" AND ( doc.aco_ids LIKE \"%@\"",[[@"%," stringByAppendingString:acoId] stringByAppendingString:@",%"]];
+                }
+                else{
+                    acoWhereClause = [acoWhereClause stringByAppendingFormat:@" or doc.aco_ids LIKE \"%@\"",[[@"%," stringByAppendingString:acoId] stringByAppendingString:@",%"]];
+                }
+			}
+            if (![acoWhereClause isEqual:@""]) {
+                acoWhereClause = [acoWhereClause stringByAppendingFormat:@" )"];
+                whereClause = [whereClause stringByAppendingFormat:@" %@",acoWhereClause];
+            }
+		}
 		if (![hosIds isEqual:@""]) {
-			whereClause = [whereClause stringByAppendingFormat:@" AND doc.hos_id in (%@)",hosIds];
+            NSString *hosWhereClause = @"";
+            int count = 0;
+            NSArray *tokens = [hosIds componentsSeparatedByString:@","];
+			for( NSString *hosId in tokens ){
+                if(count==0){
+                    hosWhereClause = [hosWhereClause stringByAppendingFormat:@" AND ( doc.hosp_ids LIKE \"%@\"",[[@"%," stringByAppendingString:hosId] stringByAppendingString:@",%"]];
+                }
+                else{
+                    hosWhereClause = [hosWhereClause stringByAppendingFormat:@" or doc.hosp_ids LIKE \"%@\"",[[@"%," stringByAppendingString:hosId] stringByAppendingString:@",%"]];
+                }
+			}
+            if (![hosWhereClause isEqual:@""]) {
+                hosWhereClause = [hosWhereClause stringByAppendingFormat:@" )"];
+                whereClause = [whereClause stringByAppendingFormat:@" %@",hosWhereClause];
+            }
 		}	
 		if (![spIds isEqual:@""]) {
-			whereClause = [whereClause stringByAppendingFormat:@" AND doc.spec_id in (%@)",spIds];
+            NSString *spWhereClause = @"";
+            int count = 0;
+            NSArray *tokens = [spIds componentsSeparatedByString:@","];
+			for( NSString *spId in tokens ){
+                if(count==0){
+                    spWhereClause = [spWhereClause stringByAppendingFormat:@" AND ( doc.spec_ids LIKE \"%@\"",[[@"%," stringByAppendingString:spId] stringByAppendingString:@",%"]];
+                }
+                else{
+                    spWhereClause = [spWhereClause stringByAppendingFormat:@" or doc.spec_ids LIKE \"%@\"",[[@"%," stringByAppendingString:spId] stringByAppendingString:@",%"]];
+                }
+			}
+            if (![spWhereClause isEqual:@""]) {
+                spWhereClause = [spWhereClause stringByAppendingFormat:@" )"];
+                whereClause = [whereClause stringByAppendingFormat:@" %@",spWhereClause];
+            }
 		}
 		if (![pracIds isEqual:@""]) {
-			whereClause = [whereClause stringByAppendingFormat:@" AND doc.prac_id in (%@)",pracIds];
+            NSString *pracWhereClause = @"";
+            int count = 0;
+            NSArray *tokens = [pracIds componentsSeparatedByString:@","];
+			for( NSString *pracId in tokens ){
+                if(count==0){
+                    pracWhereClause = [pracWhereClause stringByAppendingFormat:@" AND ( doc.prac_ids LIKE \"%@\"",[[@"%," stringByAppendingString:pracId] stringByAppendingString:@",%"]];
+                }
+                else{
+                    pracWhereClause = [pracWhereClause stringByAppendingFormat:@" or doc.prac_ids LIKE \"%@\"",[[@"%," stringByAppendingString:pracId] stringByAppendingString:@",%"]];
+                }
+			}
+            if (![pracWhereClause isEqual:@""]) {
+                pracWhereClause = [pracWhereClause stringByAppendingFormat:@" )"];
+                whereClause = [whereClause stringByAppendingFormat:@" %@",pracWhereClause];
+            }
+            
+			//whereClause = [whereClause stringByAppendingFormat:@" AND doc.prac_id in (%@)",pracIds];
 			additionalPrac = [NSString stringWithFormat:@" AND tp.prac_id in (%@)",pracIds];
 		}
 		if (![countyIds isEqual:@""]) {

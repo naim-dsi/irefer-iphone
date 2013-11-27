@@ -33,6 +33,7 @@
 	IBOutlet UIBarButtonItem *sortButton;
 	
 	BOOL *isSearchFromOnline;
+    NSString *acoIds;
 	NSString *insIds;
 	NSString *hosIds;
 	NSString *spIds;
@@ -61,6 +62,7 @@
 @property(nonatomic, retain) NSMutableArray *dataSource;
 @property(nonatomic, retain) NSDictionary *userData;
 
+@property(nonatomic, retain) NSString *acoIds;
 @property(nonatomic, retain) NSString *insIds;
 @property(nonatomic, retain) NSString *hosIds;
 @property(nonatomic, retain) NSString *spIds;

@@ -16,7 +16,8 @@
 	+ (NSString *) insuranceTableName;
 	+ (NSString *) specialityTableName;
 	+ (NSString *) countyTableName;
-	+ (NSString *) doctorTableName;
+    + (NSString *) doctorTableName;
+    + (NSString *) acoTableName;
 
 
 

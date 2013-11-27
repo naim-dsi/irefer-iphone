@@ -15,12 +15,13 @@
 #define LANGUAGE 5;
 #define OFFICE_HOUR 6;
 #define PRACTICE 7;
+#define ACO 8;
 
 @implementation filterViewController
 
-@synthesize insurances, specialities, hospitals, counties, checkBox, searchFrom, searchType, includePatient, officeHourText;
+@synthesize aco, insurances, specialities, hospitals, counties, checkBox, searchFrom, searchType, includePatient, officeHourText;
 
-@synthesize selectedInsurances, selectedSpecialities, selectedHospitals, selectedCounties, scrollView, selectedOfficehours, selectedLanguages, selectedPractices; 
+@synthesize selectedInsurances, selectedSpecialities, selectedHospitals, selectedCounties, scrollView, selectedOfficehours, selectedLanguages, selectedPractices, selectedACO;
 
 @synthesize countyLabel, countyButton, zipCodeLabel, zipCodeText, zipCntyToggleBtn, pname, address, zipToolBar, zipToolText, zipCodeValue, zipButton;
 
@@ -147,6 +148,16 @@
 			self.insurances.text = @"All";
 		
 		}		
+	}else if ([controller isKindOfClass: [acoListViewController class]] ) {
+		self.selectedACO = dataSet;
+		if ([content length] > 0){
+            
+			self.aco.text = content;
+            
+		}else{
+			self.aco.text = @"All";
+            
+		}		
 	}else if ([controller isKindOfClass: [sptListViewController class]] ) {
 		self.selectedSpecialities = dataSet;
 		if ([content length] > 0){
@@ -258,6 +269,7 @@
 	int languagebtn = LANGUAGE;
 	int officehourbtn = OFFICE_HOUR;
 	int practicebtn = PRACTICE;
+    int acobtn = ACO;
 	
 	if ([button tag] == insurancebtn) {
 		insuranceListViewController *insController = [[insuranceListViewController alloc] initWithNibName:@"SelectListViewController" bundle:nil];
@@ -268,6 +280,15 @@
 		insController.selectedDataSource = self.selectedInsurances;
 		[self presentModalViewController:insController animated:YES];
 		[insController release];
+	}else if ([button tag] == acobtn) {
+		acoListViewController *sptController = [[acoListViewController alloc] initWithNibName:@"SelectListViewController" bundle:nil];
+		sptController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+		sptController.isSearchFromOnline = searchOnline;
+		sptController.filterView = self;
+		sptController.maxSelectionLimit = 1;
+		sptController.selectedDataSource = self.selectedACO;
+		[self presentModalViewController:sptController animated:YES];
+		[sptController release];
 	}else if ([button tag] == specialitybtn) {
 		sptListViewController *sptController = [[sptListViewController alloc] initWithNibName:@"SelectListViewController" bundle:nil];
 		sptController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -520,6 +541,7 @@
 	
 	doctorListViewController *docController = [[doctorListViewController alloc] initWithNibName:@"doctorListViewController" bundle:nil];
 	docController.isSearchFromOnline = searchOnline;
+    docController.acoIds = [utils getIdsFromList:self.selectedACO];
 	docController.insIds = [utils getIdsFromList:self.selectedInsurances];
 	docController.spIds = [utils getIdsFromList:self.selectedSpecialities];
 	docController.hosIds =  [utils getIdsFromList:self.selectedHospitals];
@@ -596,6 +618,7 @@
 	[countyButton release];
 	[zipCodeLabel release];
 	[zipCodeText release];
+    [selectedACO release];
 	[selectedInsurances release];
 	[selectedHospitals release];
 	[selectedSpecialities release];

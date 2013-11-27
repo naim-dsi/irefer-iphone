@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "insuranceListViewController.h"
+#import "acoListViewController.h"
 #import "sptListViewController.h"
 #import "SelectBoxProtocol.h"
 #import "selHosListViewController.h"
@@ -24,6 +25,7 @@
 
 
 @interface filterViewController : UIViewController<SelectBoxProtocol> {
+    IBOutlet UILabel *aco;
 	IBOutlet UILabel *insurances;
 	IBOutlet UILabel *specialities;
 	IBOutlet UILabel *hospitals;
@@ -50,6 +52,7 @@
 	
 	searchDao *dao;
 	BOOL includePatient;
+    NSMutableArray *selectedACO;
 	NSMutableArray *selectedInsurances;
 	NSMutableArray *selectedSpecialities;
 	NSMutableArray *selectedHospitals;
@@ -59,6 +62,7 @@
 	NSMutableArray *selectedPractices;
 }
 
+@property(nonatomic, retain) UILabel *aco;
 @property(nonatomic, retain) UILabel *insurances;
 @property(nonatomic, retain) UILabel *specialities;
 @property(nonatomic, retain) UILabel *hospitals;
@@ -91,6 +95,7 @@
 @property(nonatomic, retain) NSMutableArray *selectedLanguages;
 @property(nonatomic, retain) NSString *selectedOfficehours;
 @property(nonatomic, retain) NSMutableArray *selectedPractices;
+@property(nonatomic, retain) NSMutableArray *selectedACO;
 
 - (void) setOfficeText:(NSString *)text;
 - (IBAction) checkBoxClicked: (id)sender;

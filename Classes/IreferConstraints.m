@@ -17,5 +17,6 @@
 + (NSString *) specialityTableName{ return @"t_speciality"; }
 + (NSString *) countyTableName{ return @"t_county"; }
 + (NSString *) doctorTableName{ return @"t_doctor"; }
++ (NSString *) acoTableName{ return @"t_aco"; }
 
 @end

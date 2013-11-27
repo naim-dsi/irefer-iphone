@@ -30,10 +30,14 @@
 }
 
 + (void) showAlert:(NSString *)title message:(NSString *)msg delegate:(UIViewController *)controller{
-
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:controller cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-	[alert show];
-	[alert release];
+    @try{
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:controller cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alert show];
+        [alert release];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"%@", exception.reason);
+    }
 	return;
 }
 

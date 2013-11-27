@@ -845,9 +845,9 @@ int actionSheetType = 0;
     [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
     NSString *dateString = [dateFormatter stringFromDate:currDate];
     NSLog(@"%@",dateString);
-    
+    //http://103.4.147.139/irefer-dsi/index.php/services/doctor/get_sync_data?prac_ids=1&cnty_ids=7&user_id=31&slimit=1000&limit=150&dlimit=0,15000&serverBDFileName=3120131125143545
 	
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_sync_data_iphone?cnty_id=%@&user_id=%@&slimit=1000&limit=150&dlimit=%@&serverBDFileName=%@",cntyIds,userId,limit,dateString];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_sync_data_iphone?prac_ids=1&cnty_ids=%@&user_id=%@&slimit=1000&limit=1000&dlimit=%@&serverBDFileName=%@",cntyIds,userId,limit,dateString];
     
     NSLog(serverUrl);
         

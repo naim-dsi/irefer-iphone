@@ -14,12 +14,12 @@
 
 @synthesize dataSource, searchBar, listTableView, spinner, countText, insIds, hosIds, spIds, inPatient, zipCode, isSearchFromOnline, alert;
 
-@synthesize pracIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours;
+@synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours;
 
 int docId,rankVal;
 
 - (NSString *) getDoctorSearchUrl{
-	NSString *url = [NSString stringWithFormat:@"%@doctor/search?prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours];
+	NSString *url = [NSString stringWithFormat:@"%@doctor/search?prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@&aco_ids=%@",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours, acoIds];
 	return url;
 }
 
@@ -50,7 +50,7 @@ int docId,rankVal;
 	
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 
-		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];		
+		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 	}
 	
 }
@@ -78,8 +78,9 @@ int docId,rankVal;
 }
 
 - (void) doctorListThread{
-
+    
 	@synchronized(self) {
+        
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
 
 		NSString *prevContent = [[NSUserDefaults standardUserDefaults] stringForKey:@"doc_prev_search_content"];
@@ -93,7 +94,7 @@ int docId,rankVal;
 				self.spinnerBg.hidden = NO;
 			//}
 
-			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit];
+			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit];
 			NSDictionary *countData = [self.dataSource objectAtIndex:0];
 			self.totalCount = [[countData objectForKey:@"count"] intValue];
 			NSLog(@"total count %d",self.totalCount);
@@ -104,7 +105,11 @@ int docId,rankVal;
 			[self.dataSource addObject:[[[NSDictionary alloc] init] autorelease] ];//empty allocation in-order to able to select the last element		
 			[self.listTableView reloadData];
 			if ([self.dataSource count] <= 1) {
-				[utils showAlert:@"Warning !!" message:@"Sorry, no result found. Please search again." delegate:self];
+                NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+                [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Warning !!",@"title",nil] ];
+                [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Sorry, no result found. Please search again.",@"message",nil] ];
+                [self performSelectorOnMainThread:@selector(showAlert:) withObject:array waitUntilDone:NO];
+				//[utils showAlert:@"Warning !!" message:@"Sorry, no result found. Please search again." delegate:nil];
 			}
 			[self.spinner stopAnimating];
 			self.spinner.hidden = YES;
@@ -119,7 +124,13 @@ int docId,rankVal;
 
 	}
 }
-
+- (void) showAlert: (NSObject *)obj {
+    NSDictionary *objData = [obj objectAtIndex:0];
+    NSString *title = [objData objectForKey:@"title"] ;
+    objData = [obj objectAtIndex:1];
+    NSString *message = [objData objectForKey:@"message"] ;
+    [utils showAlert:title message:message delegate:nil];
+}
 - (void) triggerAsyncronousRequest: (NSString *)url {
 	
 	[self.spinner startAnimating];
@@ -631,6 +642,7 @@ int docId,rankVal;
 	[listTableView release];
 	[spinner release];
 	[countText release];
+    [acoIds release];
 	[insIds release];
 	[hosIds release];
 	[spIds release];

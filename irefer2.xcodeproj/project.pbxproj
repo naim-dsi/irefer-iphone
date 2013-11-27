@@ -14,6 +14,7 @@
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
 		2899E5220DE3E06400AC0155 /* guestPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* guestPageViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
+		2BA7123A18460868001C01D2 /* acoListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BA7123818460868001C01D2 /* acoListViewController.m */; };
 		2BF113931844C5D200FB7AA7 /* SSZipArchive.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BF113921844C5D200FB7AA7 /* SSZipArchive.m */; };
 		2BF113A01844C61000FB7AA7 /* ioapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF113981844C61000FB7AA7 /* ioapi.c */; };
 		2BF113A11844C61000FB7AA7 /* mztools.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1139A1844C61000FB7AA7 /* mztools.c */; };
@@ -152,6 +153,8 @@
 		28D7ACF60DDB3853001CB0EB /* guestPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = guestPageViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* guestPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = guestPageViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2BA7123818460868001C01D2 /* acoListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = acoListViewController.m; sourceTree = "<group>"; };
+		2BA7123918460868001C01D2 /* acoListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = acoListViewController.h; sourceTree = "<group>"; };
 		2BF113911844C5D200FB7AA7 /* SSZipArchive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSZipArchive.h; sourceTree = "<group>"; };
 		2BF113921844C5D200FB7AA7 /* SSZipArchive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSZipArchive.m; sourceTree = "<group>"; };
 		2BF113971844C61000FB7AA7 /* crypt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = crypt.h; sourceTree = "<group>"; };
@@ -678,6 +681,8 @@
 		84C8B5D614B439580080DC8D /* search */ = {
 			isa = PBXGroup;
 			children = (
+				2BA7123818460868001C01D2 /* acoListViewController.m */,
+				2BA7123918460868001C01D2 /* acoListViewController.h */,
 				84C8B66714B46C580080DC8D /* filterViewController.h */,
 				84C8B66814B46C580080DC8D /* filterViewController.m */,
 				84A5A96E14B5F6D9004471BF /* sptListViewController.h */,
@@ -1070,6 +1075,7 @@
 				2BF113A11844C61000FB7AA7 /* mztools.c in Sources */,
 				2BF113A21844C61000FB7AA7 /* unzip.c in Sources */,
 				2BF113A31844C61000FB7AA7 /* zip.c in Sources */,
+				2BA7123A18460868001C01D2 /* acoListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
