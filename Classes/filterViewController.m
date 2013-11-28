@@ -102,7 +102,7 @@
 			CGFloat scrollHeight = advView.frame.origin.y+advView.frame.size.height+10.0f;
 			[self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, scrollHeight)];
 			self.includePatient = NO;
-			[self checkBoxClicked:nil];
+			//[self checkBoxClicked:nil];
 			
 		}else {
 			[self.scrollView setContentSize:CGSizeMake(self.scrollView.frame.size.width, self.scrollView.frame.size.height + 5)];

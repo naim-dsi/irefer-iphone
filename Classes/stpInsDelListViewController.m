@@ -16,7 +16,8 @@
 }
 
 - (void) loadDataSource:(NSString *)name{
-	self.dataSource = [dao getTableRowList:IreferConstraints.insuranceTableName searchValue:name]; ; 
+	self.dataSource = [dao getTableRowList:IreferConstraints.insuranceTableName searchValue:name];
+    int a = 1;
 }
 
 - (BOOL) deleteListRow:(int)rid {

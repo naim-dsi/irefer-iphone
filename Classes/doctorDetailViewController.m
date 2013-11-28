@@ -170,9 +170,20 @@
 	if( [self.dataSource objectForKey:@"degree"] != [NSNull null]  && ![[self.dataSource objectForKey:@"degree"] isEqual:@"<null>"]){
 		self.name.text = [self.name.text stringByAppendingFormat:@", %@", [self.dataSource objectForKey:@"degree"]];
 	}
-	self.speciality.text = [self.dataSource objectForKey:@"spec_name"];
-	
-	self.gender.text = [NSString stringWithFormat:@"%@",[self.dataSource objectForKey:@"insu_name"]];
+    if( [self.dataSource objectForKey:@"spec_name"] != [NSNull null]  && ![[self.dataSource objectForKey:@"spec_name"] isEqual:@"<null>"]){
+		self.speciality.text = [NSString stringWithFormat:@"%@",[self.dataSource objectForKey:@"spec_name"]];
+	}
+	else{
+        self.speciality.text = [NSString stringWithFormat:@"%@",@""];
+    }
+	if( [self.dataSource objectForKey:@"insu_name"] != [NSNull null]  && ![[self.dataSource objectForKey:@"insu_name"] isEqual:@"<null>"]){
+		self.gender.text = [NSString stringWithFormat:@"%@",[self.dataSource objectForKey:@"insu_name"]];
+	}
+	else{
+        self.gender.text = [NSString stringWithFormat:@"%@",@""];
+    }
+    
+	//self.gender.text = [NSString stringWithFormat:@"%@",[self.dataSource objectForKey:@"insu_name"]];
 	NSLog(@"rank %@",[self.dataSource objectForKey:@"u_rank"]);
 	//[self.rankbutton setTitle:[NSString stringWithFormat:@"Rank: %@",] forState:UIControlStateNormal];
 	self.rankText.text = [self.dataSource objectForKey:@"u_rank"];

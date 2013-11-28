@@ -342,6 +342,10 @@
                             address = [NSString stringWithUTF8String:cntNm];
                         }
                         
+                    }else if( [tableName isEqual:IreferConstraints.insuranceTableName] ){
+                        
+                        address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)];
+                        
                     }else {
                         address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
                     }

@@ -51,17 +51,22 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
-	SBJsonStreamParserStatus status = [parser parse:data];
-	
-	if (status == SBJsonStreamParserError) {
-		NSLog(@"Parser error: %@", parser.error);
-		
-	} else if (status == SBJsonStreamParserWaitingForData) {
-		NSLog(@"Parser waiting for more data");
-	}
-	NSLog(@"row size : %u",[self.dataSource count]);
-	NSDictionary *countData = [self.dataSource objectAtIndex:0];
+    NSString *jsonStr=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"NI::String sent from server %@",jsonStr);
+    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\r\n" withString:@""];
+    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    jsonStr = [jsonStr stringByReplacingOccurrencesOfString:@"\t" withString:@""];
+    data = [jsonStr dataUsingEncoding:NSUTF8StringEncoding];
+    SBJsonStreamParserStatus status = [parser parse:data];
+    
+    if (status == SBJsonStreamParserError) {
+        NSLog(@"Parser error: %@", parser.error);
+        
+    } else if (status == SBJsonStreamParserWaitingForData) {
+        NSLog(@"Parser waiting for more data");
+    }
+    NSLog(@"row size : %u",[self.dataSource count]);
+    NSDictionary *countData = [self.dataSource objectAtIndex:0];
 	self.totalCount = [[countData objectForKey:@"count"] intValue];
 	NSLog(@"total count %d",self.totalCount);
 	[self.dataSource removeObjectAtIndex:0];
