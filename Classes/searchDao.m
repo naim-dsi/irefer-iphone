@@ -11,7 +11,7 @@
 
 @implementation searchDao
 
-- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds acoIds:(NSString *)acoIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit{
+- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds acoIds:(NSString *)acoIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit resourceFlag:(int)resourceFlag{
 	
 	limit++;//sqlite3 exclude the upper bound so increasing one to get the exact result
 	if(docName == nil || [docName isEqual:@""])
@@ -123,7 +123,14 @@
 		}	
 		if ([inPatient isEqual:@"1"]) {
 			whereClause = [whereClause stringByAppendingString:@" AND doc.see_patient = 1"];
-		}	
+		}
+        
+        if (resourceFlag==1) {
+			whereClause = [whereClause stringByAppendingString:@" AND doc.res_flag = 1"];
+		}
+        else{
+            whereClause = [whereClause stringByAppendingString:@" AND doc.res_flag = 0"];
+        }
 		
 		if (languages != nil && ![languages isEqual:@""]) {
 			
@@ -215,12 +222,38 @@
 	return nil;
 }
 
+- (NSString *) getPracById:(NSString *)docId{
+    NSString *address = @"";
+    if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
+        NSString *query = [NSString stringWithFormat: @"Select * from t_practice where prac_id = %@ ", docId];
+        NSLog(@"query : %@",query);
+        sqlite3_stmt *statement;
+                if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
+            
+            if(sqlite3_step(statement) == SQLITE_ROW) {
+                
+                if (sqlite3_column_text(statement, 2) != NULL) {
+                    address = [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)];
+                }
+            }
+        }
+        sqlite3_finalize(statement);
+        sqlite3_close(database);
+    
+
+    }else {
+        NSLog(@"unable to open database ");
+        
+    }
+
+    return address;
+}
 
 - (NSMutableDictionary *) getDoctorDetails:(NSString *)docId{
 	
 	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
 		sqlite3_stmt *statement;
-		NSLog(@"before the query......");
+		NSLog(@"Doctor:%@",docId);
 
 		NSString *query = [NSString stringWithString:@"SELECT doc.doc_id, doc.first_name, doc.mid_name, doc.last_name, doc.degree, "];
 		query = [query stringByAppendingFormat:@"doc.doc_phone, doc.language, doc.grade, doc.gender, doc.image_url, doc.npi, doc.doc_fax, doc.office_hour, "];		   
@@ -273,7 +306,103 @@
 					pracAddr = [NSString stringWithUTF8String: sqlite3_column_text(statement, 21)];
 				}
 				NSLog(@"before the query.....2222222.");
+                NSString *prac_ids = [NSString stringWithUTF8String: sqlite3_column_text(statement, 26)];
+                NSString * practiceName = @"";
+                NSString * practiceAdd = @"";
+                NSString * practiceRank = @"";
+                if( ![prac_ids isEqual:@"<null>"] && ![prac_ids isEqual:@""] && ![prac_ids isEqual:@",,"]){
+                    //NSArray *pracIds = [prac_ids componentsSeparatedByString:@","];
+                    
+                    prac_ids = [prac_ids substringFromIndex:1];
+                    prac_ids = [prac_ids substringToIndex:[prac_ids length] - 1];
+                    NSLog(prac_ids);
+                    NSArray *pracIds = [prac_ids componentsSeparatedByString:@","];
+                    NSString *up_rank = [NSString stringWithUTF8String: sqlite3_column_text(statement, 15)];
+                    NSArray *ranks = [up_rank componentsSeparatedByString:@","];
+                    
+                    NSString *prac_names = [NSString stringWithUTF8String: sqlite3_column_text(statement, 32)];
+                    NSArray *names = [prac_names componentsSeparatedByString:@","];
+                    
+                    for(int i = 0; i<[names count]; i++){
+                        NSString *pracId = @"";
+                        NSString *pracName = [names objectAtIndex:i];
+                        NSString *pracRank = @"";
+                        NSString *address = @"";
+                        if([pracIds count]>i){
+                            pracId = [pracIds objectAtIndex:i];
+                            address = [self getPracById:pracId];
+                        }
+                        
+                        if([ranks count]>i){
+                            pracRank = [ranks objectAtIndex:i];
+                        }
+                        else{
+                            pracRank = @"0";
+                        }
+                        if(![practiceName isEqual:@""]){
+                            practiceName = [NSString stringWithFormat:@"%@|%@", practiceName, pracName];;
+                        }
+                        else{
+                            practiceName = pracName;
+                        }
+                        if(![practiceAdd isEqual:@""]){
+                            practiceAdd = [NSString stringWithFormat:@"%@|%@", practiceAdd, address];;
+                        }
+                        else{
+                            practiceAdd = address;
+                        }
+                        if(![practiceRank isEqual:@""]){
+                            practiceRank = [NSString stringWithFormat:@"%@|%@", practiceRank, pracRank];;
+                        }
+                        else{
+                            practiceRank = pracRank;
+                        }
+                    }
+                    NSLog(@"NI:: PA Name %@",practiceName);
+                    NSLog(@"NI:: PA Add %@",practiceAdd);
+                    NSLog(@"NI:: PA Rank %@",practiceRank);
+                }
+                NSString *hospitalName = @"";
+                NSString *hospitalSeePatient = @"";
+                
+                NSString *hosp_names = [NSString stringWithUTF8String: sqlite3_column_text(statement, 33)];
+                if( ![hosp_names isEqual:@"<null>"] && ![hosp_names isEqual:@""] && ![hosp_names isEqual:@",,"]){
+                    NSArray *names = [hosp_names componentsSeparatedByString:@","];
+                    NSString *see_patients = [NSString stringWithUTF8String: sqlite3_column_text(statement, 13)];
+                    NSArray *seePatients = [see_patients componentsSeparatedByString:@","];
+                    NSLog(@"NI:: HS Name %@",hosp_names);
+                    NSLog(@"NI:: HS See %@",see_patients);
 
+                    for(int i = 0; i<[names count]; i++){
+                        NSString *seePatient =@"";
+                        NSString *hospName = [names objectAtIndex:i];
+                        if([seePatients count]>i){
+                            seePatient = [seePatients objectAtIndex:i];
+                        }
+                        else{
+                            seePatient = @"0";
+                        }
+                        if(![hospitalName isEqual:@""]){
+                            hospitalName = [NSString stringWithFormat:@"%@|%@", hospitalName, hospName];;
+                        }
+                        else{
+                            hospitalName = hospName;
+                        }
+                        
+                        if(![hospitalSeePatient isEqual:@""]){
+                            hospitalSeePatient = [NSString stringWithFormat:@"%@|%@", hospitalSeePatient, seePatient];;
+                        }
+                        else{
+                            hospitalSeePatient = seePatient;
+                        }
+                        
+                    }
+                    NSLog(@"NI:: HS Name %@",hospitalName);
+                    NSLog(@"NI:: HS See %@",hospitalSeePatient);
+                    
+                }
+                
+                
 				NSMutableDictionary *dataSet = [[NSMutableDictionary alloc] initWithObjectsAndKeys: [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)], @"id", 
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)], @"first_name", 
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 2)], @"mid_name",
@@ -287,9 +416,9 @@
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 10)], @"npi",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 11)], @"doc_fax",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 12)], @"office_hour",
-										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 13)], @"see_patient",
+										 hospitalSeePatient, @"see_patient",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 14)], @"u_rank",
-										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 15)], @"up_rank",
+										 practiceRank, @"up_rank",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 22)], @"quality",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 23)], @"cost",
 										 [NSString stringWithUTF8String: sqlite3_column_text(statement, 24)], @"rank_user_number",
@@ -300,13 +429,13 @@
                                          [NSString stringWithUTF8String: sqlite3_column_text(statement, 29)], @"insu_ids",
                                          [NSString stringWithUTF8String: sqlite3_column_text(statement, 30)], @"plan_ids",
                                          [NSString stringWithUTF8String: sqlite3_column_text(statement, 31)], @"aco_ids",
-                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 32)], @"prac_name",
-                                        [NSString stringWithUTF8String: sqlite3_column_text(statement, 33)], @"hosp_name",
+                                         practiceName, @"prac_name",
+                                        hospitalName, @"hosp_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 34)], @"spec_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 35)], @"insu_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 36)], @"plan_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 37)], @"aco_name",
-                                         pracAddr, @"add_line_1",@"",@"note",nil];
+                                         practiceAdd, @"add_line_1",@"",@"note",nil];
 
 				
 				sqlite3_finalize(statement);	
@@ -483,7 +612,7 @@
 		char *errorMsg;
 		NSString *insertSQL = [[NSString alloc] 
 							   initWithFormat:@"UPDATE t_doctor SET u_rank=%d, rank_user_number=%d, avg_rank=%f, rank_update=1 WHERE doc_id=%d", rankValue, rankUserNumber, newAvgRank, docId];
-		
+		NSLog(@"Query : %@",insertSQL);
 		if (sqlite3_exec(database, [insertSQL UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
 			
 			sqlite3_close(database);
@@ -494,7 +623,7 @@
 		}else {
 			sqlite3_close(database);
 			[insertSQL release];
-			NSLog(@"Error updating doctor rank..");
+			NSLog(@"%s",errorMsg);
 			return NO;			
 		}
 			

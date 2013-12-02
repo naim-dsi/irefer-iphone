@@ -261,6 +261,9 @@
 	if ([self.searchFrom selectedSegmentIndex] == 1) {
 		searchOnline = YES;
 	}
+    
+    
+
 	
 	int insurancebtn = INSURANCE;
 	int specialitybtn =  SPECIALITY;
@@ -538,8 +541,12 @@
 	if ([self.searchFrom selectedSegmentIndex] == 1) {
 		searchOnline = YES;
 	}
-	
+	BOOL searchType = NO;
+    if ([self.searchType selectedSegmentIndex] == 1) {
+		searchType = YES;
+	}
 	doctorListViewController *docController = [[doctorListViewController alloc] initWithNibName:@"doctorListViewController" bundle:nil];
+    docController.isResourceSearch = searchType;
 	docController.isSearchFromOnline = searchOnline;
     docController.acoIds = [utils getIdsFromList:self.selectedACO];
 	docController.insIds = [utils getIdsFromList:self.selectedInsurances];

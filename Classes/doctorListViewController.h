@@ -33,6 +33,7 @@
 	IBOutlet UIBarButtonItem *sortButton;
 	
 	BOOL *isSearchFromOnline;
+    BOOL *isResourceSearch;
     NSString *acoIds;
 	NSString *insIds;
 	NSString *hosIds;
@@ -45,6 +46,7 @@
 	NSString *officeHours;
 	RatingWidget *alert;
 
+    int resourceFlag;
 }
 
 
@@ -73,8 +75,10 @@
 @property(nonatomic, retain) NSString *inPatient;
 @property(nonatomic, retain) NSString *zipCode;
 @property(nonatomic, assign) BOOL *isSearchFromOnline;
+@property(nonatomic, assign) BOOL *isResourceSearch;
 @property(nonatomic, retain) RatingWidget *alert;
 
+@property (nonatomic) int resourceFlag;
 
 - (IBAction) rankUpdate: (id)sender;
 - (IBAction) hideKeyboard: (id) sender;

@@ -14,12 +14,12 @@
 
 @synthesize dataSource, searchBar, listTableView, spinner, countText, insIds, hosIds, spIds, inPatient, zipCode, isSearchFromOnline, alert;
 
-@synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours;
+@synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours,isResourceSearch,resourceFlag;
 
 int docId,rankVal;
 
 - (NSString *) getDoctorSearchUrl{
-	NSString *url = [NSString stringWithFormat:@"%@doctor/search?prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@&aco_ids=%@",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours, acoIds];
+	NSString *url = [NSString stringWithFormat:@"%@doctor/search?prac_ids=%@&insu_ids=%@&spec_ids=%@&hosp_ids=%@&zip=%@&see_patient=%@&user_id=%@&cnty_ids=%@&limit=%d&lang=%@&office_hour=%@&aco_ids=%@&resourceFlag=%d",[utils getServerURL], pracIds, insIds, spIds, hosIds, zipCode, inPatient, [self.userData objectForKey:@"id"],countyIds, self.currentLimit, languages, officeHours, acoIds, resourceFlag];
 	return url;
 }
 
@@ -33,7 +33,13 @@ int docId,rankVal;
 	parser.delegate = adapter;
 	parser.multi = YES;
 	[utils roundUpView:[[self.spinnerBg subviews] objectAtIndex:0]];
-	
+	if (self.isResourceSearch){
+        resourceFlag = 1;
+    }
+    else{
+        resourceFlag = 0;
+    }
+    
 	if (self.isSearchFromOnline) {
 		
 		self.userData = [dao getCurrentUser];
@@ -94,7 +100,7 @@ int docId,rankVal;
 				self.spinnerBg.hidden = NO;
 			//}
 
-			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit];
+			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit resourceFlag:self.resourceFlag];
 			NSDictionary *countData = [self.dataSource objectAtIndex:0];
 			self.totalCount = [[countData objectForKey:@"count"] intValue];
 			NSLog(@"total count %d",self.totalCount);
@@ -500,7 +506,7 @@ int docId,rankVal;
 
 	NSDictionary *user = [dao getCurrentUser];
 	
-	if(self.isSearchFromOnline){
+	//if(self.isSearchFromOnline){
 		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], [alert getRank]];
 		NSLog(@"url :%@",serverUrl);
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
@@ -511,22 +517,32 @@ int docId,rankVal;
 		
 		NSLog(@"response : %@",responseString);
 		
-		if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
-			[dao updateDoctorRank:docId rank:[alert getRank]];
+		if ([responseString isEqual:@"saved"] || [responseString isEqual:@"Rank updated"]) {
+			//[dao updateDoctorRank:docId rank:[alert getRank]];
 			[self updateDataSource:docId rank:[alert getRank]];
-			[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            if( [dao updateDoctorRank:docId rank:[alert getRank]] ){
+                //[self updateDataSource:docId rank:[alert getRank]];
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else {
+                [utils showAlert:@"Warning !!" message:@"Couldn't update Local rank, please try again later." delegate:self];
+                [utils showAlert:@"Confirmation!!" message:@"Online rank has been updated." delegate:self];
+            }
+			//[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
 		}else{
-			[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+			
+            if( [dao updateDoctorRank:docId rank:[alert getRank]] ){
+                [self updateDataSource:docId rank:[alert getRank]];
+                [utils showAlert:@"Confirmation!!" message:@"Local rank has been updated." delegate:self];
+                [utils showAlert:@"Warning !!" message:@"Couldn't update online rank, please try again later." delegate:self];
+            }else {
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+                
+            }
 		}
-	}else {
-		if( [dao updateDoctorRank:docId rank:[alert getRank]] ){
-			[self updateDataSource:docId rank:[alert getRank]];
-			[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
-		}else {
-			[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
-		}		
+	//}else {
+				
 		
-	}
+	//}
 	
 	
 	[alert isWorking:NO];
@@ -648,6 +664,8 @@ int docId,rankVal;
 	[spIds release];
 	[inPatient release];
 	[zipCode release];
+    //[isResourceSearch release];
+    //[resourceFlag release];
     [super dealloc];
 }
 

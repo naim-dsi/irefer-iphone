@@ -296,7 +296,10 @@
 	//self.uprankView.frame = CGRectMake(self.uprankView.frame.origin.x, nextViewY+30.0f, self.uprankView.frame.size.width, self.uprankView.frame.size.height);
 	//[utils generateRatingBar:self.uprankView value:[self.dataSource objectForKey:@"up_rank"]];
 	newY = nextViewY;
-	if( [self.dataSource objectForKey:@"prac_name"] != [NSNull null] && ![[self.dataSource objectForKey:@"prac_name"] isEqual:@"<null>"] && ![[self.dataSource objectForKey:@"prac_name"] isEqual:@""]){
+ 
+     
+	
+    if( [self.dataSource objectForKey:@"prac_name"] != [NSNull null] && ![[self.dataSource objectForKey:@"prac_name"] isEqual:@"<null>"] && ![[self.dataSource objectForKey:@"prac_name"] isEqual:@""]){
 		
 		NSArray *pracNames = [[self.dataSource objectForKey:@"prac_name"] componentsSeparatedByString:@"|"];
 		NSArray *pracAddrs = [[self.dataSource objectForKey:@"add_line_1"] componentsSeparatedByString:@"|"];
@@ -341,6 +344,7 @@
 		}	
 		
 	}
+    
 	self.pracView.frame = CGRectMake(self.pracView.frame.origin.x, nextViewY, self.pracView.frame.size.width, self.pracView.frame.size.height+(newY - nextViewY));
 	//[self.scrollView sendSubviewToBack:self.pracView];
 
@@ -431,7 +435,7 @@
 	
 	NSDictionary *user = [dao getCurrentUser];
 	
-	if(self.isSearchFromOnline){
+	//if(self.isSearchFromOnline){
 		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
 		NSLog(@"url :%@",serverUrl);
 		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
@@ -442,21 +446,31 @@
 	
 		NSLog(@"response : %@",responseString);
 	
-		if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
+		if ([responseString isEqual:@"saved"] || [responseString isEqual:@"Rank updated"]) {
 			[self updateDataSource:[rankBar getRank]];
-			[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+			
+            if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
+                [self updateDataSource:[rankBar getRank]];
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else {
+                [utils showAlert:@"Warning !!" message:@"Couldn't update Local rank, please try again later." delegate:self];
+                [utils showAlert:@"Confirmation!!" message:@"Online Rank has been updated." delegate:self];
+            }
 		}else{
-			[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+			
+            if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
+                [self updateDataSource:[rankBar getRank]];
+                [utils showAlert:@"Confirmation!!" message:@"Local Rank has been updated." delegate:self];
+                [utils showAlert:@"Warning !!" message:@"Couldn't update online rank, please try again later." delegate:self];
+            }else {
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+                
+            }
 		}
-	}else {
-		if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
-			[self updateDataSource:[rankBar getRank]];
-			[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
-		}else {
-			[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
-		}		
+	///}else {
+				
 		
-	}
+	//}
 
 	[rankBar isWorking:NO];
 	[rankBar dismissWidget];

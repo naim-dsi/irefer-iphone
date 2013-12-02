@@ -51,7 +51,7 @@
 	IBOutlet UIScrollView *scrollView;
 	
 	searchDao *dao;
-	BOOL includePatient;
+	
     NSMutableArray *selectedACO;
 	NSMutableArray *selectedInsurances;
 	NSMutableArray *selectedSpecialities;
@@ -60,6 +60,8 @@
 	NSMutableArray *selectedLanguages;
 	NSString *selectedOfficehours;
 	NSMutableArray *selectedPractices;
+    
+    int resourceFlag;
 }
 
 @property(nonatomic, retain) UILabel *aco;
@@ -96,6 +98,8 @@
 @property(nonatomic, retain) NSString *selectedOfficehours;
 @property(nonatomic, retain) NSMutableArray *selectedPractices;
 @property(nonatomic, retain) NSMutableArray *selectedACO;
+
+
 
 - (void) setOfficeText:(NSString *)text;
 - (IBAction) checkBoxClicked: (id)sender;
