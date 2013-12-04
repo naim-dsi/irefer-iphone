@@ -139,7 +139,7 @@
 
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed! Error - %@ %@",
+    NSLog(@"Connection failed! Error - %@ ",
           [error localizedDescription]);
 	[utils showAlert:@"Warning !!" message:@"Sorry couldn't connect to server.Please try again later." delegate:self];
 }

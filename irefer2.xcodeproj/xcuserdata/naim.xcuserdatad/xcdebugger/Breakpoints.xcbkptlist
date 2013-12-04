@@ -914,7 +914,7 @@
          landmarkType = "5">
       </FileBreakpoint>
       <FileBreakpoint
-         shouldBeEnabled = "Yes"
+         shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
          filePath = "Classes/searchDao.m"
@@ -1008,13 +1008,26 @@
          shouldBeEnabled = "No"
          ignoreCount = "0"
          continueAfterRunningActions = "No"
-         filePath = "Classes/searchDao.m"
-         timestampString = "407683045.235137"
+         filePath = "Classes/doctorListViewController.m"
+         timestampString = "407844580.108815"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "128"
-         endingLineNumber = "128"
-         landmarkName = "-getDoctorList:insIds:acoIds:hosIds:spIds:pracIds:countyIds:languages:officeHours:zip:inPatient:order:limit:resourceFlag:"
+         startingLineNumber = "59"
+         endingLineNumber = "59"
+         landmarkName = "-viewDidLoad"
+         landmarkType = "5">
+      </FileBreakpoint>
+      <FileBreakpoint
+         shouldBeEnabled = "Yes"
+         ignoreCount = "0"
+         continueAfterRunningActions = "No"
+         filePath = "Classes/doctorDetailViewController.m"
+         timestampString = "407855061.901603"
+         startingColumnNumber = "9223372036854775807"
+         endingColumnNumber = "9223372036854775807"
+         startingLineNumber = "561"
+         endingLineNumber = "561"
+         landmarkName = "-saveAndCloseReportPopup:"
          landmarkType = "5">
       </FileBreakpoint>
    </FileBreakpoints>

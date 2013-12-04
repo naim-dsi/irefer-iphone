@@ -543,8 +543,23 @@
 	
 	if(![content isEqual:@""] && content != NULL){
 		if (![dao updateDoctorChangeReport:[self.dataSource objectForKey:@"id"] userId:[user objectForKey:@"id"] content:content]) {
-			NSLog(@"unable to store change report for doctor %@",[self.dataSource objectForKey:@"id"]);
+			NSLog(@"Unable to store change report for doctor %@",[self.dataSource objectForKey:@"id"]);
 		}
+        @try{
+            NSString *str = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/report?ref_doc_id=%@&doc_id=%@&report=%@&time=%@", [self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], content, [utils getFormatedStringFromDate:[NSDate date]]];
+            NSString * encodedParam = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSURL *url = [NSURL URLWithString:encodedParam];
+            NSLog(str);
+            NSLog(encodedParam);
+            str=[self stringWithUrl:url];
+            NSLog(str);
+            if(![str isEqual:@"saved"]){
+                NSLog(@"Unable to store change report for doctor %@ at server",[self.dataSource objectForKey:@"id"]);
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", exception.reason);
+        }
 		[self.dataSource setValue:[dao getReportListByDoctor:[self.dataSource objectForKey:@"id"]] forKey:@"report_list"];
 	}
 	
@@ -557,6 +572,24 @@
 	//[NSThread detachNewThreadSelector:@selector() toTarget:self withObject:nil];	
 }
 
+- (NSString *)stringWithUrl:(NSURL *)url
+{
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
+                                                cachePolicy:NSURLRequestReturnCacheDataElseLoad
+                                            timeoutInterval:30];
+    // Fetch the JSON response
+    NSData *urlData;
+    NSURLResponse *response;
+    NSError *error;
+    
+    // Make synchronous request
+    urlData = [NSURLConnection sendSynchronousRequest:urlRequest
+                                    returningResponse:&response
+                                                error:&error];
+    
+    // Construct a String around the Data from the response
+    return [[NSString alloc] initWithData:urlData encoding:NSUTF8StringEncoding];
+}
 
 -(void)textViewDidBeginEditing:(UITextView *)textView{
 	NSLog(@"textViewDidBeginEditing");

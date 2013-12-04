@@ -14,7 +14,7 @@
 
 }
 
-- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit;
+- (NSMutableArray *) getDoctorList:(NSString *)docName insIds:(NSString *)insIds hosIds:(NSString *)hosIds spIds:(NSString *)spIds pracIds:(NSString *)pracIds countyIds:(NSString *)countyIds languages:(NSString *)languages officeHours:(NSString *)officeHours zip:(NSString *)zipCode inPatient:(NSString *)inPatient order:(int)order limit:(int)limit resourceFlag:(int)resourceFlag;
 
 - (NSDictionary *) getDoctorDetails:(NSString *)docId;
 
