@@ -34,6 +34,7 @@
 	IBOutlet UIScrollView *spinnerBg;
 	IBOutlet UIScrollView *scrollView;
 	IBOutlet UIScrollView *reportBar;
+    IBOutlet UIScrollView *referBar;
 	IBOutlet UIView *spView;
 	IBOutlet UIView *pracView;
 	IBOutlet UIView *hosView;
@@ -45,10 +46,15 @@
 	IBOutlet UIView *uprankView;
 	IBOutlet UIButton *rankbutton;
 	IBOutlet UITextView *reportText;
+    IBOutlet UITextView *referText;
 	IBOutlet UIScrollView *reportOptView;
+    IBOutlet UIScrollView *referOptView;
 	IBOutlet UIToolbar *reportTextBtn;
+    IBOutlet UIToolbar *referTextBtn;
 	IBOutlet UILabel *avgRankInfo;
-	
+	IBOutlet UITextField *initialTextField;
+    IBOutlet UITextField *patientEmailTextField;
+    
 	NSString *dId;
 	NSString *phone;
 	BOOL *isSearchFromOnline;
@@ -79,17 +85,21 @@
 @property(nonatomic, retain) UIView *uprankView;
 @property(nonatomic, retain) RatingWidget *rankBar;
 @property(nonatomic, retain) UIScrollView *reportBar;
+@property(nonatomic, retain) UIScrollView *referBar;
 @property(nonatomic, retain) UIScrollView *basicView;
 @property(nonatomic, retain) UIButton *rankbutton;
 @property(nonatomic, retain) UIView *qualityView;
 @property(nonatomic, retain) UIView *costView;
 @property(nonatomic, retain) UIView *pexpView;
 @property(nonatomic, retain) UITextView *reportText;
+@property(nonatomic, retain) UITextView *referText;
 @property(nonatomic, retain) UIScrollView *reportOptView;
+@property(nonatomic, retain) UIScrollView *referOptView;
 @property(nonatomic, retain) UIToolbar *reportTextBtn;
+@property(nonatomic, retain) UIToolbar *referTextBtn;
 @property(nonatomic, retain) UILabel *avgRankInfo;
-
-
+@property(nonatomic, retain) UITextField *initialTextField;
+@property(nonatomic, retain) UITextField *patientEmailTextField;
 
 
 - (IBAction) rankButtonClicked: (id)sender;
@@ -98,10 +108,14 @@
 - (IBAction) searchAgainClicked: (id)sender;
 - (IBAction) changeReportBtnClicked: (id)sender;
 - (IBAction) closeReportPopup: (id)sender;
+- (IBAction) closeReferPopup: (id)sender;
 - (IBAction) saveAndCloseReportPopup: (id)sender;
+- (IBAction) saveAndCloseReferPopup: (id)sender;
 - (IBAction) hideReportPopupKeyboard: (id)sender;
+- (IBAction) hideReferPopupKeyboard: (id)sender;
 - (IBAction) showReportPopupKeyboard: (id)sender;
 - (IBAction) reportOptionClicked: (id)sender;
-
+- (IBAction) changeReferBtnClicked: (id)sender;
+- (IBAction) referOptionClicked: (id)sender;
 
 @end

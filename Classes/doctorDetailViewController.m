@@ -16,6 +16,7 @@
 @synthesize spView, pracView, hosView, noteView, pracInfo, hosInfo, noteInfo, urankView, uprankView, rankBar, spinnerBg, reportBar, isReportChangeCalled;
 
 @synthesize qualityView, costView, reportText, reportOptView, reportTextBtn, rankText, pexpView, avgRankInfo;
+@synthesize referBar,referText,referTextBtn,initialTextField,patientEmailTextField,referOptView;
 
 - (void)viewDidLoad {
 	dao = [[searchDao alloc] init];
@@ -513,6 +514,18 @@
 	}
 }
 
+- (IBAction) changeReferBtnClicked: (id)sender{
+	NSLog(@"Change refer button clicked");
+	
+	self.referBar.hidden = NO;
+	self.referText.text = @"";
+	NSArray *elements = [self.referOptView subviews];
+	
+	UIImageView *imgView = (UIImageView *)[elements objectAtIndex:2];
+    imgView.tag = 0;
+    [imgView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"checkbox_not_ticked" ofType:@"png"]]];
+}
+
 - (IBAction) changeReportBtnClicked: (id)sender{
 	NSLog(@"Change report button clicked");
 	
@@ -532,6 +545,15 @@
 	[self.reportText resignFirstResponder];
 	self.reportBar.hidden = YES;
 
+}
+
+- (IBAction) closeReferPopup: (id)sender{
+	self.referTextBtn.hidden = YES;
+    self.initialTextField.text = @"";
+    self.patientEmailTextField.text = @"";
+	[self.referText resignFirstResponder];
+	self.referBar.hidden = YES;
+    
 }
 
 - (IBAction) saveAndCloseReportPopup: (id)sender{
@@ -572,6 +594,47 @@
 	//[NSThread detachNewThreadSelector:@selector() toTarget:self withObject:nil];	
 }
 
+- (IBAction) saveAndCloseReferPopup: (id)sender{
+    
+	[self performSelectorInBackground:@selector(viewLoadingScreen) withObject:nil];
+	NSDictionary *user = [dao getCurrentUser];
+	
+	NSString *content = [self getReferContent];
+	
+	if(![content isEqual:@""] && content != NULL){
+		@try{
+            NSString *str = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/referral2?doc_id=%@&ref_doc_id=%@&%@", [user objectForKey:@"doc_id"], [self.dataSource objectForKey:@"id"], content];
+            NSString * encodedParam = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            NSURL *url = [NSURL URLWithString:encodedParam];
+            NSLog(str);
+            NSLog(encodedParam);
+            str=[self stringWithUrl:url];
+            NSLog(str);
+            if(![str isEqual:@"saved"]||![str isEqual:@""]){
+                NSLog(@"Unable to store change report for doctor %@ at server",[self.dataSource objectForKey:@"id"]);
+            }
+        }
+        @catch (NSException *exception) {
+            NSLog(@"%@", exception.reason);
+        }
+		
+	}
+	else{
+        [self.view endEditing:YES];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        return;
+    }
+	[self reloadView];
+	[self.view endEditing:YES];
+	[self closeReferPopup:nil];
+	[self.spinner stopAnimating];
+	self.spinner.hidden = YES;
+	self.spinnerBg.hidden = YES;
+	//[NSThread detachNewThreadSelector:@selector() toTarget:self withObject:nil];
+}
+
 - (NSString *)stringWithUrl:(NSURL *)url
 {
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url
@@ -594,6 +657,13 @@
 -(void)textViewDidBeginEditing:(UITextView *)textView{
 	NSLog(@"textViewDidBeginEditing");
 	self.reportTextBtn.hidden = NO;
+    //self.referTextBtn.hidden = NO;
+}
+- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
+    NSLog(@"textFieldDidBeginEditing");
+	
+    self.referTextBtn.hidden = NO;
+    return YES;
 }
 
 
@@ -601,6 +671,67 @@
 
 	[self.reportText resignFirstResponder];
 	self.reportTextBtn.hidden = YES;
+}
+
+- (IBAction) hideReferPopupKeyboard: (id)sender{
+    
+	[self.initialTextField resignFirstResponder];
+    [self.patientEmailTextField resignFirstResponder];
+	[self.referText resignFirstResponder];
+	self.referTextBtn.hidden = YES;
+}
+
+- (NSString *)getReferContent{
+    
+	NSString *content = @"";
+    NSArray *elements = [self.referOptView subviews];
+    if ([(UIImageView *)[elements objectAtIndex:2] tag] == 1) {
+        if ([content isEqual:@""]) {
+            content = @"insurance=1";
+        }else {
+            content = [content stringByAppendingFormat:@"&%@",@"insurance=1"];
+        }
+        
+    }
+    else{
+        if ([content isEqual:@""]) {
+            content = @"insurance=0";
+        }else {
+            content = [content stringByAppendingFormat:@"&%@",@"insurance=0"];
+        }
+    }
+    
+    self.initialTextField.text = [self.initialTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    self.patientEmailTextField.text = [self.patientEmailTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    if (self.initialTextField.text != NULL && ![self.initialTextField.text isEqual:@""] ) {
+		if ([content isEqual:@""]) {
+			content = [content stringByAppendingFormat:@"initial=%@",self.initialTextField.text];
+		}else {
+			content = [content stringByAppendingFormat:@"&initial=%@",self.initialTextField.text];
+		}
+	}
+    else{
+        [utils showAlert:@"Error !!" message:@"No initial given." delegate:self];
+        return @"";
+    }
+    if (self.patientEmailTextField.text != NULL && ![self.patientEmailTextField.text isEqual:@""] ) {
+        if (![utils performSelector:@selector(validateEmail:) withObject:self.patientEmailTextField.text]) {
+            [utils showAlert:@"Error !!" message:@"Please provide a valid email address." delegate:self];
+            return @"";
+        }
+		if ([content isEqual:@""]) {
+			content = [content stringByAppendingFormat:@"email=%@",self.patientEmailTextField.text];
+		}else {
+			content = [content stringByAppendingFormat:@"&email=%@",self.patientEmailTextField.text];
+		}
+	}
+    else{
+        [utils showAlert:@"Error !!" message:@"No patient email given." delegate:self];
+        return @"";
+    }
+    
+	return content;
 }
 
 - (NSString *)getReportContent{
@@ -629,7 +760,20 @@
 	}
 	return content;
 }
-
+- (IBAction) referOptionClicked: (id)sender{
+	UIButton *button = (UIButton *)sender;
+	
+	NSArray *elements = [self.referOptView subviews];
+	UIImageView *imgView = (UIImageView *)[elements objectAtIndex:2];
+	if( imgView.tag == 0 ){
+		imgView.tag = 1;
+		[imgView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"checkbox_ticked" ofType:@"png"]]];
+	}else {
+		imgView.tag = 0;
+		[imgView setImage:[UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"checkbox_not_ticked" ofType:@"png"]]];
+	}
+    
+}
 
 - (IBAction) reportOptionClicked: (id)sender{
 	UIButton *button = (UIButton *)sender;
@@ -734,14 +878,20 @@
 	[avgRankInfo release];
 	[pexpView release];
 	[rankText release];
+    [referOptView release];
+    [initialTextField release];
+    [patientEmailTextField release];
 	[reportTextBtn release];
+    [referTextBtn release];
 	[reportOptView release];
 	[reportText release];
+    [referText release];
 	[qualityView release];
 	[costView release];
 	[rankbutton release];
 	[basicView release];
 	[reportBar release];
+    [referBar release];
 	[spinnerBg release];
 	[rankBar release];
 	[urankView release];
