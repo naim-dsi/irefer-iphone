@@ -361,7 +361,7 @@
 - (void) setSegmentTextColor:(UISegmentedControl *)control index:(int)index{
 	
 	NSArray *segments = [control subviews];
-	
+	UIColor * color = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:199/255.0f alpha:1.0f];
 	for(int i=0; i < [segments count]; i++){
 		UIView *segment = (UIView *)[segments objectAtIndex:i];
 		
@@ -370,7 +370,7 @@
 			if ([row isKindOfClass:[UILabel class]]) {
 				//NSLog(@"true");
 				if (i == index) {
-					[row performSelector:@selector(setTextColor:) withObject:self.insurances.textColor];	
+					[row performSelector:@selector(setTextColor:) withObject:color];	
 				}else {
 					[row performSelector:@selector(setTextColor:) withObject:[UIColor grayColor]];	
 				}
