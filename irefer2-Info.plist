@@ -8,8 +8,10 @@
 	<string>My Medical Neighbors</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
-	<key>CFBundleIconFile</key>
-	<string>irefer_icon.png</string>
+	<key>CFBundleIcons</key>
+	<dict/>
+	<key>CFBundleIcons~ipad</key>
+	<dict/>
 	<key>CFBundleIdentifier</key>
 	<string>com.dsinv.irefer</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -21,10 +23,12 @@
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>2.0</string>
+	<string>2.2</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSMainNibFile</key>
 	<string>MainWindow</string>
+	<key>UIStatusBarStyle</key>
+	<string>UIStatusBarStyleDefault</string>
 </dict>
 </plist>

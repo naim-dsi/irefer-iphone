@@ -32,7 +32,7 @@
 + (void) showAlert:(NSString *)title message:(NSString *)msg delegate:(UIViewController *)controller{
     @try{
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:title message:msg delegate:controller cancelButtonTitle:@"Ok" otherButtonTitles:nil];
-        [alert show];
+        [alert performSelectorOnMainThread:@selector(show) withObject:nil waitUntilDone:YES];
         [alert release];
     }
     @catch (NSException *exception) {
