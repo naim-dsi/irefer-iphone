@@ -9,15 +9,18 @@
 #import <UIKit/UIKit.h>
 
 int main(int argc, char *argv[]) {
-    @autoreleasepool {
+    
+     @autoreleasepool {
         
 		[[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"UIUseLegacyUI"];
 		[[NSUserDefaults standardUserDefaults] synchronize];
         
 		return UIApplicationMain(argc, argv, nil, nil);
 	}
-    //NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
-    //int retVal = UIApplicationMain(argc, argv, nil, nil);
-    //[pool release];
-    //return retVal;
+/*
+    NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
+    int retVal = UIApplicationMain(argc, argv, nil, nil);
+    [pool release];
+    return retVal;
+*/
 }

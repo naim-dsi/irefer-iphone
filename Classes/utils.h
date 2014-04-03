@@ -22,6 +22,8 @@
 
 + (NSString *) getServerURL ;
 
++ (NSString *) getBaseURL ;
+
 + (UIColor *) getTableCellSelectionColor;
 
 + (void) showAlert:(NSString *)title message:(NSString *)msg delegate:(UIViewController *)controller;

@@ -652,6 +652,7 @@ int actionSheetType = 0;
 	parser = [[SBJsonParser alloc] init];
 	
 	if ([[self.userData objectForKey:@"is_PCP"] intValue]) {
+        /*
 		NSLog(@"inside pcp");
 		
 		if (![dao clearPractices]) {
@@ -720,9 +721,13 @@ int actionSheetType = 0;
 		if(![dao saveSpecialities:dataList]){
 			NSLog(@"unable to save speciality template data");
 		}
-		
+		*/
+        if (![dao clearPracticesAndAll]) {
+            NSLog(@"unable to clear Hospitals And All");
+        }
+
 	}else {
-		
+		/*
 		NSLog(@"inside hospitalist");
 		
 		if (![dao clearHospitals]) {
@@ -794,7 +799,11 @@ int actionSheetType = 0;
 		if(![dao saveSpecialities:dataList]){
 			NSLog(@"unable to save speciality template data");
 		}
-		
+         */
+        
+        if (![dao clearHospitalsAndAll]) {
+            NSLog(@"unable to clear Hospitals And All");
+        }
 	}
 	
 	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Clearing Doctors.." waitUntilDone:NO];
@@ -863,12 +872,50 @@ int actionSheetType = 0;
     NSString *dbPath = [dao dataFilePath];
     
     
-    NSURL *dbUrl = [[NSURL alloc] initWithString:
-                     [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-    NSData *dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
+    NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:300];
+    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:dbUrl];
+   
+    NSURLResponse * response = nil;
+    error = nil;
+    NSData * dbFile = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    
+    if (error != nil)
+    {
+        self.userData = [dao getCurrentUserPracticeOrHospital];
+        
+        [self updateRowCounts];
+        
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.inactiveBtn.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        
+        
+        [pool drain];
+        return;
+    }
     
     
-    
+    //NSData *dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
+    NSString *responseString = [[NSString alloc] initWithData:dbFile encoding:NSUTF8StringEncoding];
+    if (![responseString isEqualToString:@"1"]){
+        self.userData = [dao getCurrentUserPracticeOrHospital];
+        
+        [self updateRowCounts];
+        
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.inactiveBtn.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        
+        
+        [pool drain];
+        return;
+    }
+    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getBaseURL)]] stringByAppendingFormat:@"dbzip/%@.zip",dateString];
+    dbUrl = [[NSURL alloc] initWithString: [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
     if ([fileManager fileExistsAtPath:txtPath] == NO) {
         [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading database..." waitUntilDone:NO];
         [dbFile writeToFile:txtPath atomically:YES];
@@ -899,6 +946,7 @@ int actionSheetType = 0;
              [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:dbUrl];
     [[NSURLConnection alloc] initWithRequest:request delegate:nil];
+    
     /*
     serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty?prac_ids=1&cnty_ids=%@",cntyIds];
 	NSMutableArray *dataList = [utils getDataFromSyncronousURLCall:serverUrl];

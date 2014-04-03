@@ -19,8 +19,8 @@
 - (BOOL)saveSpecialities:(NSMutableArray *)dataList;
 - (BOOL)saveCounties:(NSMutableArray *)dataList;
 - (BOOL)saveDoctors:(NSMutableArray *)dataList;
-
-
+- (BOOL)clearPracticesAndAll;
+- (BOOL)clearHospitalsAndAll;
 - (BOOL)clearAllSettings;
 - (BOOL)clearDoctors;
 - (BOOL)clearPractices;

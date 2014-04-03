@@ -462,6 +462,207 @@
 	return NO;
 }
 
+- (BOOL)clearPracticesAndAll{
+	if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = [NSString stringWithFormat:@"DELETE FROM t_practice where prac_id NOT IN (select my_prac_id from t_users where act_code <> '')"];
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from practices table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+	if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_hospital where hos_id <> (select my_hos_id from t_users where act_code <> '')";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from hospital table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_insurance";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from insurance table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_county where county_id <> (select my_county_id from t_users where act_code <> '')";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from county table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_speciality";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from speciality table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+	return NO;
+}
+- (BOOL)clearHospitalsAndAll{
+	if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = [NSString stringWithFormat:@"DELETE FROM t_hospital where hos_id <> (select my_hos_id from t_users where act_code <> '')"];
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from hospital table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+	//return NO;
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_hospital where hos_id <> (select my_hos_id from t_users where act_code <> '')";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from hospital table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_insurance";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from insurance table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_county where county_id <> (select my_county_id from t_users where act_code <> '')";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from county table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		//return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+    if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		char *errorMsg;
+		NSString *deleteSQL = @"DELETE FROM t_speciality";
+		if(sqlite3_exec(database, [deleteSQL UTF8String], NULL, NULL, &errorMsg) != SQLITE_OK){
+			NSLog(@"unable to delete all from speciality table on setup dao...");
+			
+			sqlite3_free(errorMsg);
+			sqlite3_close(database);
+			//return NO;
+			
+		}
+		
+		sqlite3_free(errorMsg);
+		sqlite3_close(database);
+		return YES;
+	}else {
+		NSLog(@"Unable to open database connection on setup dao....");
+	}
+	return NO;
+}
+
+
+
+
 - (BOOL)clearDoctors{
 	if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
 		
