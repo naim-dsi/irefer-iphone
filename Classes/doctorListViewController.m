@@ -217,7 +217,7 @@ int docId,rankVal;
 											[dict objectForKey:@"c3"], @"mid_name", [dict objectForKey:@"c4"], @"degree",
 											[dict objectForKey:@"c5"], @"doc_phone", [dict objectForKey:@"c6"], @"language",
 											[dict objectForKey:@"c7"], @"grade",[dict objectForKey:@"u_rank"], @"u_rank",
-											[dict objectForKey:@"c8"], @"prac_name", nil]];
+											[dict objectForKey:@"up_rank"], @"up_rank", [dict objectForKey:@"c8"], @"prac_name", nil]];
 			}else if ([dict objectForKey:@"count"] != NULL && ![[dict objectForKey:@"count"] isEqual:@""]) {
 				
 				[self.dataSource addObject:[[NSDictionary alloc] initWithObjectsAndKeys: [dict objectForKey:@"count"], @"count", nil]];
@@ -238,7 +238,7 @@ int docId,rankVal;
 								[dict objectForKey:@"c3"], @"mid_name", [dict objectForKey:@"c4"], @"degree",
 								[dict objectForKey:@"c5"], @"doc_phone", [dict objectForKey:@"c6"], @"language",
 								[dict objectForKey:@"c7"], @"grade", [dict objectForKey:@"u_rank"], @"u_rank",
-								[dict objectForKey:@"c8"], @"prac_name", nil]];
+								[dict objectForKey:@"up_rank"], @"up_rank", [dict objectForKey:@"c8"], @"prac_name", nil]];
 	}
 }
 

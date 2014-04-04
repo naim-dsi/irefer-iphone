@@ -22,7 +22,10 @@
 	//return @"http://www.irefermd.com/admin-v1/index.php?r=";
 	//return @"http://www.irefermd.com/admin/index.php?r=";
     //return @"http://103.4.147.139/irefer-dsi/index.php/services/";
-    return @"http://10.0.0.253/irefer-dsi/index.php/services/";
+    NSString *servicePath = @"index.php/services/";
+    return [[NSString stringWithString: [self getBaseURL]] stringByAppendingFormat:@"%@",servicePath];
+
+    //return @"http://10.0.0.253/irefer-dsi/index.php/services/";
 
 }
 

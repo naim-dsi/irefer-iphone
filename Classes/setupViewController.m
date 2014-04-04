@@ -882,6 +882,7 @@ int actionSheetType = 0;
     
     if (error != nil)
     {
+        [utils showAlert:@"Error !!!" message:@"Sync process failed. Please try again later." delegate:nil];
         self.userData = [dao getCurrentUserPracticeOrHospital];
         
         [self updateRowCounts];
@@ -900,6 +901,7 @@ int actionSheetType = 0;
     //NSData *dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
     NSString *responseString = [[NSString alloc] initWithData:dbFile encoding:NSUTF8StringEncoding];
     if (![responseString isEqualToString:@"1"]){
+        [utils showAlert:@"Error !!!" message:@"Sync process failed. Please try again later." delegate:nil];
         self.userData = [dao getCurrentUserPracticeOrHospital];
         
         [self updateRowCounts];
@@ -924,6 +926,21 @@ int actionSheetType = 0;
         [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading database..." waitUntilDone:NO];
         [fileManager removeItemAtPath:txtPath error:&error];
         [dbFile writeToFile:txtPath atomically:YES];
+    }
+    if ([fileManager fileExistsAtPath:txtPath] == NO) {
+        [utils showAlert:@"Error !!!" message:@"Sync process failed. Please try again later." delegate:nil];
+        self.userData = [dao getCurrentUserPracticeOrHospital];
+        
+        [self updateRowCounts];
+        
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.inactiveBtn.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        
+        
+        [pool drain];
+        return;
     }
     [self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Unzipping database..." waitUntilDone:NO];
     [dao release];

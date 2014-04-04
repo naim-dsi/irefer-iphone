@@ -158,7 +158,7 @@
 			}
 		}
 		
-		NSString *query = [NSString stringWithFormat:@"SELECT distinct doc.doc_id, doc.first_name, doc.last_name, doc.mid_name, doc.degree, doc.language, doc.grade, doc.doc_phone, doc.u_rank, IFNULL(prac.name, '') as name FROM t_doctor doc LEFT JOIN (SELECT distinct t1.doc_id, GROUP_CONCAT(tp.name,',') name1, tp.name from t_doctor t1 JOIN t_practice tp ON(t1.prac_id = tp.prac_id%@) group by t1.doc_id) prac ON (doc.doc_id = prac.doc_id) %@",  additionalPrac, whereClause];
+		NSString *query = [NSString stringWithFormat:@"SELECT distinct doc.doc_id, doc.first_name, doc.last_name, doc.mid_name, doc.degree, doc.language, doc.grade, doc.doc_phone, doc.u_rank, doc.up_rank, IFNULL(prac.name, '') as name FROM t_doctor doc LEFT JOIN (SELECT distinct t1.doc_id, GROUP_CONCAT(tp.name,',') name1, tp.name from t_doctor t1 JOIN t_practice tp ON(t1.prac_id = tp.prac_id%@) group by t1.doc_id) prac ON (doc.doc_id = prac.doc_id) %@",  additionalPrac, whereClause];
 		
 		NSString *countQuery = [NSString stringWithFormat:@"SELECT count(distinct(doc.doc_id)) FROM t_doctor doc %@", whereClause];
 		
@@ -199,8 +199,8 @@
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 6)], @"grade",
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 7)], @"doc_phone",
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 8)], @"u_rank",
-								   
-								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 9)], @"prac_name", nil] autorelease]];
+								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 9)], @"up_rank",
+								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 10)], @"prac_name", nil] autorelease]];
 			}
 			
 		}else {
@@ -477,7 +477,7 @@
 		NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];	
 		
 		NSString *query = [NSString stringWithFormat:@"%@ %@ %@ %@",
-						   @"SELECT distinct doc.doc_id, doc.first_name, doc.last_name, doc.mid_name, doc.degree, doc.language, doc.grade, doc.doc_phone, doc.u_rank, IFNULL(prac1.name, '') as name",
+						   @"SELECT distinct doc.doc_id, doc.first_name, doc.last_name, doc.mid_name, doc.degree, doc.language, doc.grade, doc.doc_phone, doc.u_rank, doc.up_rank, IFNULL(prac1.name, '') as name",
 						   @"FROM t_doctor doc LEFT JOIN (SELECT distinct t1.doc_id, GROUP_CONCAT(tp.name,',') name1, tp.name from t_doctor t1 JOIN t_practice tp ON(t1.prac_id = tp.prac_id) group by t1.doc_id) prac1 ON (doc.doc_id = prac1.doc_id)",
 						   @"LEFT JOIN t_practice prac ON (doc.prac_id = prac.prac_id) LEFT JOIN t_hospital hos ON (doc.hos_id = hos.hos_id) LEFT JOIN t_speciality spec ON (doc.spec_id = spec.spec_id) LEFT JOIN t_insurance ins ON (doc.ins_id = ins.ins_id)",
 						   @"LEFT JOIN t_county county ON (doc.county_id = county.county_id) "];
@@ -524,15 +524,15 @@
 		}
 		
 		if (order == 0) {
-			query = [query stringByAppendingFormat:@" order by doc.u_rank desc, doc.grade desc, doc.last_name"];
+			query = [query stringByAppendingFormat:@" order by doc.u_rank desc, doc.up_rank desc, doc.grade desc, doc.last_name"];
 		}else if (order == 1) {
-			query = [query stringByAppendingFormat:@" order by doc.grade desc, doc.u_rank desc, doc.last_name"];
+			query = [query stringByAppendingFormat:@" order by doc.grade desc, doc.u_rank desc, doc.up_rank desc, doc.last_name"];
 		}else if (order == 2) {
-			query = [query stringByAppendingFormat:@" order by doc.first_name, doc.u_rank desc, doc.grade desc"];
+			query = [query stringByAppendingFormat:@" order by doc.first_name, doc.u_rank desc, doc.up_rank desc, doc.grade desc"];
 		}else if (order == 3) {
-			query = [query stringByAppendingFormat:@" order by doc.last_name, doc.u_rank desc, doc.grade desc"];
+			query = [query stringByAppendingFormat:@" order by doc.last_name, doc.u_rank desc, doc.up_rank desc, doc.grade desc"];
 		}else {
-			query = [query stringByAppendingFormat:@" order by doc.u_rank desc, doc.grade desc, doc.last_name"];
+			query = [query stringByAppendingFormat:@" order by doc.u_rank desc, doc.up_rank desc, doc.grade desc, doc.last_name"];
 		}
 						
 		query = [query stringByAppendingFormat:@" limit %d",limit];
@@ -563,7 +563,8 @@
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 6)], @"grade",
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 7)], @"doc_phone",
 								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 8)], @"u_rank",
-								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 9)], @"prac_name", nil] autorelease]];
+								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 9)], @"up_rank",
+                                   [NSString stringWithUTF8String: sqlite3_column_text(statement, 10)], @"prac_name", nil] autorelease]];
 			}
 			
 		}else {

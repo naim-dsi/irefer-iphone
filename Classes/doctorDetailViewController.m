@@ -432,50 +432,40 @@
 
 
 - (void) rankUpdateReqThread{
-	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
-	
-	NSDictionary *user = [dao getCurrentUser];
-	
-	//if(self.isSearchFromOnline){
-		NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
-		NSLog(@"url :%@",serverUrl);
-		NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
-		NSURLResponse *response = nil;
-		NSError *error = nil;
-		NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-		NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
-	
-		NSLog(@"response : %@",responseString);
-	
-		if ([responseString isEqual:@"saved"] || [responseString isEqual:@"Rank updated"]) {
-			[self updateDataSource:[rankBar getRank]];
-			
-            if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
-                [self updateDataSource:[rankBar getRank]];
-                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
-            }else {
-                [utils showAlert:@"Warning !!" message:@"Couldn't update Local rank, please try again later." delegate:self];
-                [utils showAlert:@"Confirmation!!" message:@"Online Rank has been updated." delegate:self];
-            }
-		}else{
-			
-            if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
-                [self updateDataSource:[rankBar getRank]];
-                [utils showAlert:@"Confirmation!!" message:@"Local Rank has been updated." delegate:self];
-                [utils showAlert:@"Warning !!" message:@"Couldn't update online rank, please try again later." delegate:self];
-            }else {
-                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
-                
-            }
-		}
-	///}else {
-				
-		
-	//}
-
-	[rankBar isWorking:NO];
-	[rankBar dismissWidget];
-	[pool release];
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+    NSDictionary *user = [dao getCurrentUser];
+    
+    if(self.isSearchFromOnline){
+        NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
+        NSLog(@"url :%@",serverUrl);
+        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
+        NSURLResponse *response = nil;
+        NSError *error = nil;
+        NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+        NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
+        
+        NSLog(@"response : %@",responseString);
+        
+        if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
+            [self updateDataSource:[rankBar getRank]];
+            [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+        }else{
+            [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+        }
+    }else {
+        if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
+            [self updateDataSource:[rankBar getRank]];
+            [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+        }else {
+            [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
+        }	
+        
+    }
+    
+    [rankBar isWorking:NO];
+    [rankBar dismissWidget];
+    [pool release];
 }
 
 - (void) updateDataSource:(int)rankValue{
@@ -567,7 +557,7 @@
 		if (![dao updateDoctorChangeReport:[self.dataSource objectForKey:@"id"] userId:[user objectForKey:@"id"] content:content]) {
 			NSLog(@"Unable to store change report for doctor %@",[self.dataSource objectForKey:@"id"]);
 		}
-        @try{
+        /*@try{
             NSString *str = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/report?ref_doc_id=%@&doc_id=%@&report=%@&time=%@", [self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], content, [utils getFormatedStringFromDate:[NSDate date]]];
             NSString * encodedParam = [str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             NSURL *url = [NSURL URLWithString:encodedParam];
@@ -582,6 +572,7 @@
         @catch (NSException *exception) {
             NSLog(@"%@", exception.reason);
         }
+        */ 
 		[self.dataSource setValue:[dao getReportListByDoctor:[self.dataSource objectForKey:@"id"]] forKey:@"report_list"];
 	}
 	
