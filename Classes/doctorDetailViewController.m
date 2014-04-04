@@ -602,7 +602,13 @@
             str=[self stringWithUrl:url];
             NSLog(str);
             if(![str isEqual:@"saved"]||![str isEqual:@""]){
-                NSLog(@"Unable to store change report for doctor %@ at server",[self.dataSource objectForKey:@"id"]);
+                [utils showAlert:@"Error !!" message:@"Unable to store referal data." delegate:self];
+                NSLog(@"Unable to store referal data for doctor %@ at server",[self.dataSource objectForKey:@"id"]);
+                //[self.view endEditing:YES];
+                [self.spinner stopAnimating];
+                self.spinner.hidden = YES;
+                self.spinnerBg.hidden = YES;
+                return;
             }
         }
         @catch (NSException *exception) {
@@ -718,8 +724,13 @@
 		}
 	}
     else{
-        [utils showAlert:@"Error !!" message:@"No patient email given." delegate:self];
-        return @"";
+        //[utils showAlert:@"Error !!" message:@"No patient email given." delegate:self];
+        if ([content isEqual:@""]) {
+			content = [content stringByAppendingFormat:@"email=%@",@""];
+		}else {
+			content = [content stringByAppendingFormat:@"&email=%@",@""];
+		}
+        return content;
     }
     
 	return content;
