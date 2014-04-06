@@ -10,16 +10,16 @@
 #import "JSON.h"
 #import "utils.h"
 #import "searchDao.h"
-#import "RatingWidget.h"
+#import "CustomIOS7AlertView.h"
 #import "filterViewController.h"
 #import "ReportWidget.h"
 
-@interface doctorDetailViewController : UIViewController<SBJsonStreamParserAdapterDelegate, UITextViewDelegate> {
+@interface doctorDetailViewController : UIViewController<SBJsonStreamParserAdapterDelegate, UITextViewDelegate,CustomIOS7AlertViewDelegate> {
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableDictionary *dataSource;
 	searchDao *dao;
-	RatingWidget *rankBar;
+	
 	UIScrollView *basicView;
 	
 	IBOutlet UILabel *name;
@@ -59,6 +59,13 @@
 	NSString *phone;
 	BOOL *isSearchFromOnline;
 	BOOL *isReportChangeCalled;
+    CustomIOS7AlertView *alert;
+    int rank;
+	NSMutableArray *rankBtnList;
+	UIImage *unRankedImage;
+	UIImage *rankedImage;
+    int resourceFlag;
+    BOOL busy;
 }
 
 @property(nonatomic, retain) UILabel *name;
@@ -83,7 +90,7 @@
 @property(nonatomic, retain) UILabel *noteInfo;
 @property(nonatomic, retain) UIView *urankView;
 @property(nonatomic, retain) UIView *uprankView;
-@property(nonatomic, retain) RatingWidget *rankBar;
+
 @property(nonatomic, retain) UIScrollView *reportBar;
 @property(nonatomic, retain) UIScrollView *referBar;
 @property(nonatomic, retain) UIScrollView *basicView;
@@ -100,7 +107,13 @@
 @property(nonatomic, retain) UILabel *avgRankInfo;
 @property(nonatomic, retain) UITextField *initialTextField;
 @property(nonatomic, retain) UITextField *patientEmailTextField;
-
+@property(nonatomic, retain) CustomIOS7AlertView *alert;
+@property(nonatomic, assign) int rank;
+@property(nonatomic, assign) BOOL busy;
+@property(nonatomic, retain) NSMutableArray *rankBtnList;
+@property(nonatomic, retain) UIImage *unRankedImage;
+@property(nonatomic, retain) UIImage *rankedImage;
+@property (nonatomic) int resourceFlag;
 
 - (IBAction) rankButtonClicked: (id)sender;
 - (IBAction) backToDocList: (id)sender;

@@ -13,10 +13,10 @@
 
 @synthesize name, speciality, degree, gender, spinner, phone, dId, dataSource, isSearchFromOnline, scrollView, basicView, rankbutton;
 
-@synthesize spView, pracView, hosView, noteView, pracInfo, hosInfo, noteInfo, urankView, uprankView, rankBar, spinnerBg, reportBar, isReportChangeCalled;
+@synthesize spView, pracView, hosView, noteView, pracInfo, hosInfo, noteInfo, urankView, uprankView, alert, spinnerBg, reportBar, isReportChangeCalled;
 
 @synthesize qualityView, costView, reportText, reportOptView, reportTextBtn, rankText, pexpView, avgRankInfo;
-@synthesize referBar,referText,referTextBtn,initialTextField,patientEmailTextField,referOptView;
+@synthesize referBar,referText,referTextBtn,initialTextField,patientEmailTextField,referOptView,rank, rankBtnList, unRankedImage, rankedImage, busy;
 
 - (void)viewDidLoad {
 	dao = [[searchDao alloc] init];
@@ -413,14 +413,19 @@
 
 - (IBAction) rankButtonClicked: (id)sender{
 	
-	rankBar = [[RatingWidget alloc] initRatingWidget:self.name.text delegate:self];
-	[rankBar show];
+	//rankBar = [[NewRatingWidget alloc] initNewRatingWidget:self.name.text delegate:self];
+	//[rankBar show];
+    NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
+    [docDic setValue:self.name.text forKey:@"docName"];
+    [docDic setValue:self.rankText.text forKey:@"docRank"];
+	[self launchDialog:docDic];
+	
 
 }
-
+/*
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-	if ([alertView isKindOfClass:[RatingWidget class]] && !rankBar.busy) {
-		if( buttonIndex == rankBar.cancelButtonIndex ){
+	if ([alertView isKindOfClass:[NewRatingWidget class]] && !rankBar.busy) {
+		if( buttonIndex == 0 ){
 			[rankBar dismissWidget];
 		}else{
 			[rankBar isWorking:YES];
@@ -429,7 +434,119 @@
 	}
     
 }
+*/
+- (void)launchDialog:(NSMutableDictionary *)docDic
+{
+    
+    alert = [[CustomIOS7AlertView alloc] initWithFrame:CGRectZero];
+    
+    [alert setButtonTitles:[NSMutableArray arrayWithObjects:@"Cancel", @"Update", nil]];
+    [alert setContainerView:[self createAlertView:docDic]];
+    [alert setDelegate:self];
+    
+    
+    
+    [alert setUseMotionEffects:true];
+    
+    [alert show];
+}
 
+
+- (void)customIOS7dialogButtonTouchUpInside: (CustomIOS7AlertView *)alertView clickedButtonAtIndex: (NSInteger)buttonIndex
+{
+    if ([alertView isKindOfClass:[CustomIOS7AlertView class]] && !self.busy) {
+		if( buttonIndex == 0 ){
+			[alertView close];
+		}else{
+			self.busy = YES;
+			[NSThread detachNewThreadSelector:@selector(rankUpdateReqThread) toTarget:self withObject:nil];
+		}
+	}
+    //NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);
+    
+    
+    
+}
+
+- (UIView *)createAlertView:(NSMutableDictionary *)docDic
+{
+    NSString *docName = [docDic objectForKey: @"docName"];
+    NSString *docRank = [docDic objectForKey: @"docRank"];
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 100)];
+    int yPosition = 10;
+    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, yPosition, view.frame.size.width, 0)];
+    [label setText: docName];
+    [label setBackgroundColor: [UIColor clearColor]];
+    [label setNumberOfLines: 0];
+    [label sizeToFit];
+    [label setCenter: CGPointMake(view.center.x, 20)];
+    [view addSubview:label];
+    
+    
+    
+    
+    self.rank =[docRank integerValue];
+    
+    [self.spinner hidesWhenStopped];
+    
+    self.unRankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_silver" ofType:@"png"]];
+    self.rankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_orange" ofType:@"png"]];
+    self.rankBtnList = [[NSMutableArray alloc] initWithCapacity:5];
+    
+    CGFloat x=45.0f;
+    
+    for (int i=0; i<5; i++) {
+        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+        button.tag = i+1;
+        [button addTarget:self action:@selector(rankBtnClicked:) forControlEvents:UIControlEventTouchDown];
+        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [button setTitle:[NSString stringWithFormat:@"%d",button.tag] forState:UIControlStateNormal];
+        [button setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+        button.frame = CGRectMake(x , 50.0, 30.0, 30.0);
+        [view addSubview:button];
+        [self.rankBtnList addObject:button];
+        x += 40.0f;
+    }
+    [self preSetRank];
+    //[view addSubview:self.spinner];
+    return view;
+}
+
+
+- (void)preSetRank{
+	//UIButton *button = (UIButton *)sender;
+	//NSLog(@"rank enter %d", button.tag);
+	//self.rank = button.tag;
+	for (int i=0; i < 5; i++) {
+		UIButton *rankBtn = [self.rankBtnList objectAtIndex:i];
+		if( i < self.rank ){
+			//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.rankedImage forState:UIControlStateNormal];
+		}else {
+			//[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+		}
+        
+	}
+}
+
+
+- (void)rankBtnClicked:(id)sender{
+	UIButton *button = (UIButton *)sender;
+	NSLog(@"rank enter %d", button.tag);
+	self.rank = button.tag;
+	for (int i=0; i < 5; i++) {
+		UIButton *rankBtn = [self.rankBtnList objectAtIndex:i];
+		if( i < button.tag ){
+			//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.rankedImage forState:UIControlStateNormal];
+		}else {
+			//[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+		}
+        
+	}
+}
 
 - (void) rankUpdateReqThread{
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -437,7 +554,7 @@
     NSDictionary *user = [dao getCurrentUser];
     
     if(self.isSearchFromOnline){
-        NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], [rankBar getRank]];
+        NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], self.rank];
         NSLog(@"url :%@",serverUrl);
         NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
         NSURLResponse *response = nil;
@@ -448,14 +565,14 @@
         NSLog(@"response : %@",responseString);
         
         if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
-            [self updateDataSource:[rankBar getRank]];
+            [self updateDataSource:self.rank];
             [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
         }else{
             [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
         }
     }else {
-        if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:[rankBar getRank]] ){
-            [self updateDataSource:[rankBar getRank]];
+        if( [dao updateDoctorRank:[[self.dataSource objectForKey:@"id"] intValue] rank:self.rank] ){
+            [self updateDataSource:self.rank];
             [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
         }else {
             [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
@@ -463,8 +580,9 @@
         
     }
     
-    [rankBar isWorking:NO];
-    [rankBar dismissWidget];
+    self.busy = NO;
+    [alert close];
+    [alert release];
     [pool release];
 }
 
@@ -895,7 +1013,7 @@
 	[reportBar release];
     [referBar release];
 	[spinnerBg release];
-	[rankBar release];
+	[alert release];
 	[urankView release];
 	[uprankView release];
 	[pracInfo release];
@@ -915,6 +1033,9 @@
 	[degree release];
 	[gender release];
 	[dao release];
+    [rankedImage release];
+	[unRankedImage release];
+	[rankBtnList release];
     [super dealloc];
 }
 

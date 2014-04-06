@@ -11,10 +11,10 @@
 #import "utils.h"
 #import "searchDao.h"
 #import "CustomDoctorCell.h"
-#import "RatingWidget.h"
+#import "CustomIOS7AlertView.h"
 #import "viewMoreCell.h"
 
-@interface doctorListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate> {
+@interface doctorListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate,CustomIOS7AlertViewDelegate> {
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableArray *dataSource;
@@ -44,9 +44,13 @@
 	NSString *inPatient;
 	NSString *zipCode;
 	NSString *officeHours;
-	RatingWidget *alert;
-
+	CustomIOS7AlertView *alert;
+    int rank;
+	NSMutableArray *rankBtnList;
+	UIImage *unRankedImage;
+	UIImage *rankedImage;
     int resourceFlag;
+    BOOL busy;
 }
 
 
@@ -76,8 +80,12 @@
 @property(nonatomic, retain) NSString *zipCode;
 @property(nonatomic, assign) BOOL *isSearchFromOnline;
 @property(nonatomic, assign) BOOL *isResourceSearch;
-@property(nonatomic, retain) RatingWidget *alert;
-
+@property(nonatomic, retain) CustomIOS7AlertView *alert;
+@property(nonatomic, assign) int rank;
+@property(nonatomic, assign) BOOL busy;
+@property(nonatomic, retain) NSMutableArray *rankBtnList;
+@property(nonatomic, retain) UIImage *unRankedImage;
+@property(nonatomic, retain) UIImage *rankedImage;
 @property (nonatomic) int resourceFlag;
 
 - (IBAction) rankUpdate: (id)sender;

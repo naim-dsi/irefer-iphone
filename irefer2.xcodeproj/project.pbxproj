@@ -33,6 +33,10 @@
 		388CC8E618BC7217008DA9BE /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8DE18BC7217008DA9BE /* Icon-Small.png */; };
 		388CC8E818BC74A4008DA9BE /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8E718BC74A4008DA9BE /* Icon-Small-40@2x.png */; };
 		388CC8EA18BC753E008DA9BE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8E918BC753E008DA9BE /* Icon@2x.png */; };
+		38A1CE8618F17513005A385D /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1CE8518F17513005A385D /* CustomIOS7AlertView.m */; };
+		38A1CE8D18F17774005A385D /* NewRatingWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1CE8C18F17774005A385D /* NewRatingWidget.m */; };
+		38A1CE9318F18D68005A385D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A1CE9218F18D68005A385D /* SystemConfiguration.framework */; };
+		38A1CE9518F18F6B005A385D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A1CE9418F18F6B005A385D /* QuartzCore.framework */; };
 		38C787EF18B5DA4100896788 /* logo ratina.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C787EE18B5DA4100896788 /* logo ratina.png */; };
 		38C787F218B5DB4100896788 /* irefer_icon~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C787F018B5DB4100896788 /* irefer_icon~iphone.png */; };
 		38C787F318B5DB4100896788 /* irefer_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 38C787F118B5DB4100896788 /* irefer_icon@2x.png */; };
@@ -106,7 +110,6 @@
 		84D80D6614BA2E6C0026C3D6 /* doctorDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D80D6414BA2E6C0026C3D6 /* doctorDetailViewController.m */; };
 		84D80D6714BA2E6C0026C3D6 /* doctorDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D80D6514BA2E6C0026C3D6 /* doctorDetailViewController.xib */; };
 		84D86ED914C5A22A00213E9D /* RatingWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D86ED814C5A22A00213E9D /* RatingWidget.m */; };
-		84D91B7314E53D6A00E46B07 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D91B7214E53D6A00E46B07 /* SystemConfiguration.framework */; };
 		84D91CE114BD7D93003EB6BF /* stpPracDelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D91CE014BD7D93003EB6BF /* stpPracDelListViewController.m */; };
 		84D91D5114BD9115003EB6BF /* IreferConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D91D5014BD9115003EB6BF /* IreferConstraints.m */; };
 		84D91DC314BDBAB9003EB6BF /* stpHosDelListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D91DC214BDBAB9003EB6BF /* stpHosDelListViewController.m */; };
@@ -186,6 +189,12 @@
 		388CC8DE18BC7217008DA9BE /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		388CC8E718BC74A4008DA9BE /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
 		388CC8E918BC753E008DA9BE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		38A1CE8418F17513005A385D /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = CustomIOS7AlertView/CustomIOS7AlertView.h; sourceTree = "<group>"; };
+		38A1CE8518F17513005A385D /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = CustomIOS7AlertView/CustomIOS7AlertView.m; sourceTree = "<group>"; };
+		38A1CE8B18F17774005A385D /* NewRatingWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRatingWidget.h; sourceTree = "<group>"; };
+		38A1CE8C18F17774005A385D /* NewRatingWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRatingWidget.m; sourceTree = "<group>"; };
+		38A1CE9218F18D68005A385D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		38A1CE9418F18F6B005A385D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		38C787EE18B5DA4100896788 /* logo ratina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo ratina.png"; sourceTree = "<group>"; };
 		38C787F018B5DB4100896788 /* irefer_icon~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irefer_icon~iphone.png"; sourceTree = "<group>"; };
 		38C787F118B5DB4100896788 /* irefer_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irefer_icon@2x.png"; sourceTree = "<group>"; };
@@ -307,7 +316,6 @@
 		84D80D6514BA2E6C0026C3D6 /* doctorDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = doctorDetailViewController.xib; path = Classes/doctorDetailViewController.xib; sourceTree = "<group>"; };
 		84D86ED714C5A22A00213E9D /* RatingWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RatingWidget.h; sourceTree = "<group>"; };
 		84D86ED814C5A22A00213E9D /* RatingWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RatingWidget.m; sourceTree = "<group>"; };
-		84D91B7214E53D6A00E46B07 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		84D91CDF14BD7D93003EB6BF /* stpPracDelListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stpPracDelListViewController.h; sourceTree = "<group>"; };
 		84D91CE014BD7D93003EB6BF /* stpPracDelListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = stpPracDelListViewController.m; sourceTree = "<group>"; };
 		84D91D3014BD8945003EB6BF /* DeleteListProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeleteListProtocol.h; sourceTree = "<group>"; };
@@ -376,12 +384,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38A1CE9518F18F6B005A385D /* QuartzCore.framework in Frameworks */,
+				38A1CE9318F18D68005A385D /* SystemConfiguration.framework in Frameworks */,
 				C81A154C1850C1AF009CD176 /* libsqlite3.dylib in Frameworks */,
 				2BF113A51844CCF900FB7AA7 /* libz.dylib in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
-				84D91B7314E53D6A00E46B07 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -474,12 +483,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38A1CE9418F18F6B005A385D /* QuartzCore.framework */,
+				38A1CE9218F18D68005A385D /* SystemConfiguration.framework */,
 				2BF113A41844CCF900FB7AA7 /* libz.dylib */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 				84929A3014B076EF00C59EED /* libsqlite3.dylib */,
-				84D91B7214E53D6A00E46B07 /* SystemConfiguration.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -500,9 +510,20 @@
 			path = minizip;
 			sourceTree = "<group>";
 		};
+		38A1CE8318F174FD005A385D /* CustomIOS7AlertView */ = {
+			isa = PBXGroup;
+			children = (
+				38A1CE8418F17513005A385D /* CustomIOS7AlertView.h */,
+				38A1CE8518F17513005A385D /* CustomIOS7AlertView.m */,
+			);
+			name = CustomIOS7AlertView;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		840A15BD14B77E9C00200AF1 /* components */ = {
 			isa = PBXGroup;
 			children = (
+				38A1CE8318F174FD005A385D /* CustomIOS7AlertView */,
 				84E9D31014E3B37F006CEE51 /* ReportWidget */,
 				84D86ED614C5A20B00213E9D /* RatingWidget */,
 				84E0F12D14BC7E27009F2E6B /* DeleteList */,
@@ -875,6 +896,8 @@
 			children = (
 				84D86ED714C5A22A00213E9D /* RatingWidget.h */,
 				84D86ED814C5A22A00213E9D /* RatingWidget.m */,
+				38A1CE8B18F17774005A385D /* NewRatingWidget.h */,
+				38A1CE8C18F17774005A385D /* NewRatingWidget.m */,
 			);
 			name = RatingWidget;
 			sourceTree = "<group>";
@@ -1083,6 +1106,7 @@
 				84E0F0FC14BC5676009F2E6B /* stpPracListViewController.m in Sources */,
 				84E0F13114BC7E7D009F2E6B /* DeleteListViewController.m in Sources */,
 				84E0F17014BC86C3009F2E6B /* customDeleteCell.m in Sources */,
+				38A1CE8618F17513005A385D /* CustomIOS7AlertView.m in Sources */,
 				84D91CE114BD7D93003EB6BF /* stpPracDelListViewController.m in Sources */,
 				84D91D5114BD9115003EB6BF /* IreferConstraints.m in Sources */,
 				84D91DC314BDBAB9003EB6BF /* stpHosDelListViewController.m in Sources */,
@@ -1096,6 +1120,7 @@
 				84CFF7DA14C042AB00104F53 /* NSObject+JSON.m in Sources */,
 				84CFF7DB14C042AB00104F53 /* SBJsonParser.m in Sources */,
 				84CFF7DC14C042AB00104F53 /* SBJsonStreamParser.m in Sources */,
+				38A1CE8D18F17774005A385D /* NewRatingWidget.m in Sources */,
 				84CFF7DD14C042AB00104F53 /* SBJsonStreamParserAdapter.m in Sources */,
 				84CFF7DE14C042AB00104F53 /* SBJsonStreamParserState.m in Sources */,
 				84CFF7DF14C042AB00104F53 /* SBJsonStreamWriter.m in Sources */,
@@ -1131,6 +1156,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -1150,6 +1179,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = irefer2_Prefix.pch;
 				INFOPLIST_FILE = "irefer2-Info.plist";
@@ -1186,6 +1219,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sazzad Mostafa (XJXYRP74T6)";
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = irefer2_Prefix.pch;
 				INFOPLIST_FILE = "irefer2-Info.plist";
