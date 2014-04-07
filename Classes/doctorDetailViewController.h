@@ -14,7 +14,12 @@
 #import "filterViewController.h"
 #import "ReportWidget.h"
 
+@protocol doctorDetailViewControllerDetailViweDelegate <NSObject>
+-(void) doctorDetailViewControllerDismissed:(NSString *)stringForFirst;
+@end
+
 @interface doctorDetailViewController : UIViewController<SBJsonStreamParserAdapterDelegate, UITextViewDelegate,CustomIOS7AlertViewDelegate> {
+    id <doctorDetailViewControllerDetailViweDelegate> delegate;
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableDictionary *dataSource;
@@ -61,13 +66,14 @@
 	BOOL *isReportChangeCalled;
     CustomIOS7AlertView *alert;
     int rank;
+    int paRank;
 	NSMutableArray *rankBtnList;
 	UIImage *unRankedImage;
 	UIImage *rankedImage;
     int resourceFlag;
     BOOL busy;
 }
-
+@property(weak,nonatomic) id<doctorDetailViewControllerDetailViweDelegate> delegate;
 @property(nonatomic, retain) UILabel *name;
 @property(nonatomic, retain) UILabel *speciality;
 @property(nonatomic, retain) UILabel *degree;
@@ -109,6 +115,7 @@
 @property(nonatomic, retain) UITextField *patientEmailTextField;
 @property(nonatomic, retain) CustomIOS7AlertView *alert;
 @property(nonatomic, assign) int rank;
+@property(nonatomic, assign) int paRank;
 @property(nonatomic, assign) BOOL busy;
 @property(nonatomic, retain) NSMutableArray *rankBtnList;
 @property(nonatomic, retain) UIImage *unRankedImage;
@@ -126,7 +133,6 @@
 - (IBAction) saveAndCloseReferPopup: (id)sender;
 - (IBAction) hideReportPopupKeyboard: (id)sender;
 - (IBAction) hideReferPopupKeyboard: (id)sender;
-- (IBAction) showReportPopupKeyboard: (id)sender;
 - (IBAction) reportOptionClicked: (id)sender;
 - (IBAction) changeReferBtnClicked: (id)sender;
 - (IBAction) referOptionClicked: (id)sender;

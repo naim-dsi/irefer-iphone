@@ -60,8 +60,8 @@
 		}
 		
 		NSString *insertSQL = [[NSString alloc] 
-							   initWithFormat:@"INSERT OR REPLACE INTO t_users(user_id, last_name, first_name, email, act_code, my_prac_id, my_hos_id, my_county_id, need_to_sync, update_setting, doc_id) VALUES (%d, \"%@\", \"%@\", \"%@\", \"%@\", %d, %d, %d, %d, %d, %d);",
-							   [[user objectForKey:@"id"] integerValue], [user objectForKey:@"last_name"], [user objectForKey:@"first_name"], [user objectForKey:@"email"], [user objectForKey:@"activation_code"], procId, hosId, cntyId, 1, 1,[[user objectForKey:@"doc_id"] integerValue]];
+							   initWithFormat:@"INSERT OR REPLACE INTO t_users(user_id, last_name, first_name, email, act_code, my_prac_id, my_hos_id, my_county_id, need_to_sync, update_setting, rank_doc_practice, doc_id) VALUES (%d, \"%@\", \"%@\", \"%@\", \"%@\", %d, %d, %d, %d, %d, %d, %d);",
+							   [[user objectForKey:@"id"] integerValue], [user objectForKey:@"last_name"], [user objectForKey:@"first_name"], [user objectForKey:@"email"], [user objectForKey:@"activation_code"], procId, hosId, cntyId, 1, 1, 0, [[user objectForKey:@"doc_id"] integerValue]];
 		
 		if (sqlite3_exec(database, [insertSQL UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
 			

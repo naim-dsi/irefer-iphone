@@ -21,6 +21,7 @@
 		2BF113A21844C61000FB7AA7 /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1139C1844C61000FB7AA7 /* unzip.c */; };
 		2BF113A31844C61000FB7AA7 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1139E1844C61000FB7AA7 /* zip.c */; };
 		2BF113A51844CCF900FB7AA7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF113A41844CCF900FB7AA7 /* libz.dylib */; };
+		382E563F18F2DF2A0003F31D /* advancedDocListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382E563E18F2DF2A0003F31D /* advancedDocListViewController.m */; };
 		388CC8D418BC6EED008DA9BE /* logo-6a.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D318BC6EED008DA9BE /* logo-6a.png */; };
 		388CC8D618BC6F8F008DA9BE /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D518BC6F8F008DA9BE /* Icon-Small-40.png */; };
 		388CC8DF18BC7217008DA9BE /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D718BC7217008DA9BE /* Icon-76.png */; };
@@ -122,7 +123,6 @@
 		84D91DD814BDC78C003EB6BF /* stpCntyListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D91DD714BDC78C003EB6BF /* stpCntyListViewController.m */; };
 		84D9FA3314ED09EF00FA3FC8 /* viewMoreCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D9FA3214ED09EF00FA3FC8 /* viewMoreCell.xib */; };
 		84D9FA3C14ED0CFA00FA3FC8 /* viewMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D9FA3B14ED0CFA00FA3FC8 /* viewMoreCell.m */; };
-		84DA1C8514C610360048EC47 /* advancedDocListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DA1C8414C610360048EC47 /* advancedDocListViewController.m */; };
 		84DBF9DE14C06A0F004B4FCF /* BaseDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DBF9DD14C06A0F004B4FCF /* BaseDao.m */; };
 		84DFCF7114B98A710003FAD6 /* doc_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84DFCF7014B98A710003FAD6 /* doc_icon.png */; };
 		84E0F0FC14BC5676009F2E6B /* stpPracListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E0F0FB14BC5676009F2E6B /* stpPracListViewController.m */; };
@@ -177,6 +177,8 @@
 		2BF1139F1844C61000FB7AA7 /* zip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zip.h; sourceTree = "<group>"; };
 		2BF113A41844CCF900FB7AA7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		32CA4F630368D1EE00C91783 /* irefer2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = irefer2_Prefix.pch; sourceTree = "<group>"; };
+		382E563D18F2DF2A0003F31D /* advancedDocListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advancedDocListViewController.h; sourceTree = "<group>"; };
+		382E563E18F2DF2A0003F31D /* advancedDocListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advancedDocListViewController.m; sourceTree = "<group>"; };
 		388CC8D318BC6EED008DA9BE /* logo-6a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-6a.png"; sourceTree = "<group>"; };
 		388CC8D518BC6F8F008DA9BE /* Icon-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40.png"; sourceTree = "<group>"; };
 		388CC8D718BC7217008DA9BE /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
@@ -340,8 +342,6 @@
 		84D9FA3214ED09EF00FA3FC8 /* viewMoreCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = viewMoreCell.xib; sourceTree = "<group>"; };
 		84D9FA3A14ED0CFA00FA3FC8 /* viewMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = viewMoreCell.h; sourceTree = "<group>"; };
 		84D9FA3B14ED0CFA00FA3FC8 /* viewMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = viewMoreCell.m; sourceTree = "<group>"; };
-		84DA1C8314C610360048EC47 /* advancedDocListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advancedDocListViewController.h; sourceTree = "<group>"; };
-		84DA1C8414C610360048EC47 /* advancedDocListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advancedDocListViewController.m; sourceTree = "<group>"; };
 		84DBF9DD14C06A0F004B4FCF /* BaseDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseDao.m; sourceTree = "<group>"; };
 		84DFCF7014B98A710003FAD6 /* doc_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = doc_icon.png; sourceTree = "<group>"; };
 		84E0F0FA14BC5676009F2E6B /* stpPracListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stpPracListViewController.h; sourceTree = "<group>"; };
@@ -775,8 +775,8 @@
 		84C8B5D714B43A290080DC8D /* advanceSearch */ = {
 			isa = PBXGroup;
 			children = (
-				84DA1C8314C610360048EC47 /* advancedDocListViewController.h */,
-				84DA1C8414C610360048EC47 /* advancedDocListViewController.m */,
+				382E563D18F2DF2A0003F31D /* advancedDocListViewController.h */,
+				382E563E18F2DF2A0003F31D /* advancedDocListViewController.m */,
 			);
 			name = advanceSearch;
 			sourceTree = "<group>";
@@ -1090,6 +1090,7 @@
 				8424C3CC14B0902F00609CE3 /* registrationDao.m in Sources */,
 				84C8B5F314B442000080DC8D /* commonDao.m in Sources */,
 				84C8B5F614B442D70080DC8D /* searchDao.m in Sources */,
+				382E563F18F2DF2A0003F31D /* advancedDocListViewController.m in Sources */,
 				84C8B66A14B46C580080DC8D /* filterViewController.m in Sources */,
 				84C8B6C214B4B02E0080DC8D /* SelectListViewController.m in Sources */,
 				84A5A8F614B5C7CA004471BF /* customSelectCell.m in Sources */,
@@ -1130,7 +1131,6 @@
 				84DBF9DE14C06A0F004B4FCF /* BaseDao.m in Sources */,
 				8455C9A014C239B400A47770 /* pracActivationViewController.m in Sources */,
 				84D86ED914C5A22A00213E9D /* RatingWidget.m in Sources */,
-				84DA1C8514C610360048EC47 /* advancedDocListViewController.m in Sources */,
 				84CFA6B714C6B93600D4DEF8 /* guestPageViewController.m in Sources */,
 				84E8F1FD14DA89BD00052A6B /* languageListViewController.m in Sources */,
 				84E8F2CA14DABB8400052A6B /* pracListViewController.m in Sources */,

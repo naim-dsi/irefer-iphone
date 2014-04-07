@@ -258,7 +258,7 @@
 		NSString *query = [NSString stringWithString:@"SELECT doc.doc_id, doc.first_name, doc.mid_name, doc.last_name, doc.degree, "];
 		query = [query stringByAppendingFormat:@"doc.doc_phone, doc.language, doc.grade, doc.gender, doc.image_url, doc.npi, doc.doc_fax, doc.office_hour, "];		   
 		query = [query stringByAppendingFormat:@"IFNULL(hos.see_patient, '0'), doc.u_rank, pa.up_rank, hos.name, ins.name, sp.name, cnt.name, pa.name, pa.address,  doc.quality, doc.cost, doc.rank_user_number, IFNULL(doc.avg_rank, '0'), "];
-        query = [query stringByAppendingFormat:@"doc.prac_ids, doc.hosp_ids, doc.spec_ids, doc.insu_ids, doc.plan_ids, doc.aco_ids, doc.prac_names, doc.hosp_names, doc.spec_names, doc.insu_names, doc.plan_names, doc.aco_names "];	
+        query = [query stringByAppendingFormat:@"doc.prac_ids, doc.hosp_ids, doc.spec_ids, doc.insu_ids, doc.plan_ids, doc.aco_ids, doc.prac_names, doc.hosp_names, doc.spec_names, doc.insu_names, doc.plan_names, doc.aco_names, doc.up_rank pa_rank "];
 		query = [query stringByAppendingFormat:@"from t_doctor doc LEFT JOIN (SELECT distinct dh.doc_id, GROUP_CONCAT(th.name,'|') name, GROUP_CONCAT(dh.see_patient,'|') see_patient from t_hospital th, (select distinct t1.hos_id, t1.doc_id, t1.see_patient from t_doctor t1 where t1.doc_id = %@)dh WHERE dh.hos_id = th.hos_id) hos ON (doc.doc_id = hos.doc_id) ",docId];		   
 		query = [query stringByAppendingFormat:@"LEFT JOIN (SELECT distinct di.doc_id, GROUP_CONCAT(ti.name,',') name from t_insurance ti, (select distinct t1.ins_id, t1.doc_id from t_doctor t1 where t1.doc_id = %@)di WHERE di.ins_id = ti.ins_id) ins ON (doc.doc_id = ins.doc_id) ", docId];		   
 		query = [query stringByAppendingFormat:@"LEFT JOIN (SELECT distinct ds.doc_id, GROUP_CONCAT(ts.name,',') name from t_speciality ts, (select distinct t1.spec_id, t1.doc_id from t_doctor t1 where t1.doc_id = %@)ds WHERE ds.spec_id = ts.spec_id) sp ON (doc.doc_id = sp.doc_id) ", docId];		   
@@ -435,6 +435,7 @@
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 35)], @"insu_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 36)], @"plan_name",
                                         [NSString stringWithUTF8String: sqlite3_column_text(statement, 37)], @"aco_name",
+                                        [NSString stringWithUTF8String: sqlite3_column_text(statement, 38)], @"pa_rank",
                                          practiceAdd, @"add_line_1",@"",@"note",nil];
 
 				
@@ -628,6 +629,55 @@
 			return NO;			
 		}
 			
+		
+	}else {
+		NSLog(@"Unable to open database connection for rank update....");
+	}
+	
+	return NO;
+}
+
+- (BOOL) updateDoctorPARank:(int)docId rank:(int)rankValue{
+    
+	//NSDictionary *rankInfo = [self getDoctorRankInfo:docId];
+    
+	if (sqlite3_open([[super dataFilePath] UTF8String], &database) == SQLITE_OK) {
+		
+		//float newAvgRank = rankValue;
+		//int rankUserNumber = [[rankInfo valueForKey:@"rankUserNumber"] intValue];
+        
+		//if (rankUserNumber > 0) {
+			//int prevRank = [[rankInfo valueForKey:@"rank"] intValue];
+			
+			
+			//if (prevRank == 0) {
+				//rankUserNumber++;
+			//}
+			//newAvgRank = (([[rankInfo valueForKey:@"avgRank"] floatValue] * rankUserNumber) - prevRank + rankValue)/rankUserNumber;
+		
+		//}else {
+			//rankUserNumber = 1;
+		//}
+        
+		
+		char *errorMsg;
+		NSString *insertSQL = [[NSString alloc]
+							   initWithFormat:@"UPDATE t_doctor SET up_rank=%d, rank_update=1 WHERE doc_id=%d", rankValue, docId];
+		NSLog(@"Query : %@",insertSQL);
+		if (sqlite3_exec(database, [insertSQL UTF8String], NULL, NULL, &errorMsg) == SQLITE_OK) {
+			
+			sqlite3_close(database);
+			[insertSQL release];
+			NSLog(@"successfully updated doctor rank..");
+			return YES;
+			
+		}else {
+			sqlite3_close(database);
+			[insertSQL release];
+			NSLog(@"%s",errorMsg);
+			return NO;
+		}
+        
 		
 	}else {
 		NSLog(@"Unable to open database connection for rank update....");

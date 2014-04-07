@@ -13,8 +13,9 @@
 #import "CustomDoctorCell.h"
 #import "CustomIOS7AlertView.h"
 #import "viewMoreCell.h"
+#import "doctorDetailViewController.h"
 
-@interface doctorListViewController : UIViewController<UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate,CustomIOS7AlertViewDelegate> {
+@interface doctorListViewController : UIViewController<doctorDetailViewControllerDetailViweDelegate,UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate,CustomIOS7AlertViewDelegate> {
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableArray *dataSource;
@@ -82,6 +83,7 @@
 @property(nonatomic, assign) BOOL *isResourceSearch;
 @property(nonatomic, retain) CustomIOS7AlertView *alert;
 @property(nonatomic, assign) int rank;
+@property(nonatomic, assign) int paRank;
 @property(nonatomic, assign) BOOL busy;
 @property(nonatomic, retain) NSMutableArray *rankBtnList;
 @property(nonatomic, retain) UIImage *unRankedImage;

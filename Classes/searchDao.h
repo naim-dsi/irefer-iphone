@@ -21,7 +21,7 @@
 - (NSMutableArray *) getAdvDoctorList:(NSString *)searchCode order:(int)order limit:(int)limit;
 
 - (BOOL) updateDoctorRank:(int)docId rank:(int)rankValue;
-
+- (BOOL) updateDoctorPARank:(int)docId rank:(int)rankValue;
 - (NSArray *) getReportListByDoctor:(NSString *)docId;
 
 - (BOOL) updateDoctorChangeReport:(NSString *)docId userId:(NSString *)uId content:(NSString *)msg;

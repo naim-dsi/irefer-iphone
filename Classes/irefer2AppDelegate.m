@@ -90,7 +90,7 @@
 			content = [content stringByAppendingFormat:@"|%@,%@",[report objectForKey:@"docId"],[report objectForKey:@"text"]];
 		}
 	}
-	NSLog(content);
+	//NSLog(content);
 	NSString *url = @"";
 	NSString *responseStr = @"";
 	
@@ -107,12 +107,12 @@
 	for(NSDictionary *rank in ranks){
 		if (isFirst) {
 			isFirst = NO;
-			content = [content stringByAppendingFormat:@"%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"]];
+			content = [content stringByAppendingFormat:@"%@,%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"],[rank objectForKey:@"up_rank"]];
 		}else {
-			content = [content stringByAppendingFormat:@"|%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"]];
+			content = [content stringByAppendingFormat:@"|%@,%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"],[rank objectForKey:@"up_rank"]];
 		}
 	}
-	NSLog(content);
+	//NSLog(content);
 	if(![content isEqual:@""]){
 		url = [NSString stringWithFormat:@"%@userDocRank/bulkRank?user_id=%@&val=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
 		NSLog(url);

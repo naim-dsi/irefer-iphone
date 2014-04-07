@@ -825,7 +825,7 @@ int actionSheetType = 0;
 	actionSheetType = 3;
 	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Depending on the number of counties you selected and your internet connection speed, this download may take at least several minutes. Should we proceed ?" delegate:self cancelButtonTitle:@"No" destructiveButtonTitle:@"Yes" otherButtonTitles:nil];
 	[actionSheet showInView:self.view];
-	[actionSheet release];			
+	[actionSheet release];
 }
 
 - (void) processDoctorSyncronization{

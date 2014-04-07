@@ -18,25 +18,20 @@
     return [emailTest evaluateWithObject:email];
 }
 
-+ (NSString *) getServerURL {
-	//return @"http://www.irefermd.com/admin-v1/index.php?r=";
-	//return @"http://www.irefermd.com/admin/index.php?r=";
-    //return @"http://103.4.147.139/irefer-dsi/index.php/services/";
-    NSString *servicePath = @"index.php/services/";
-    return [[NSString stringWithString: [self getBaseURL]] stringByAppendingFormat:@"%@",servicePath];
-
-    //return @"http://10.0.0.253/irefer-dsi/index.php/services/";
-
-}
 
 + (NSString *) getBaseURL {
-	//return @"http://www.irefermd.com/admin-v1/index.php?r=";
-	//return @"http://www.irefermd.com/admin/index.php?r=";
-    //return @"http://103.4.147.139/irefer-dsi/";
-    return @"http://10.0.0.111/irefer-dsi/";
+	return @"http://103.4.147.139/irefer-dsi/";
     
 }
 
++ (NSString *) getServerURL {
+	
+    NSString *servicePath = @"index.php/services/";
+    return [[NSString stringWithString: [self getBaseURL]] stringByAppendingFormat:@"%@",servicePath];
+    
+    
+    
+}
 + (UIColor *) getTableCellSelectionColor{
 	return [UIColor colorWithRed:255.0 green:158.0 blue:57.0 alpha:1.0];
 }

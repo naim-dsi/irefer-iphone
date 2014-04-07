@@ -17,7 +17,7 @@
 
 @synthesize dataSource, searchBar, listTableView, spinner, countText, insIds, hosIds, spIds, inPatient, zipCode, isSearchFromOnline, alert;
 
-@synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours,isResourceSearch,resourceFlag,rank, rankBtnList, unRankedImage, rankedImage, busy;
+@synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours,isResourceSearch,resourceFlag,rank, rankBtnList, unRankedImage, rankedImage, busy, paRank;
 
 int docId,rankVal;
 
@@ -388,13 +388,17 @@ int docId,rankVal;
 	}else if ([[rowData objectForKey:@"id"] intValue] > 0 ) {
 		doctorDetailViewController *docDetailController = [[doctorDetailViewController alloc] initWithNibName:@"doctorDetailViewController" bundle:nil];
 		docDetailController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+        docDetailController.delegate=self;
 		docDetailController.isSearchFromOnline = self.isSearchFromOnline;
 		docDetailController.dId = [rowData objectForKey:@"id"];
 		[self presentModalViewController:docDetailController animated:YES];
 		[docDetailController release];
 	}
 }
-
+- (void)doctorDetailViewControllerDismissed:(NSString *)stringForFirst
+{
+    NSString *thisIsTheDesiredString = stringForFirst;
+}
 - (void) longPressActivity:(UILongPressGestureRecognizer *)gesture{
 	if (gesture.state == UIGestureRecognizerStateBegan) {
 		
@@ -479,13 +483,14 @@ int docId,rankVal;
 		}
 	}
     int docRank =  [rowData objectForKey:@"u_rank"];
-	
+	int docPARank =  [rowData objectForKey:@"up_rank"];
 	//alert = [[NewRatingWidget alloc] initNewRatingWidget:docName delegate:self];
     //[alert show];
     //[self performSelector:@selector(alertShow) withObject:self afterDelay:3.0 ];
     NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
     [docDic setValue:docName forKey:@"docName"];
     [docDic setValue:docRank forKey:@"docRank"];
+    [docDic setValue:docPARank forKey:@"docPARank"];
 	[self launchDialog:docDic];
 	docId = [[rowData objectForKey:@"id"] intValue];
 	NSLog(@"rank update for %d",button.tag);
@@ -537,46 +542,137 @@ int docId,rankVal;
 {
     NSString *docName = [docDic objectForKey: @"docName"];
     NSString *docRank = [docDic objectForKey: @"docRank"];
-    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 100)];
-    int yPosition = 10;
-    UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, yPosition, view.frame.size.width, 0)];
-    [label setText: docName];
-    [label setBackgroundColor: [UIColor clearColor]];
-    [label setNumberOfLines: 0];
-    [label sizeToFit];
-    [label setCenter: CGPointMake(view.center.x, 20)];
-    [view addSubview:label];
-    
-    
-    
-    
-    self.rank =[docRank integerValue];
-    
-    [self.spinner hidesWhenStopped];
-    
-    self.unRankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_silver" ofType:@"png"]];
-    self.rankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_orange" ofType:@"png"]];
-    self.rankBtnList = [[NSMutableArray alloc] initWithCapacity:5];
-    
-    CGFloat x=45.0f;
-    
-    for (int i=0; i<5; i++) {
-        UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
-        button.tag = i+1;
-        [button addTarget:self action:@selector(rankBtnClicked:) forControlEvents:UIControlEventTouchDown];
-        [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [button setTitle:[NSString stringWithFormat:@"%d",button.tag] forState:UIControlStateNormal];
-        [button setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
-        button.frame = CGRectMake(x , 50.0, 30.0, 30.0);
-        [view addSubview:button];
-        [self.rankBtnList addObject:button];
-        x += 40.0f;
+    NSString *docPARank = [docDic objectForKey: @"docPARank"];
+    NSDictionary *user = [dao getCurrentUser];
+    if([[user objectForKey:@"allow_pa_rank"] integerValue]==0){
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 100)];
+        int yPosition = 10;
+        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, yPosition, view.frame.size.width, 0)];
+        [label setText: docName];
+        [label setBackgroundColor: [UIColor clearColor]];
+        [label setNumberOfLines: 0];
+        [label sizeToFit];
+        [label setCenter: CGPointMake(view.center.x, 20)];
+        [view addSubview:label];
+        
+        
+        
+        
+        self.rank =[docRank integerValue];
+        
+        
+        [self.spinner hidesWhenStopped];
+        
+        self.unRankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_silver" ofType:@"png"]];
+        self.rankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_orange" ofType:@"png"]];
+        self.rankBtnList = [[NSMutableArray alloc] initWithCapacity:5];
+        
+        CGFloat x=45.0f;
+        
+        for (int i=0; i<5; i++) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.tag = i+1;
+            [button addTarget:self action:@selector(rankBtnClicked:) forControlEvents:UIControlEventTouchDown];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:@"%d",button.tag] forState:UIControlStateNormal];
+            [button setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+            button.frame = CGRectMake(x , 50.0, 30.0, 30.0);
+            [view addSubview:button];
+            [self.rankBtnList addObject:button];
+            x += 40.0f;
+        }
+        [self preSetRank];
+        //[view addSubview:self.spinner];
+        return view;
     }
-    [self preSetRank];
-    //[view addSubview:self.spinner];
-    return view;
+    else{
+        UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 290, 190)];
+        int yPosition = 10;
+        UILabel *label = [[UILabel alloc] initWithFrame: CGRectMake(0, yPosition, view.frame.size.width, 0)];
+        [label setText: docName];
+        [label setBackgroundColor: [UIColor clearColor]];
+        [label setNumberOfLines: 0];
+        [label sizeToFit];
+        [label setCenter: CGPointMake(view.center.x, 20)];
+        [view addSubview:label];
+        
+        
+       
+        UILabel *labelPA = [[UILabel alloc] initWithFrame: CGRectMake(0, 40, view.frame.size.width, 0)];
+        [labelPA setText: @"PA Rank"];
+        [labelPA setBackgroundColor: [UIColor clearColor]];
+        [labelPA setNumberOfLines: 0];
+        [labelPA sizeToFit];
+        [labelPA setCenter: CGPointMake(view.center.x, 50)];
+        [view addSubview:labelPA];
+        
+        UILabel *labelMY = [[UILabel alloc] initWithFrame: CGRectMake(0, 40, view.frame.size.width, 0)];
+        [labelMY setText: @"MY Rank"];
+        [labelMY setBackgroundColor: [UIColor clearColor]];
+        [labelMY setNumberOfLines: 0];
+        [labelMY sizeToFit];
+        [labelMY setCenter: CGPointMake(view.center.x, 120)];
+        [view addSubview:labelMY];
+        
+        
+        self.rank =[docRank integerValue];
+        self.paRank =[docPARank integerValue];
+        [self.spinner hidesWhenStopped];
+        
+        self.unRankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_silver" ofType:@"png"]];
+        self.rankedImage = [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"rank_orange" ofType:@"png"]];
+        self.rankBtnList = [[NSMutableArray alloc] initWithCapacity:5];
+        
+        CGFloat x=45.0f;
+        for (int i=0; i<5; i++) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.tag = i+1;
+            [button addTarget:self action:@selector(rankBtnClicked:) forControlEvents:UIControlEventTouchDown];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:@"%d",button.tag] forState:UIControlStateNormal];
+            [button setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+            button.frame = CGRectMake(x , 140.0, 30.0, 30.0);
+            [view addSubview:button];
+            [self.rankBtnList addObject:button];
+            x += 40.0f;
+        }
+        x=45.0f;
+        for (int i=0; i<5; i++) {
+            UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
+            button.tag = i+5+1;
+            [button addTarget:self action:@selector(paRankBtnClicked:) forControlEvents:UIControlEventTouchDown];
+            [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+            [button setTitle:[NSString stringWithFormat:@"%d",button.tag-5] forState:UIControlStateNormal];
+            [button setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+            button.frame = CGRectMake(x , 70.0, 30.0, 30.0);
+            [view addSubview:button];
+            [self.rankBtnList addObject:button];
+            x += 40.0f;
+        }
+        [self preSetRank];
+        [self preSetPARank];
+        
+        //[view addSubview:self.spinner];
+        return view;
+    }
 }
 
+- (void)preSetPARank{
+	//UIButton *button = (UIButton *)sender;
+	//NSLog(@"rank enter %d", button.tag);
+	//self.rank = button.tag;
+	for (int i=0; i < 5; i++) {
+		UIButton *rankBtn = [self.rankBtnList objectAtIndex:i+5];
+		if( i < self.paRank ){
+			//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.rankedImage forState:UIControlStateNormal];
+		}else {
+			//[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+		}
+        
+	}
+}
 
 - (void)preSetRank{
 	//UIButton *button = (UIButton *)sender;
@@ -595,6 +691,22 @@ int docId,rankVal;
 	}
 }
 
+- (void)paRankBtnClicked:(id)sender{
+	UIButton *button = (UIButton *)sender;
+	NSLog(@"rank enter %d", button.tag);
+	self.paRank = button.tag-5;
+	for (int i=0; i < 5; i++) {
+		UIButton *rankBtn = [self.rankBtnList objectAtIndex:i+5];
+		if( i+5 < button.tag ){
+			//[button setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.rankedImage forState:UIControlStateNormal];
+		}else {
+			//[button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+			[rankBtn setBackgroundImage:self.unRankedImage forState:UIControlStateNormal];
+		}
+        
+	}
+}
 
 - (void)rankBtnClicked:(id)sender{
 	UIButton *button = (UIButton *)sender;
@@ -638,35 +750,115 @@ int docId,rankVal;
     NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
     NSDictionary *user = [dao getCurrentUser];
-    
-    if(self.isSearchFromOnline){
-        NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.rank];
-        NSLog(@"url :%@",serverUrl);
-        NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
-        NSURLResponse *response = nil;
-        NSError *error = nil;
-        NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-        NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
-        
-        NSLog(@"response : %@",responseString);
-        
-        if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
-            [dao updateDoctorRank:docId rank:self.rank];
-            [self updateDataSource:docId rank:self.rank];
-            [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
-        }else{
-            [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
-        }
-    }else {
-        if( [dao updateDoctorRank:docId rank:self.rank] ){
-            [self updateDataSource:docId rank:self.rank];
-            [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+    if([[user objectForKey:@"allow_pa_rank"] integerValue]==0){
+        if(self.isSearchFromOnline){
+            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.rank];
+            NSLog(@"url :%@",serverUrl);
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
+            NSURLResponse *response = nil;
+            NSError *error = nil;
+            NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"response : %@",responseString);
+            
+            if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
+                [dao updateDoctorRank:docId rank:self.rank];
+                [self updateDataSource:docId rank:self.rank];
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else{
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+            }
         }else {
-            [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
-        }	
-        
+            if( [dao updateDoctorRank:docId rank:self.rank] ){
+                [self updateDataSource:docId rank:self.rank];
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else {
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
+            }	
+            
+        }
     }
-    
+    else{
+        if(self.isSearchFromOnline){
+            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/paRank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.paRank];
+            NSLog(@"url :%@",serverUrl);
+            NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
+            NSURLResponse *response = nil;
+            NSError *error = nil;
+            NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"response : %@",responseString);
+            int err=0;
+            int err2=0;
+            if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
+                [dao updateDoctorPARank:docId rank:self.paRank];
+                [self updatePARankInDataSource:docId rank:self.paRank];
+                //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else{
+                err=1;
+                //[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+            }
+            
+            serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.rank];
+            NSLog(@"url :%@",serverUrl);
+            request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
+            response = nil;
+            error = nil;
+            newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+            responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
+            
+            NSLog(@"response : %@",responseString);
+            
+            if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
+                [dao updateDoctorRank:docId rank:self.rank];
+                [self updateDataSource:docId rank:self.rank];
+                
+            }else{
+                err2=1;
+                
+            }
+            if(err==0){
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+                
+            }
+            if(err==1){
+                [utils showAlert:@"Warning !!" message:@"Couldn't update PA rank, please try again later." delegate:self];
+            }
+            if(err2==1){
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+            }
+        }else {
+            int err=0;
+            int err2=0;
+            if( [dao updateDoctorPARank:docId rank:self.paRank] ){
+                [self updatePARankInDataSource:docId rank:self.paRank];
+                //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else {
+                err=1;
+                //[utils showAlert:@"Warning !!" message:@"Couldn't update PA rank, please try again later." delegate:self];
+            }
+            
+            if( [dao updateDoctorRank:docId rank:self.rank] ){
+                [self updateDataSource:docId rank:self.rank];
+                //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+            }else {
+                //[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+                err2=1;
+            }
+            if(err==0){
+                [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
+                
+            }
+            if(err==1){
+                [utils showAlert:@"Warning !!" message:@"Couldn't update PA rank, please try again later." delegate:self];
+            }
+            if(err2==1){
+                [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
+            }
+        }
+    }
     
     self.busy = NO;
     [alert close];
@@ -675,12 +867,31 @@ int docId,rankVal;
     [pool release];
 }
 
+
 - (void) updateDataSource:(int)docId rank:(int)rankValue{
 	for (int i=0; i<[self.dataSource count]; i++) {
 		NSDictionary *row = (NSDictionary *)[self.dataSource objectAtIndex:i];
 		if ([[row objectForKey:@"id"] intValue] == docId) {
 			NSMutableDictionary *newRow = [row mutableCopy];
 			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"u_rank"];
+			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
+            [self.listTableView reloadData];
+            
+            [self.spinner stopAnimating];
+            self.spinner.hidden = YES;
+            self.spinnerBg.hidden = YES;
+            [self.listTableView setHidden:NO];
+			return;
+		}
+	}
+}
+
+- (void) updatePARankInDataSource:(int)docId rank:(int)rankValue{
+	for (int i=0; i<[self.dataSource count]; i++) {
+		NSDictionary *row = (NSDictionary *)[self.dataSource objectAtIndex:i];
+		if ([[row objectForKey:@"id"] intValue] == docId) {
+			NSMutableDictionary *newRow = [row mutableCopy];
+			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"up_rank"];
 			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
             [self.listTableView reloadData];
             

@@ -76,7 +76,7 @@
 - (NSDictionary *) getCurrentUser{
 	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
 		
-		NSString *query = @"SELECT user_id, last_name, first_name, email, need_to_sync, update_setting, doc_id from t_users where act_code <> ''";
+		NSString *query = @"SELECT user_id, last_name, first_name, email, need_to_sync, update_setting, doc_id,rank_doc_practice from t_users where act_code <> ''";
 		sqlite3_stmt *statement;
 		
 		if(sqlite3_prepare_v2(database, [query UTF8String], -1, &statement, nil) == SQLITE_OK){
@@ -88,6 +88,7 @@
 				NSString *firstName = [NSString stringWithUTF8String:sqlite3_column_text(statement, 2)];
 				NSString *email = [NSString stringWithUTF8String:sqlite3_column_text(statement, 3)];
                 NSString *doc_id = [NSString stringWithUTF8String:sqlite3_column_text(statement, 6)];
+                NSString *allow_pa_rank = [NSString stringWithUTF8String:sqlite3_column_text(statement, 7)];
 				int needToSync = sqlite3_column_int(statement, 4);
 				int updateSetting = sqlite3_column_int(statement, 5);
 	
@@ -95,7 +96,7 @@
 				sqlite3_finalize(statement);
 				sqlite3_close(database);
 				
-				return [[[NSDictionary alloc] initWithObjectsAndKeys: [NSString stringWithFormat:@"%d",uId], @"id", doc_id, @"doc_id", lastName, @"last_name", firstName, @"first_name", email, @"email", [NSString stringWithFormat:@"%d",needToSync], @"need_to_sync", [NSString stringWithFormat:@"%d",updateSetting], @"update_setting", nil] autorelease];
+				return [[[NSDictionary alloc] initWithObjectsAndKeys: [NSString stringWithFormat:@"%d",uId], @"id", doc_id, @"doc_id", lastName, @"last_name", firstName, @"first_name", email, @"email", [NSString stringWithFormat:@"%d",needToSync], @"need_to_sync", [NSString stringWithFormat:@"%d",updateSetting], @"update_setting", allow_pa_rank, @"allow_pa_rank", nil] autorelease];
 				
 			}
 			
@@ -674,7 +675,7 @@
 	if (sqlite3_open([[self dataFilePath] UTF8String], &database) == SQLITE_OK) {
 		NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];	
 		
-		NSString *query = [NSString stringWithFormat:@"SELECT doc_id, u_rank FROM t_doctor WHERE rank_update=1"];
+		NSString *query = [NSString stringWithFormat:@"SELECT doc_id, u_rank, up_rank FROM t_doctor WHERE rank_update=1"];
 		
 		NSLog(@"query : %@",query);
 		sqlite3_stmt *statement;
@@ -684,7 +685,7 @@
 			while(sqlite3_step(statement) == SQLITE_ROW) {
 				
 				[array addObject:[[[NSDictionary alloc] initWithObjectsAndKeys: [NSString stringWithUTF8String: sqlite3_column_text(statement, 0)], @"docId", 
-								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)], @"rank", nil] autorelease]];
+								   [NSString stringWithUTF8String: sqlite3_column_text(statement, 1)], @"rank",[NSString stringWithUTF8String: sqlite3_column_text(statement, 2)], @"up_rank", nil] autorelease]];
 			}
 			
 		}else {
