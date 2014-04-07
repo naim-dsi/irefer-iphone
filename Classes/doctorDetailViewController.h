@@ -13,13 +13,10 @@
 #import "CustomIOS7AlertView.h"
 #import "filterViewController.h"
 #import "ReportWidget.h"
-
-@protocol doctorDetailViewControllerDetailViweDelegate <NSObject>
--(void) doctorDetailViewControllerDismissed:(NSString *)stringForFirst;
-@end
+#import "doctorListViewController.h"
 
 @interface doctorDetailViewController : UIViewController<SBJsonStreamParserAdapterDelegate, UITextViewDelegate,CustomIOS7AlertViewDelegate> {
-    id <doctorDetailViewControllerDetailViweDelegate> delegate;
+    id delegate;
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableDictionary *dataSource;
@@ -73,7 +70,7 @@
     int resourceFlag;
     BOOL busy;
 }
-@property(weak,nonatomic) id<doctorDetailViewControllerDetailViweDelegate> delegate;
+@property(weak,nonatomic) id delegate;
 @property(nonatomic, retain) UILabel *name;
 @property(nonatomic, retain) UILabel *speciality;
 @property(nonatomic, retain) UILabel *degree;

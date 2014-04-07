@@ -13,9 +13,14 @@
 #import "CustomDoctorCell.h"
 #import "CustomIOS7AlertView.h"
 #import "viewMoreCell.h"
-#import "doctorDetailViewController.h"
 
-@interface doctorListViewController : UIViewController<doctorDetailViewControllerDetailViweDelegate,UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate,CustomIOS7AlertViewDelegate> {
+
+@protocol doctorListViewControllerDelegate <NSObject>
+-(void) doctorDetailViewControllerDismissed:(NSMutableDictionary *)docDic;
+@end
+
+@interface doctorListViewController : UIViewController<doctorListViewControllerDelegate,UITableViewDelegate, UITableViewDataSource, SBJsonStreamParserAdapterDelegate, UIActionSheetDelegate,CustomIOS7AlertViewDelegate> {
+    
 	SBJsonStreamParser *parser;
 	SBJsonStreamParserAdapter *adapter;
 	NSMutableArray *dataSource;

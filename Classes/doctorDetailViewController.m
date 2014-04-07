@@ -11,7 +11,7 @@
 
 @implementation doctorDetailViewController
 @synthesize delegate;
-@synthesize name, speciality, degree, gender, spinner, phone, dId, dataSource, isSearchFromOnline, scrollView, basicView, rankbutton,resourceFlag;
+@synthesize name, speciality, degree, gender, spinner, phone, dId, dataSource, isSearchFromOnline, scrollView, basicView, rankbutton;
 
 @synthesize spView, pracView, hosView, noteView, pracInfo, hosInfo, noteInfo, urankView, uprankView, alert, spinnerBg, reportBar, isReportChangeCalled;
 
@@ -807,9 +807,14 @@
 }
 
 - (IBAction) backToDocList: (id)sender{
-    if([self.delegate respondsToSelector:@selector(secondViewControllerDismissed:)])
+    if([self.delegate respondsToSelector:@selector(doctorDetailViewControllerDismissed:)])
     {
-        [self.delegate doctorDetailViewControllerDismissed:@"THIS IS THE STRING TO SEND!!!"];
+        int docPARank =  [self.dataSource objectForKey:@"pa_rank"];
+        NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
+        [docDic setValue:self.dId forKey:@"docId"];
+        [docDic setValue:self.rankText.text forKey:@"docRank"];
+        [docDic setValue:docPARank forKey:@"docPARank"];
+        [self.delegate doctorDetailViewControllerDismissed:docDic];
     }
 	[self dismissModalViewControllerAnimated:YES];
 }

@@ -390,14 +390,20 @@ int docId,rankVal;
 		docDetailController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
         docDetailController.delegate=self;
 		docDetailController.isSearchFromOnline = self.isSearchFromOnline;
+        //docId = [rowData objectForKey:@"id"];
 		docDetailController.dId = [rowData objectForKey:@"id"];
 		[self presentModalViewController:docDetailController animated:YES];
 		[docDetailController release];
 	}
 }
-- (void)doctorDetailViewControllerDismissed:(NSString *)stringForFirst
+- (void)doctorDetailViewControllerDismissed:(NSMutableDictionary *)docDic
 {
-    NSString *thisIsTheDesiredString = stringForFirst;
+    NSString *docId = [docDic objectForKey: @"docId"];
+    NSString *docRank = [docDic objectForKey: @"docRank"];
+    NSString *docPARank = [docDic objectForKey: @"docPARank"];
+    [self updateDataSource:[docId integerValue] rank:[docRank integerValue]];
+    [self updatePARankInDataSource:[docId integerValue] rank:[docPARank integerValue]];
+    //NSString *thisIsTheDesiredString = stringForFirst;
 }
 - (void) longPressActivity:(UILongPressGestureRecognizer *)gesture{
 	if (gesture.state == UIGestureRecognizerStateBegan) {

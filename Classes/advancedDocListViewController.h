@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "doctorListViewController.h"
 
-@interface advancedDocListViewController : doctorListViewController <doctorDetailViewControllerDetailViweDelegate> {
+@interface advancedDocListViewController : doctorListViewController {
 
 }
 
