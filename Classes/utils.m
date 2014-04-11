@@ -20,8 +20,8 @@
 
 
 + (NSString *) getBaseURL {
-	//return @"http://103.4.147.139/irefer-dsi/";
-    return @"http://10.0.0.144:8888/";
+	return @"http://103.4.147.139/irefer-dsi/";
+    //return @"http://10.0.0.144:8888/";
     
 }
 

@@ -113,6 +113,49 @@
 	//self.searchType.selectedSegmentIndex = 0;
 	[self setSegmentTextColor:self.searchFrom index:0];
 	[self setSegmentTextColor:self.searchType index:0];
+    UIColor * color = [UIColor colorWithRed:0/255.0f green:1/255.0f blue:0/255.0f alpha:1.0f];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont boldSystemFontOfSize:10], UITextAttributeFont,
+                                [UIColor grayColor], UITextAttributeTextColor,
+                                nil];
+    [searchFrom setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [searchFrom setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+    
+    [searchFrom setTintColor:color];
+    
+    searchFrom.segmentedControlStyle = UISegmentedControlStyleBar;
+    
+    attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont boldSystemFontOfSize:10], UITextAttributeFont,
+                                [UIColor grayColor], UITextAttributeTextColor,
+                                nil];
+    [searchType setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [searchType setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+    
+    [searchType setTintColor:color];
+    
+    searchType.segmentedControlStyle = UISegmentedControlStyleBar;
+    
+    //UISegmentedControl *control = (UISegmentedControl *)sender;
+	int index = 0;
+	if (searchType.selectedSegmentIndex == 0) {
+		index = 1;
+	}
+	
+	[self setSegmentTextColor:searchType index:index];
+    
+    index = 0;
+	if (searchFrom.selectedSegmentIndex == 0) {
+		index = 1;
+	}
+	
+	[self setSegmentTextColor:searchType index:index];
+    [self performSelectorOnMainThread:@selector(advancedToggleBtnClicked:) withObject:nil waitUntilDone:NO];
+    [self performSelectorOnMainThread:@selector(advancedToggleBtnClicked:) withObject:nil waitUntilDone:NO];
 
 }
 
@@ -361,7 +404,8 @@
 - (void) setSegmentTextColor:(UISegmentedControl *)control index:(int)index{
 	
 	NSArray *segments = [control subviews];
-	UIColor * color = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:199/255.0f alpha:1.0f];
+	//UIColor * color = [UIColor colorWithRed:255/255.0f green:252/255.0f blue:199/255.0f alpha:1.0f];
+    UIColor * color = [UIColor whiteColor];
 	for(int i=0; i < [segments count]; i++){
 		UIView *segment = (UIView *)[segments objectAtIndex:i];
 		

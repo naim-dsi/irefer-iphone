@@ -61,7 +61,20 @@ int docId,rankVal;
 
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 	}
-	
+	NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont boldSystemFontOfSize:10], UITextAttributeFont,
+                                [UIColor whiteColor], UITextAttributeTextColor,
+                                nil];
+    [sortOptions setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [sortOptions setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+    
+    [sortOptions setTintColor:[UIColor colorWithRed:0.61176f green:0.61176f  blue:0.61176f  alpha:1.0f]];
+    
+    sortOptions.segmentedControlStyle = UISegmentedControlStyleBar;
+    
+    //[[UISegmentedControl appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName : [UIColor whiteColor]} forState:UIControlStateSelected];
 }
 
 - (IBAction) searchContentChanged: (id) sender{
@@ -125,10 +138,7 @@ int docId,rankVal;
 			self.spinnerBg.hidden = YES;
 			[self.listTableView setHidden:NO];
 			[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@",currentContent] forKey:@"doc_prev_search_content"];
-
-			
-		}	
-		
+		}
 		[pool release];
 
 	}
@@ -147,8 +157,9 @@ int docId,rankVal;
 	self.spinnerBg.hidden = NO;
 	NSLog(@"%@",url);
 
-	url = [url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];	
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
+	url = [url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
+	NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:300];
+	//NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
 }
@@ -194,7 +205,11 @@ int docId,rankVal;
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed! Error - %@ %@",
+    [self.spinner stopAnimating];
+	self.spinner.hidden = YES;
+	self.spinnerBg.hidden = YES;
+	[self.listTableView setHidden:YES];
+    NSLog(@"Connection failed! Error - %@ ",
           [error localizedDescription]);
 }
 
@@ -398,11 +413,23 @@ int docId,rankVal;
 }
 - (void)doctorDetailViewControllerDismissed:(NSMutableDictionary *)docDic
 {
-    NSString *docId = [docDic objectForKey: @"docId"];
-    NSString *docRank = [docDic objectForKey: @"docRank"];
-    NSString *docPARank = [docDic objectForKey: @"docPARank"];
-    [self updateDataSource:[docId integerValue] rank:[docRank integerValue]];
-    [self updatePARankInDataSource:[docId integerValue] rank:[docPARank integerValue]];
+    if([[docDic objectForKey: @"closeList"] isEqual:@"1"]){
+        //[self backToFilterPage:nil];
+        [self performSelectorOnMainThread:@selector(backToFilterPage:) withObject:nil waitUntilDone:NO];
+        //[self.spinner startAnimating];
+        //self.spinner.hidden = YES;
+        //self.spinnerBg.hidden = YES;
+        //[self performSelector:@selector(backToFilterPage:) withObject:nil afterDelay:1];
+        //[self dismissModalViewControllerAnimated:YES];
+        return;
+    }
+    else{
+        NSString *docId = [docDic objectForKey: @"docId"];
+        NSString *docRank = [docDic objectForKey: @"docRank"];
+        NSString *docPARank = [docDic objectForKey: @"docPARank"];
+        [self updateDataSource:[docId integerValue] rank:[docRank integerValue]];
+        [self updatePARankInDataSource:[docId integerValue] rank:[docPARank integerValue]];
+    }
     //NSString *thisIsTheDesiredString = stringForFirst;
 }
 - (void) longPressActivity:(UILongPressGestureRecognizer *)gesture{
@@ -464,6 +491,9 @@ int docId,rankVal;
 }
 
 - (IBAction) backToFilterPage: (id) sender{
+    [self.spinner stopAnimating];
+    self.spinner.hidden = YES;
+    self.spinnerBg.hidden = YES;
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -488,18 +518,23 @@ int docId,rankVal;
 			docName =  [rowData objectForKey:@"last_name"];
 		}
 	}
-    int docRank =  [rowData objectForKey:@"u_rank"];
-	int docPARank =  [rowData objectForKey:@"up_rank"];
+    NSString *docRank =  [rowData objectForKey:@"u_rank"];
+	NSString *docPARank =  [rowData objectForKey:@"up_rank"];
 	//alert = [[NewRatingWidget alloc] initNewRatingWidget:docName delegate:self];
     //[alert show];
     //[self performSelector:@selector(alertShow) withObject:self afterDelay:3.0 ];
     NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
-    [docDic setValue:docName forKey:@"docName"];
-    [docDic setValue:docRank forKey:@"docRank"];
-    [docDic setValue:docPARank forKey:@"docPARank"];
-	[self launchDialog:docDic];
-	docId = [[rowData objectForKey:@"id"] intValue];
-	NSLog(@"rank update for %d",button.tag);
+    @try{
+        [docDic setValue:docName forKey:@"docName"];
+        [docDic setValue:docRank forKey:@"docRank"];
+        [docDic setValue:docPARank forKey:@"docPARank"];
+        [self launchDialog:docDic];
+        docId = [[rowData objectForKey:@"id"] intValue];
+        NSLog(@"rank update for %ld",(long)button.tag);
+    }
+    @catch(NSException *ex){
+        NSLog(@"%@", ex.reason);
+    }
 }
 - (void) alertShow{
     [alert show];

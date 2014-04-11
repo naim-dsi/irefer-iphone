@@ -34,7 +34,8 @@
 	self.spinnerBg.hidden = NO;
 
 	url = [url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:900];
+	//NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
 }
@@ -82,7 +83,7 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed! Error - %@ %@",
+    NSLog(@"Connection failed! Error - %@ ",
           [error localizedDescription]);
 }
 

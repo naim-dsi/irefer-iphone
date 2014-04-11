@@ -70,9 +70,11 @@
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
 	//[self.searchBar setUserInteractionEnabled:NO];
-	
+	//NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    
 	url = [url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
-	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
+    NSMutableURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url] cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:300];
+	//NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:url]];//asynchronous call
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
 	
 }
@@ -117,8 +119,11 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed! Error - %@ %@",
-          [error localizedDescription]);
+    [self.spinner stopAnimating];
+	self.spinner.hidden = YES;
+	self.spinnerBg.hidden = YES;
+	[self.listTableView setHidden:YES];
+    NSLog(@"Connection failed! Error - %@",[error localizedDescription]);
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

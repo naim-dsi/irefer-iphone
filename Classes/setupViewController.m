@@ -873,7 +873,7 @@ int actionSheetType = 0;
     
     
     NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:300];
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:900];
     //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:dbUrl];
    
     NSURLResponse * response = nil;

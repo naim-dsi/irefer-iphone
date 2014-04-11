@@ -415,7 +415,7 @@
 	
 	//rankBar = [[NewRatingWidget alloc] initNewRatingWidget:self.name.text delegate:self];
 	//[rankBar show];
-    int docPARank =  [self.dataSource objectForKey:@"pa_rank"];
+    NSString *docPARank =  [self.dataSource objectForKey:@"pa_rank"];
     NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
     [docDic setValue:self.name.text forKey:@"docName"];
     [docDic setValue:self.rankText.text forKey:@"docRank"];
@@ -809,11 +809,12 @@
 - (IBAction) backToDocList: (id)sender{
     if([self.delegate respondsToSelector:@selector(doctorDetailViewControllerDismissed:)])
     {
-        int docPARank =  [self.dataSource objectForKey:@"pa_rank"];
+        NSString *docPARank =  [self.dataSource objectForKey:@"pa_rank"];
         NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
         [docDic setValue:self.dId forKey:@"docId"];
         [docDic setValue:self.rankText.text forKey:@"docRank"];
         [docDic setValue:docPARank forKey:@"docPARank"];
+        [docDic setValue:@"0" forKey:@"closeList"];
         [self.delegate doctorDetailViewControllerDismissed:docDic];
     }
 	[self dismissModalViewControllerAnimated:YES];
@@ -825,11 +826,25 @@
 
 
 - (IBAction) searchAgainClicked: (id)sender{
-	if ([self.parentViewController.parentViewController isKindOfClass:[filterViewController class]]) {
+	/*
+     if ([self.parentViewController.parentViewController isKindOfClass:[filterViewController class]]) {
 		[self.parentViewController.parentViewController dismissModalViewControllerAnimated:YES];
 	}else {
-		[self.parentViewController.parentViewController.parentViewController dismissModalViewControllerAnimated:YES];	
+       // [self dismissModalViewControllerAnimated:YES];
+		[self.parentViewController.parentViewController.parentViewController dismissModalViewControllerAnimated:YES];
 	}
+     */
+    if([self.delegate respondsToSelector:@selector(doctorDetailViewControllerDismissed:)])
+    {
+        NSString *docPARank =  [self.dataSource objectForKey:@"pa_rank"];
+        NSMutableDictionary *docDic = [NSMutableDictionary dictionary];
+        [docDic setValue:self.dId forKey:@"docId"];
+        [docDic setValue:self.rankText.text forKey:@"docRank"];
+        [docDic setValue:docPARank forKey:@"docPARank"];
+        [docDic setValue:@"1" forKey:@"closeList"];
+        [self.delegate doctorDetailViewControllerDismissed:docDic];
+    }
+    [self dismissModalViewControllerAnimated:NO];
 }
 
 - (IBAction) changeReferBtnClicked: (id)sender{
@@ -871,7 +886,7 @@
     self.patientEmailTextField.text = @"";
 	[self.referText resignFirstResponder];
 	self.referBar.hidden = YES;
-    
+    [self hideReferPopupWithKeyboard];
 }
 
 - (IBAction) saveAndCloseReportPopup: (id)sender{
@@ -929,14 +944,17 @@
             NSLog(encodedParam);
             str=[self stringWithUrl:url];
             NSLog(str);
-            if(![str isEqual:@"saved"]||![str isEqual:@""]){
+            if(![str isEqual:@"saved"]||[str isEqual:@""]){
                 [utils showAlert:@"Error !!" message:@"Unable to store referal data." delegate:self];
                 NSLog(@"Unable to store referal data for doctor %@ at server",[self.dataSource objectForKey:@"id"]);
-                //[self.view endEditing:YES];
+                [self.view endEditing:YES];
                 [self.spinner stopAnimating];
                 self.spinner.hidden = YES;
                 self.spinnerBg.hidden = YES;
                 return;
+            }
+            else{
+                [utils showAlert:@"Success !!" message:@"Successfully referred." delegate:self];
             }
         }
         @catch (NSException *exception) {
@@ -951,6 +969,7 @@
         self.spinnerBg.hidden = YES;
         return;
     }
+    [self hideReferPopupWithKeyboard];
 	[self reloadView];
 	[self.view endEditing:YES];
 	[self closeReferPopup:nil];
@@ -990,7 +1009,13 @@
     self.referTextBtn.hidden = NO;
     return YES;
 }
-
+- (BOOL)hideReferPopupWithKeyboard{
+    [self.view endEditing:YES];
+    [self.initialTextField resignFirstResponder];
+    [self.patientEmailTextField resignFirstResponder];
+	//[self.referText resignFirstResponder];
+	self.referTextBtn.hidden = YES;
+}
 
 - (IBAction) hideReportPopupKeyboard: (id)sender{
 
@@ -1002,9 +1027,10 @@
     
 	[self.initialTextField resignFirstResponder];
     [self.patientEmailTextField resignFirstResponder];
-	[self.referText resignFirstResponder];
+	//[self.referText resignFirstResponder];
 	self.referTextBtn.hidden = YES;
 }
+
 
 - (NSString *)getReferContent{
     
