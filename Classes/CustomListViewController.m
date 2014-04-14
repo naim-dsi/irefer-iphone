@@ -25,7 +25,8 @@
 	parser.delegate = adapter;
 	parser.multi = YES;
 	[utils roundUpView:[[self.spinnerBg subviews] objectAtIndex:0]];
-
+    self.searchBar.text = @"*";
+    self.searchBar.text = @"";
 	[self.listTableView setHidden:YES];
 	self.searchBar.placeholder = [self getSearchBarLabel];
 	NSString *serverUrl = [self getInitUrl];

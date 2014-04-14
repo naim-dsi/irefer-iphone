@@ -23,6 +23,8 @@
 	parser = [SBJsonStreamParser new];
 	parser.delegate = adapter;
 	parser.multi = YES;
+    self.searchBar.text = @"*";
+    self.searchBar.text = @"";
 	[utils roundUpView:[[self.spinnerBg subviews] objectAtIndex:0]];
 
 }

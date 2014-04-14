@@ -118,26 +118,40 @@ int docId,rankVal;
 
 			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit resourceFlag:self.resourceFlag];
 			NSDictionary *countData = [self.dataSource objectAtIndex:0];
-			self.totalCount = [[countData objectForKey:@"count"] intValue];
-			NSLog(@"total count %d",self.totalCount);
-			[self.dataSource removeObjectAtIndex:0];
-			if ([self.dataSource count] < self.totalCount) {
-				[self.dataSource addObject:[[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Showing %d out of %d",self.currentLimit,self.totalCount],@"count",nil] autorelease] ];		
-			}
-			[self.dataSource addObject:[[[NSDictionary alloc] init] autorelease] ];//empty allocation in-order to able to select the last element		
-			[self.listTableView reloadData];
-			if ([self.dataSource count] <= 1) {
+			NSString *tcount = [countData objectForKey:@"count"];
+            if(![tcount isEqual:@"0"]){
+                self.totalCount = [[countData objectForKey:@"count"] intValue];
+            
+                NSLog(@"total count %d",self.totalCount);
+                [self.dataSource removeObjectAtIndex:0];
+                if ([self.dataSource count] < self.totalCount) {
+                    [self.dataSource addObject:[[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Showing %d out of %d",self.currentLimit,self.totalCount],@"count",nil] autorelease] ];		
+                }
+                [self.dataSource addObject:[[[NSDictionary alloc] init] autorelease] ];//empty allocation in-order to able to select the last element		
+                [self.listTableView reloadData];
+                if ([self.dataSource count] <= 1) {
+                    NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
+                    [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Warning !!",@"title",nil] ];
+                    [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Sorry, no result found. Please search again.",@"message",nil] ];
+                    [self performSelectorOnMainThread:@selector(showAlert:) withObject:array waitUntilDone:NO];
+                    //[utils showAlert:@"Warning !!" message:@"Sorry, no result found. Please search again." delegate:nil];
+                }
+                [self.spinner stopAnimating];
+                self.spinner.hidden = YES;
+                self.spinnerBg.hidden = YES;
+                [self.listTableView setHidden:NO];
+                [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@",currentContent] forKey:@"doc_prev_search_content"];
+            }
+            else{
                 NSMutableArray *array = [[[NSMutableArray alloc] init] autorelease];
                 [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Warning !!",@"title",nil] ];
                 [array addObject:[[NSDictionary alloc] initWithObjectsAndKeys:@"Sorry, no result found. Please search again.",@"message",nil] ];
                 [self performSelectorOnMainThread:@selector(showAlert:) withObject:array waitUntilDone:NO];
-				//[utils showAlert:@"Warning !!" message:@"Sorry, no result found. Please search again." delegate:nil];
-			}
-			[self.spinner stopAnimating];
-			self.spinner.hidden = YES;
-			self.spinnerBg.hidden = YES;
-			[self.listTableView setHidden:NO];
-			[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@",currentContent] forKey:@"doc_prev_search_content"];
+                [self.spinner stopAnimating];
+                self.spinner.hidden = YES;
+                self.spinnerBg.hidden = YES;
+                [self.listTableView setHidden:YES];
+            }
 		}
 		[pool release];
 
