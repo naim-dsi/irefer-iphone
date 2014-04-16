@@ -666,7 +666,7 @@
     if([[user objectForKey:@"allow_pa_rank"] integerValue]==0){
     
         if(self.isSearchFromOnline){
-            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], self.rank];
+            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%@&user_id=%@&rank=%d",[self.dataSource objectForKey:@"id"], [user objectForKey:@"id"], self.rank];
             NSLog(@"url :%@",serverUrl);
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
             NSURLResponse *response = nil;

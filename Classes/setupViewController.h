@@ -25,6 +25,7 @@
 #import "aboutViewController.h"
 #import "advancedDocListViewController.h"
 #import "SSZipArchive.h"
+#import "BaseDao.h"
 
 @interface setupViewController : UIViewController<SelectBoxProtocol,DeleteListProtocol,UIActionSheetDelegate> {
 
@@ -47,7 +48,7 @@
 	IBOutlet UILabel *spinnerText;
 	IBOutlet UIButton *inactiveBtn;
 	IBOutlet UIScrollView *scrollView;
-
+    BaseDao *baseDao;
 }
 
 @property(nonatomic, retain) UILabel *pname;

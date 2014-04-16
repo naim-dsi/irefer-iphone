@@ -438,11 +438,12 @@ int docId,rankVal;
         return;
     }
     else{
-        NSString *docId = [docDic objectForKey: @"docId"];
-        NSString *docRank = [docDic objectForKey: @"docRank"];
-        NSString *docPARank = [docDic objectForKey: @"docPARank"];
-        [self updateDataSource:[docId integerValue] rank:[docRank integerValue]];
-        [self updatePARankInDataSource:[docId integerValue] rank:[docPARank integerValue]];
+        //NSString *docId = [docDic objectForKey: @"docId"];
+        //NSString *docRank = [docDic objectForKey: @"docRank"];
+        //NSString *docPARank = [docDic objectForKey: @"docPARank"];
+        //[self updateDataSource:[docId integerValue] rank:[docRank integerValue]];
+        //[self updatePARankInDataSource:[docId integerValue] rank:[docPARank integerValue]];
+        [self reloadData];
     }
     //NSString *thisIsTheDesiredString = stringForFirst;
 }
@@ -532,6 +533,9 @@ int docId,rankVal;
 			docName =  [rowData objectForKey:@"last_name"];
 		}
 	}
+    //[self.spinner startAnimating];
+    //self.spinner.hidden = NO;
+    //self.spinnerBg.hidden = NO;
     NSString *docRank =  [rowData objectForKey:@"u_rank"];
 	NSString *docPARank =  [rowData objectForKey:@"up_rank"];
 	//alert = [[NewRatingWidget alloc] initNewRatingWidget:docName delegate:self];
@@ -568,6 +572,7 @@ int docId,rankVal;
     [alert setUseMotionEffects:true];
     
     [alert show];
+    
 }
 
 
@@ -807,7 +812,7 @@ int docId,rankVal;
     NSDictionary *user = [dao getCurrentUser];
     if([[user objectForKey:@"allow_pa_rank"] integerValue]==0){
         if(self.isSearchFromOnline){
-            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank&doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.rank];
+            NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/rank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.rank];
             NSLog(@"url :%@",serverUrl);
             NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
             NSURLResponse *response = nil;
@@ -819,14 +824,16 @@ int docId,rankVal;
             
             if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
                 [dao updateDoctorRank:docId rank:self.rank];
-                [self updateDataSource:docId rank:self.rank];
+                //[self updateDataSource:docId rank:self.rank];
+                [self reloadData];
                 [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else{
                 [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
             }
         }else {
             if( [dao updateDoctorRank:docId rank:self.rank] ){
-                [self updateDataSource:docId rank:self.rank];
+                //[self updateDataSource:docId rank:self.rank];
+                [self reloadData];
                 [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else {
                 [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];	
@@ -888,7 +895,7 @@ int docId,rankVal;
             int err=0;
             int err2=0;
             if( [dao updateDoctorPARank:docId rank:self.paRank] ){
-                [self updatePARankInDataSource:docId rank:self.paRank];
+                //[self updatePARankInDataSource:docId rank:self.paRank];
                 //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else {
                 err=1;
@@ -896,13 +903,14 @@ int docId,rankVal;
             }
             
             if( [dao updateDoctorRank:docId rank:self.rank] ){
-                [self updateDataSource:docId rank:self.rank];
+                //[self updateDataSource:docId rank:self.rank];
                 //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else {
                 //[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
                 err2=1;
             }
             if(err==0){
+                [self reloadData];
                 [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
                 
             }
@@ -930,12 +938,12 @@ int docId,rankVal;
 			NSMutableDictionary *newRow = [row mutableCopy];
 			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"u_rank"];
 			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
-            [self.listTableView reloadData];
-            
-            [self.spinner stopAnimating];
-            self.spinner.hidden = YES;
-            self.spinnerBg.hidden = YES;
-            [self.listTableView setHidden:NO];
+            //[self.listTableView reloadData];
+            //[self.spinner stopAnimating];
+            //self.spinner.hidden = YES;
+            //self.spinnerBg.hidden = YES;
+            //[self.listTableView setHidden:NO];
+            //NSLog(@"url : list updated.");
 			return;
 		}
 	}
@@ -948,12 +956,13 @@ int docId,rankVal;
 			NSMutableDictionary *newRow = [row mutableCopy];
 			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"up_rank"];
 			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
-            [self.listTableView reloadData];
+            //[self.listTableView reloadData];
+            //[self.spinner stopAnimating];
+            //self.spinner.hidden = YES;
+            //self.spinnerBg.hidden = YES;
+            //[self.listTableView setHidden:NO];
+            //NSLog(@"url : list updated.");
             
-            [self.spinner stopAnimating];
-            self.spinner.hidden = YES;
-            self.spinnerBg.hidden = YES;
-            [self.listTableView setHidden:NO];
 			return;
 		}
 	}
@@ -1007,7 +1016,46 @@ int docId,rankVal;
 	self.sortOptions.hidden = YES;	
 		
 }
-
+- (void) reloadData{
+	NSLog(@"inside sortMethodChanged:");
+    //	self.currentLimit = 50;
+	
+	if (self.sortOptions.selectedSegmentIndex == 0) {
+		
+		self.sortButton.title = @"Sort By Rank";
+		
+	}else if (self.sortOptions.selectedSegmentIndex == 1) {
+		
+		self.sortButton.title = @"Sort By Value";
+		
+	}else if (self.sortOptions.selectedSegmentIndex == 2) {
+		
+		self.sortButton.title = @"Sort By First Name";
+		
+	}else if (self.sortOptions.selectedSegmentIndex == 3) {
+		
+		self.sortButton.title = @"Sort By Last Name";
+		
+	}
+	
+	if( !self.isSearchFromOnline ){
+        
+		[self.spinner startAnimating];
+		self.spinner.hidden = NO;
+		self.spinnerBg.hidden = NO;
+		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
+		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
+        
+	}else {
+		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%d", self.searchBar.text, self.sortOptions.selectedSegmentIndex];
+		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
+        
+	}
+    
+	self.sortToolBar.hidden = YES;
+	self.sortOptions.hidden = YES;
+    
+}
 - (IBAction) sortButtonClicked:(id) sender{
 	if (self.sortToolBar.hidden) {
 		self.sortToolBar.hidden = NO;

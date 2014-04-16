@@ -18,7 +18,8 @@ int actionSheetType = 0;
 - (void)loadView{
 	[super loadView];
 	dao = [[setupDao alloc] init];
-
+    baseDao = [[BaseDao alloc] init];
+    [NSThread detachNewThreadSelector:@selector(startupSyncThread) toTarget:self withObject:nil];
 	self.userData = [dao getCurrentUserPracticeOrHospital];
 	if( self.userData != nil ){
 		
@@ -838,7 +839,67 @@ int actionSheetType = 0;
 	
 	[self performSelectorInBackground:@selector(doctorProcessThread) withObject:nil];
 }
-
+-(void) startupSyncThread{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    
+	NSDictionary *userData = [baseDao getCurrentUserPracticeOrHospital];
+	
+	//uploading abuse reports
+	NSArray *reports = [baseDao getSyncronizableReports];
+	NSLog(@"uploadable report count %d",[reports count]);
+	BOOL *isFirst = YES;
+	NSString *content = @"";
+	for(NSDictionary *report in reports){
+		if (isFirst) {
+			isFirst = NO;
+			content = [content stringByAppendingFormat:@"%@,%@",[report objectForKey:@"docId"],[report objectForKey:@"text"]];
+		}else {
+			content = [content stringByAppendingFormat:@"|%@,%@",[report objectForKey:@"docId"],[report objectForKey:@"text"]];
+		}
+	}
+	//NSLog(content);
+	NSString *url = @"";
+	NSString *responseStr = @"";
+	
+	if(![content isEqual:@""]){
+		url = [NSString stringWithFormat:@"%@doctorComment/comment2?user_id=%@&var=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
+		responseStr = [utils getStringFromSyncronousURLCall:url];
+		[baseDao updateSyncronizableReports];
+	}
+	//uploading ranks
+	NSArray *ranks = [baseDao getSyncronizableRanks];
+	NSLog(@"uploadable rank count %d",[ranks count]);
+	isFirst = YES;
+	content = @"";
+	for(NSDictionary *rank in ranks){
+		if (isFirst) {
+			isFirst = NO;
+			content = [content stringByAppendingFormat:@"%@,%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"],[rank objectForKey:@"up_rank"]];
+		}else {
+			content = [content stringByAppendingFormat:@"|%@,%@,%@",[rank objectForKey:@"docId"],[rank objectForKey:@"rank"],[rank objectForKey:@"up_rank"]];
+		}
+	}
+	//NSLog(content);
+	if(![content isEqual:@""]){
+		url = [NSString stringWithFormat:@"%@userDocRank/bulkRank?user_id=%@&val=%@",[utils getServerURL], [userData objectForKey:@"uid"], content];
+		NSLog(url);
+		responseStr = [utils getStringFromSyncronousURLCall:url];
+		NSLog(@"response for rank update %@",responseStr);
+		[baseDao updateSyncronizableRanks];
+	}
+	
+	//uploading search count
+	int count = [baseDao getSearchCount:1];
+	NSLog(@"uploadable search count %d",count);
+	if( count > 0 ){
+		url = [NSString stringWithFormat:@"%@searchStatistics/setCount?user_id=%@&count=%d",[utils getServerURL], [userData objectForKey:@"uid"], count];
+		NSLog(url);
+		responseStr = [utils getStringFromSyncronousURLCall:url];
+		NSLog(@"response for statistics upload %@",responseStr);
+	}
+	//[utils showAlert:@"Notification !!!" message:@"test" delegate:nil];
+	[pool drain];
+}
 - (void)doctorProcessThread {  
 	NSLog(@"inside doctor thread");
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  

@@ -26,6 +26,19 @@
 	//[self performSelectorOnMainThread: @selector(advDoctorListThread) withObject: nil waitUntilDone: NO];	
 	[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 	[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
+    NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:
+                                [UIFont boldSystemFontOfSize:10], UITextAttributeFont,
+                                [UIColor whiteColor], UITextAttributeTextColor,
+                                nil];
+    [sortOptions setTitleTextAttributes:attributes forState:UIControlStateNormal];
+    
+    NSDictionary *highlightedAttributes = [NSDictionary dictionaryWithObject:[UIColor whiteColor] forKey:UITextAttributeTextColor];
+    [sortOptions setTitleTextAttributes:highlightedAttributes forState:UIControlStateHighlighted];
+    
+    [sortOptions setTintColor:[UIColor colorWithRed:0.61176f green:0.61176f  blue:0.61176f  alpha:1.0f]];
+    
+    sortOptions.segmentedControlStyle = UISegmentedControlStyleBar;
+    
 
 }
 
