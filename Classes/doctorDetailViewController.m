@@ -41,6 +41,7 @@
 - (void) doOfflineloading{
 	NSLog(@"before the dao call......");
 	self.dataSource = [dao getDoctorDetails:self.dId];
+    [self.dataSource setValue:[dao getReportListByDoctor:[self.dataSource objectForKey:@"id"]] forKey:@"report_list"];
 	NSLog(@"After dao calll.......");
 	[self.dataSource setValue:[dao getReportListByDoctor:self.dId] forKey:@"report_list"];
 	NSLog(@"After dao calll.......1111");
@@ -203,7 +204,8 @@
 	CGFloat newY = 0.0f; 
 //	NSArray *elements = [self.scrollView subviews];
 	UILabel *spInfoLabel = (UILabel *)[elements objectAtIndex:3];
-	if ([self.dataSource objectForKey:@"report_list"] != nil && [[self.dataSource objectForKey:@"report_list"] count] > 0) {
+    BOOL isEmpty = ([[self.dataSource objectForKey:@"report_list"] count] == 0);
+	if ([self.dataSource objectForKey:@"report_list"] != nil && !isEmpty) {
 		UIView *reportView = (UIView *)[elements objectAtIndex:0];
 		UILabel *reportLabel = (UILabel *)[elements objectAtIndex:1];
 	
@@ -304,7 +306,7 @@
 		
 		NSArray *pracNames = [[self.dataSource objectForKey:@"prac_name"] componentsSeparatedByString:@"|"];
 		NSArray *pracAddrs = [[self.dataSource objectForKey:@"add_line_1"] componentsSeparatedByString:@"|"];
-		NSArray *pracRanks = [[self.dataSource objectForKey:@"up_rank"] componentsSeparatedByString:@"|"];
+		//NSArray *pracRanks = [[self.dataSource objectForKey:@"up_rank"] componentsSeparatedByString:@"|"];
 		UILabel *pracLabel;
 		if ([pracNames count] > 1) {
 			self.pracInfo.text = @"Practices:";
@@ -312,8 +314,11 @@
 		for(int i = 0; i<[pracNames count]; i++){
 
 			NSString *pracName = [pracNames objectAtIndex:i];
-			NSString *pracAddr = [pracAddrs objectAtIndex:i];
-			NSString *pracRank = [pracRanks objectAtIndex:i];
+            NSString *pracAddr = @"";
+            if(i<[pracAddrs count]){
+                pracAddr = [pracAddrs objectAtIndex:i];
+			}
+            //NSString *pracRank = [pracRanks objectAtIndex:i];
 			
 			if( i == 0){
 				pracLabel = [self createContentLabel:[NSString stringWithFormat:@"%@",pracName] ypos:&newY];
@@ -338,10 +343,10 @@
 				pracLabel.frame = CGRectMake(pracLabel.frame.origin.x, pracLabel.frame.origin.y, pracLabel.frame.size.width, labelSize.height);
 				newY += labelSize.height;
 			}
-			if( pracRank != [NSNull null] && ![pracRank isEqual:@""]){
-				[self.scrollView addSubview: [self createContentLabel:[NSString stringWithFormat:@"PA Rank: %@",pracRank] ypos:&newY]];
-				newY += heightDiff;
-			}
+			//if( pracRank != [NSNull null] && ![pracRank isEqual:@""]){
+				//[self.scrollView addSubview: [self createContentLabel:[NSString stringWithFormat:@"PA Rank: %@",pracRank] ypos:&newY]];
+				//newY += heightDiff;
+			//}
 		}	
 		
 	}
@@ -361,12 +366,12 @@
 		}
 		for(int i=0; i<[hosNames count]; i++){
 			NSString *hosName = [hosNames objectAtIndex:i];
-			NSString *sp = [seePatients objectAtIndex:i];
-			if ([sp isEqual:@"1"]) {
-				hosName = [hosName stringByAppendingFormat:@" (Y)"];
-			}else {
-				hosName = [hosName stringByAppendingFormat:@" (N)"];
-			}
+			//NSString *sp = [seePatients objectAtIndex:i];
+			//if ([sp isEqual:@"1"]) {
+			//	hosName = [hosName stringByAppendingFormat:@" (Y)"];
+			//}else {
+			//	hosName = [hosName stringByAppendingFormat:@" (N)"];
+			//}
 			
 			UILabel *hosLabel = [self createContentLabel:[NSString stringWithFormat:@"%@",hosName] ypos:&newY];
 			hosLabel.numberOfLines = 10;
@@ -459,9 +464,12 @@
     if ([alertView isKindOfClass:[CustomIOS7AlertView class]] && !self.busy) {
 		if( buttonIndex == 0 ){
 			[alertView close];
+            [alert release];
 		}else{
 			self.busy = YES;
 			[NSThread detachNewThreadSelector:@selector(rankUpdateReqThread) toTarget:self withObject:nil];
+            [alert close];
+            [alert release];
 		}
 	}
     //NSLog(@"Delegate: Button at position %d is clicked on alertView %d.", buttonIndex, [alertView tag]);
@@ -776,8 +784,7 @@
     }
 
     self.busy = NO;
-    [alert close];
-    [alert release];
+    
     [pool release];
 }
 

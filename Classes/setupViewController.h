@@ -32,7 +32,8 @@
 	SBJsonParser *parser;
 	setupDao *dao;
 	NSMutableDictionary *userData;
-	
+	NSTimer *autoTimer;
+    NSString *dateString;
 	IBOutlet UILabel *pname;
 	IBOutlet UILabel *addr;
 	IBOutlet UIButton *pracBtn;
@@ -50,7 +51,7 @@
 	IBOutlet UIScrollView *scrollView;
     BaseDao *baseDao;
 }
-
+@property(nonatomic, retain) NSString *dateString;
 @property(nonatomic, retain) UILabel *pname;
 @property(nonatomic, retain) UILabel *addr;
 @property(nonatomic, retain) UIButton *pracBtn;
@@ -65,7 +66,7 @@
 @property(nonatomic, retain) UIScrollView *spinnerBg;
 @property(nonatomic, retain) UILabel *spinnerText;
 @property(nonatomic, retain) UIButton *inactiveBtn;
-
+@property(nonatomic, retain) NSTimer *autoTimer;
 @property(nonatomic, retain) NSDictionary *userData;
 @property(nonatomic, retain) UIScrollView *scrollView;
 

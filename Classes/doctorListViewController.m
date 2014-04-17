@@ -85,7 +85,8 @@ int docId,rankVal;
 	if (self.isSearchFromOnline) {
 		
 		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%d", self.searchBar.text, self.sortOptions.selectedSegmentIndex];
-		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];	
+        NSURL *url = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+		[self triggerAsyncronousRequest:url];
 		
 	}else {
 		
@@ -569,7 +570,7 @@ int docId,rankVal;
     
     
         
-    [alert setUseMotionEffects:true];
+    [alert setUseMotionEffects:false];
     
     [alert show];
     
@@ -583,8 +584,11 @@ int docId,rankVal;
 		if( buttonIndex != 0 ){
 			self.busy=YES;
 			[NSThread detachNewThreadSelector:@selector(rankUpdateReqThread) toTarget:self withObject:nil];
+            [alert close];
+            [alert release];
 		}else {
 			[alertView close];
+            [alert release];
 		}
         
 	}else if(![alertView isKindOfClass:[CustomIOS7AlertView class]] && [self.dataSource count] == 1){
@@ -824,8 +828,8 @@ int docId,rankVal;
             
             if ([responseString isEqual:@"saved"] || [responseString isEqual:@"rank updated"]) {
                 [dao updateDoctorRank:docId rank:self.rank];
-                //[self updateDataSource:docId rank:self.rank];
-                [self reloadData];
+                [self updateDataSource:docId rank:self.rank];
+                //[self reloadData];
                 [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else{
                 [utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
@@ -895,7 +899,7 @@ int docId,rankVal;
             int err=0;
             int err2=0;
             if( [dao updateDoctorPARank:docId rank:self.paRank] ){
-                //[self updatePARankInDataSource:docId rank:self.paRank];
+                [self updatePARankInDataSource:docId rank:self.paRank];
                 //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else {
                 err=1;
@@ -903,14 +907,14 @@ int docId,rankVal;
             }
             
             if( [dao updateDoctorRank:docId rank:self.rank] ){
-                //[self updateDataSource:docId rank:self.rank];
+                [self updateDataSource:docId rank:self.rank];
                 //[utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
             }else {
                 //[utils showAlert:@"Warning !!" message:@"Couldn't update rank, please try again later." delegate:self];
                 err2=1;
             }
             if(err==0){
-                [self reloadData];
+                //[self reloadData];
                 [utils showAlert:@"Confirmation!!" message:@"Rank has been updated." delegate:self];
                 
             }
@@ -924,8 +928,7 @@ int docId,rankVal;
     }
     
     self.busy = NO;
-    [alert close];
-    [alert release];
+    
     
     [pool release];
 }
@@ -938,11 +941,11 @@ int docId,rankVal;
 			NSMutableDictionary *newRow = [row mutableCopy];
 			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"u_rank"];
 			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
-            //[self.listTableView reloadData];
-            //[self.spinner stopAnimating];
-            //self.spinner.hidden = YES;
-            //self.spinnerBg.hidden = YES;
-            //[self.listTableView setHidden:NO];
+            [self.listTableView reloadData];
+            [self.spinner stopAnimating];
+            self.spinner.hidden = YES;
+            self.spinnerBg.hidden = YES;
+            [self.listTableView setHidden:NO];
             //NSLog(@"url : list updated.");
 			return;
 		}
@@ -956,11 +959,11 @@ int docId,rankVal;
 			NSMutableDictionary *newRow = [row mutableCopy];
 			[newRow setObject:[NSString stringWithFormat:@"%d",rankValue] forKey:@"up_rank"];
 			[self.dataSource replaceObjectAtIndex:i withObject:newRow];
-            //[self.listTableView reloadData];
-            //[self.spinner stopAnimating];
-            //self.spinner.hidden = YES;
-            //self.spinnerBg.hidden = YES;
-            //[self.listTableView setHidden:NO];
+            [self.listTableView reloadData];
+            [self.spinner stopAnimating];
+            self.spinner.hidden = YES;
+            self.spinnerBg.hidden = YES;
+            [self.listTableView setHidden:NO];
             //NSLog(@"url : list updated.");
             
 			return;
@@ -1047,8 +1050,12 @@ int docId,rankVal;
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
         
 	}else {
-		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%d", self.searchBar.text, self.sortOptions.selectedSegmentIndex];
-		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
+		[self.listTableView reloadData];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        [self.listTableView setHidden:NO];
+
         
 	}
     

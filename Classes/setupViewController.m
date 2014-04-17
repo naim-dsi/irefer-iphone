@@ -11,7 +11,7 @@
 
 @implementation setupViewController
 
-@synthesize pname, addr, pracBtn, hosBtn, insBtn, spBtn, cntyBtn, docCountText, pracAddBtn, hosAddBtn, spinner, userData, inactiveBtn, scrollView, spinnerBg, spinnerText;
+@synthesize pname, addr, pracBtn, hosBtn, insBtn, spBtn, cntyBtn, docCountText, pracAddBtn, hosAddBtn, spinner, userData, inactiveBtn, scrollView, spinnerBg, spinnerText,autoTimer,dateString;
 
 int actionSheetType = 0;
 
@@ -836,8 +836,8 @@ int actionSheetType = 0;
 	self.spinnerBg.hidden = NO;
 	self.spinnerText.text = @"Preparing database...";
 	NSLog(@"before doctor thread");
-	
-	[self performSelectorInBackground:@selector(doctorProcessThread) withObject:nil];
+	[self doctorProcessThread];
+	//[self performSelectorInBackground:@selector(doctorProcessThread) withObject:nil];
 }
 -(void) startupSyncThread{
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
@@ -913,34 +913,39 @@ int actionSheetType = 0;
 	NSDate *currDate = [NSDate date];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
     [dateFormatter setDateFormat:@"yyyyMMddHHmmss"];
-    NSString *dateString = [dateFormatter stringFromDate:currDate];
-    NSLog(@"%@",dateString);
+    self.dateString = [dateFormatter stringFromDate:currDate];
+    NSLog(@"%@",self.dateString);
     //http://103.4.147.139/irefer-dsi/index.php/services/doctor/get_sync_data?prac_ids=1&cnty_ids=7&user_id=31&slimit=1000&limit=150&dlimit=0,15000&serverBDFileName=3120131125143545
 	
-	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_sync_data_iphone?prac_ids=1&cnty_ids=%@&user_id=%@&slimit=1000&limit=1000&dlimit=%@&serverBDFileName=%@",cntyIds,userId,limit,dateString];
+	NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_sync_data_iphone?prac_ids=1&cnty_ids=%@&user_id=%@&slimit=1000&limit=1000&dlimit=%@&serverBDFileName=%@",cntyIds,userId,limit,self.dateString];
     
     NSLog(serverUrl);
         
-    NSFileManager *fileManager = [NSFileManager defaultManager];
+   /*
     NSError *error;
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-    NSString *documentsDirectory = [paths objectAtIndex:0];
-    NSString *datePath= [NSString stringWithFormat: @"/%@.zip",dateString];
-    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:datePath];
-    
-    NSLog(txtPath);
-    
-    NSString *dbPath = [dao dataFilePath];
-    
-    
-    NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:900];
+   NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
     //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:dbUrl];
    
     NSURLResponse * response = nil;
     error = nil;
-    NSData * dbFile = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    */
     
+    
+    NSURL *dbUrl = [[NSURL alloc] initWithString:
+             [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSURLRequest * request = [[NSURLRequest alloc] initWithURL:dbUrl];
+    [[NSURLConnection alloc] initWithRequest:request delegate:nil];
+    
+    //NSTimer* myTimer = [NSTimer scheduledTimerWithTimeInterval:60.0 target: self selector: @selector(checkIfDBReady:) userInfo: nil repeats: YES];
+    
+    
+    self.autoTimer = [NSTimer scheduledTimerWithTimeInterval:15.0 target:self selector:@selector(checkIfDBReady) userInfo:nil repeats:YES];
+    
+    //[[NSRunLoop mainRunLoop] addTimer:self.autoTimer forMode:NSDefaultRunLoopMode];
+    //[self checkIfDBReady];
+    /*
     if (error != nil)
     {
         [utils showAlert:@"Error !!!" message:@"Sync process failed. Please try again later." delegate:nil];
@@ -957,9 +962,6 @@ int actionSheetType = 0;
         [pool drain];
         return;
     }
-    
-    
-    //NSData *dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
     NSString *responseString = [[NSString alloc] initWithData:dbFile encoding:NSUTF8StringEncoding];
     if (![responseString isEqualToString:@"1"]){
         [utils showAlert:@"Error !!!" message:@"Sync process failed. Please try again later." delegate:nil];
@@ -976,7 +978,49 @@ int actionSheetType = 0;
         [pool drain];
         return;
     }
-    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getBaseURL)]] stringByAppendingFormat:@"dbzip/%@.zip",dateString];
+    */
+	
+	
+	[pool drain];  
+	
+}
+-(void)checkIfDBReady{
+    NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/get_db_status?serverBDFileName=%@",self.dateString];
+    
+    NSLog(serverUrl);
+    
+    
+    NSError *error;
+    NSURL *dbUrl = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
+    NSMutableURLRequest *urlRequest = [NSURLRequest requestWithURL:dbUrl cachePolicy:NSURLRequestReloadIgnoringLocalCacheData timeoutInterval:30];
+    //NSURLRequest * urlRequest = [NSURLRequest requestWithURL:dbUrl];
+    
+    NSURLResponse * response = nil;
+    error = nil;
+    NSData *res = [NSURLConnection sendSynchronousRequest:urlRequest returningResponse:&response error:&error];
+    NSString *responseString = [[NSString alloc] initWithData:res encoding:NSUTF8StringEncoding];
+    if ([responseString isEqualToString:@"3"]){
+        [self.autoTimer invalidate];
+        self.autoTimer = nil;
+        [self downloadAndReplaceDB];
+    }
+   
+}
+-(void) downloadAndReplaceDB{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSURL *dbUrl = nil;
+    NSURLResponse * response = nil;
+    NSError *error = nil;
+    NSData * dbFile = nil;
+    NSString *serverUrl = @"";
+	NSString *responseStr = @"";
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *datePath= [NSString stringWithFormat: @"/%@.zip",self.dateString];
+    NSString *txtPath = [documentsDirectory stringByAppendingPathComponent:datePath];
+    NSString *dbPath = [dao dataFilePath];
+    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getBaseURL)]] stringByAppendingFormat:@"dbzip/%@.zip",self.dateString];
     dbUrl = [[NSURL alloc] initWithString: [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     dbFile = [[NSData alloc] initWithContentsOfURL:dbUrl];
     if ([fileManager fileExistsAtPath:txtPath] == NO) {
@@ -1018,88 +1062,25 @@ int actionSheetType = 0;
     if ([fileManager fileExistsAtPath:txtPath] == YES) {
         [fileManager removeItemAtPath:txtPath error:&error];
     }
-    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/deletedbfiles?serverBDFileName=%@",dateString];
+    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/deletedbfiles?serverBDFileName=%@",self.dateString];
     NSLog(serverUrl);
     dbUrl = [[NSURL alloc] initWithString:
              [serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
     NSURLRequest * request = [[NSURLRequest alloc] initWithURL:dbUrl];
     [[NSURLConnection alloc] initWithRequest:request delegate:nil];
     
-    /*
-    serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"practice/jsonCounty?prac_ids=1&cnty_ids=%@",cntyIds];
-	NSMutableArray *dataList = [utils getDataFromSyncronousURLCall:serverUrl];
-
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Practices.." waitUntilDone:NO];
-
-	if(![dao savePractices:dataList]){
-		NSLog(@"unable to save practice data");
-	}
-	//[dataList release];
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Hospitals.." waitUntilDone:NO];
-
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"hospital/jsonCounty?cnty_id=%@",cntyIds];
-	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
-	
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Hospitals.." waitUntilDone:NO];
-
-	if(![dao saveHospitals:dataList]){
-		NSLog(@"unable to save hospital data");
-	}
-	//[dataList release];
-
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Insurances.." waitUntilDone:NO];
-
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"insurance/jsonLite"];
-	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
-	[dataList removeObjectAtIndex:0];
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Insurances.." waitUntilDone:NO];
-	if(![dao saveInsurances:dataList]){
-		NSLog(@"unable to save Insurance data");
-	}
-	//[dataList release];
-
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Specialities.." waitUntilDone:NO];
-
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"speciality/jsonLite"];
-	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
-	[dataList removeObjectAtIndex:0];
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Specialities.." waitUntilDone:NO];
-	if(![dao saveSpecialities:dataList]){
-		NSLog(@"unable to save Speciality data");
-	}
-	//[dataList release];
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Downloading Doctors.." waitUntilDone:NO];
-	
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"doctor/json?prac_ids=1&cnty_ids=%@&limit=%@&user_id=%@", cntyIds, limit, userId];
-	NSLog(@"%@",serverUrl);
-	dataList = [utils getDataFromSyncronousURLCall:serverUrl];
-	NSLog(@"total downloaded doctor count : %d", [dataList count]);
-	[self.spinnerText performSelectorOnMainThread:@selector(setText:) withObject:@"Saving Doctors.." waitUntilDone:NO];
-	if(![dao saveDoctors:dataList]){
-		NSLog(@"unable to save Doctors data");
-	}
-	//	[dataList release];
-	serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"user/json?user_id=%@",[userData objectForKey:@"uid"]];
-	NSLog(serverUrl);
-	NSMutableArray *profileList = [utils getDataFromSyncronousURLCall:serverUrl];
-	if (profileList != NULL && [profileList count] > 0) {
-		NSDictionary *profile = [profileList objectAtIndex:0];
-		[dao updateNotifyDates:[profile objectForKey:@"id"] adminNotifyDate:[profile objectForKey:@"admin_notify_date"] userNotifyDate:[profile objectForKey:@"user_notify_date"]];
-	}
-	*/
+    
 	self.userData = [dao getCurrentUserPracticeOrHospital];
 	
 	[self updateRowCounts];
 	
 	[self.spinner stopAnimating];
-	self.spinner.hidden = YES;	
+	self.spinner.hidden = YES;
 	self.inactiveBtn.hidden = YES;
 	self.spinnerBg.hidden = YES;
-	
-	
-	[pool drain];  
-	
+    [pool drain];
 }
+
 - (BOOL)renameFileFrom:(NSString*)oldPath to:(NSString *)newPath
 {
     NSString *documentDir = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
