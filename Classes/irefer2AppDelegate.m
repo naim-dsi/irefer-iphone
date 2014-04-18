@@ -71,8 +71,19 @@
 	[NSThread detachNewThreadSelector:@selector(startupSyncThread) toTarget:self withObject:nil];
 
 }
+-(BOOL) connectedToInternet
 
+{
+    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
+    
+    return ( URLString != NULL ) ? YES : NO;
+    
+}
 -(void) startupSyncThread{
+    if(![self connectedToInternet]){
+        NSLog(@"No Internet");
+        return;
+    }
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
 
 	NSDictionary *userData = [dao getCurrentUserPracticeOrHospital];

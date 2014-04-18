@@ -92,26 +92,33 @@
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
 	NSString *jsonStr=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
     NSLog(@"NI::String sent from server %@",jsonStr);
-	[self.spinner stopAnimating];
-	self.spinner.hidden = YES;
-	self.spinnerBg.hidden = YES;
-	
-	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastName.text, @"last_name", self.firstName.text, @"first_name", self.email.text, @"email", nil];
-	NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, hospital];
-	
-	if (![dao updateHospitalistRegistration:dataSet]) {
-		[utils showAlert:@"Warning !!" message:@"Sorry couldn't save registration data. Please try again later." delegate:self];
-	}
-	
-	[user release];
-	[dataSet release];
-	[jsonStr release];
-	//[self dismissModalViewControllerAnimated:YES];
-	
-	//do successmessage and forwarding
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Your registration request has been submitted. Please wait for activation notification email." delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil];
-	[actionSheet showInView:self.view];
-	[actionSheet release];
+    if ([jsonStr isEqualToString:@"saved"]){
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        
+        NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastName.text, @"last_name", self.firstName.text, @"first_name", self.email.text, @"email", nil];
+        NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, hospital];
+        
+        if (![dao updateHospitalistRegistration:dataSet]) {
+            [utils showAlert:@"Warning !!" message:@"Sorry couldn't save registration data. Please try again later." delegate:self];
+        }
+        
+        [user release];
+        [dataSet release];
+        [jsonStr release];
+        //[self dismissModalViewControllerAnimated:YES];
+        
+        //do successmessage and forwarding
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Your registration request has been submitted. Please wait for activation notification email." delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil];
+        [actionSheet showInView:self.view];
+        [actionSheet release];
+    }else{
+        [utils showAlert:@"Warning !!" message:@"Sorry this email address has already been used. Please try again." delegate:self];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+    }
 }
 
 

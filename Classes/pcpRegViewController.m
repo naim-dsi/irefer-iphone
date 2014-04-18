@@ -126,27 +126,37 @@
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
 	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	NSLog(@"NI::String sent from server %@",[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
-	[self.spinner stopAnimating];
-	self.spinner.hidden = YES;
-	self.spinnerBg.hidden = YES;
+	NSString *jsonStr=[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+    NSLog(@"NI::String sent from server %@",jsonStr);
+    if ([jsonStr isEqualToString:@"saved"]){
 
-	NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastNameText.text, @"last_name", self.firstNameText.text, @"first_name", self.email.text, @"email", [model valueForKey:@"id"], @"doc_id", nil];
-	NSDictionary *practice=[[NSDictionary alloc] initWithObjectsAndKeys:[model objectForKey:@"prac_id"], @"id", [model objectForKey:@"prac_name"], @"name", [model objectForKey:@"add_line_1"], @"add_line1", nil]; 
-	NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, practice];
-	
-	if (![dao updatePCPUserRegistration:dataSet]) {
-		[utils showAlert:@"Warning !!" message:@"Sorry couldn't save registration data. Please try again later." delegate:self];
-	}
-	[user release];
-	[practice release];
-	[dataSet release];
-	//[self dismissModalViewControllerAnimated:YES];
-		
-	//do successmessage and forwarding
-	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Your registration request has been submitted. Please wait for activation notification email." delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil];
-	[actionSheet showInView:self.view];
-	[actionSheet release];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+
+        NSDictionary *user=[[NSDictionary alloc] initWithObjectsAndKeys: self.lastNameText.text, @"last_name", self.firstNameText.text, @"first_name", self.email.text, @"email", [model valueForKey:@"id"], @"doc_id", nil];
+        NSDictionary *practice=[[NSDictionary alloc] initWithObjectsAndKeys:[model objectForKey:@"prac_id"], @"id", [model objectForKey:@"prac_name"], @"name", [model objectForKey:@"add_line_1"], @"add_line1", nil]; 
+        NSMutableArray *dataSet = [[NSMutableArray alloc] initWithObjects:user, practice];
+        
+        if (![dao updatePCPUserRegistration:dataSet]) {
+            [utils showAlert:@"Warning !!" message:@"Sorry couldn't save registration data. Please try again later." delegate:self];
+        }
+        [user release];
+        [practice release];
+        [dataSet release];
+        //[self dismissModalViewControllerAnimated:YES];
+            
+        //do successmessage and forwarding
+        UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Your registration request has been submitted. Please wait for activation notification email." delegate:self cancelButtonTitle:nil destructiveButtonTitle:@"Ok" otherButtonTitles:nil];
+        [actionSheet showInView:self.view];
+        [actionSheet release];
+        [actionSheet release];
+    }else{
+        [utils showAlert:@"Warning !!" message:@"Sorry this email address has already been used. Please try again." delegate:self];
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.spinnerBg.hidden = YES;
+    }
 }
 
 

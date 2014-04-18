@@ -86,7 +86,7 @@ int docId,rankVal;
 		
 		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%d", self.searchBar.text, self.sortOptions.selectedSegmentIndex];
         NSURL *url = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
-		[self triggerAsyncronousRequest:url];
+		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
 	}else {
 		
@@ -846,6 +846,11 @@ int docId,rankVal;
         }
     }
     else{
+        if(self.rank==0){
+            if(self.paRank!=0){
+                self.rank=self.paRank;
+            }
+        }
         if(self.isSearchFromOnline){
             NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"userDocRank/paRank?doc_id=%d&user_id=%@&rank=%d",docId, [user objectForKey:@"id"], self.paRank];
             NSLog(@"url :%@",serverUrl);

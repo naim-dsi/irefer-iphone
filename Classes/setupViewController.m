@@ -840,6 +840,10 @@ int actionSheetType = 0;
 	//[self performSelectorInBackground:@selector(doctorProcessThread) withObject:nil];
 }
 -(void) startupSyncThread{
+    if(![self connectedToInternet]){
+        NSLog(@"No Internet");
+        return;
+    }
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
     
 	NSDictionary *userData = [baseDao getCurrentUserPracticeOrHospital];
@@ -900,8 +904,31 @@ int actionSheetType = 0;
 	//[utils showAlert:@"Notification !!!" message:@"test" delegate:nil];
 	[pool drain];
 }
+
+
+-(BOOL) connectedToInternet
+
+{
+    NSString *URLString = [NSString stringWithContentsOfURL:[NSURL URLWithString:@"http://www.google.com"]];
+    
+    return ( URLString != NULL ) ? YES : NO;
+    
+}
+
+
 - (void)doctorProcessThread {  
 	NSLog(@"inside doctor thread");
+    
+    if(![self connectedToInternet]){
+        [self.spinner stopAnimating];
+        self.spinner.hidden = YES;
+        self.inactiveBtn.hidden = YES;
+        self.spinnerBg.hidden = YES;
+        [utils showAlert:@"Warning !!" message:@"Sorry can not connect to the server." delegate:self];
+        return;
+    }
+    
+    
 	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
 	
 	NSDictionary *user = [dao getCurrentUser];
