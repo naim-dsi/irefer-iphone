@@ -32,6 +32,7 @@
 - (void)loadView {
 	[super loadView];
 	dao = [[registrationDao alloc] init];
+    
 }
 
 

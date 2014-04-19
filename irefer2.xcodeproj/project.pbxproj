@@ -22,6 +22,7 @@
 		2BF113A31844C61000FB7AA7 /* zip.c in Sources */ = {isa = PBXBuildFile; fileRef = 2BF1139E1844C61000FB7AA7 /* zip.c */; };
 		2BF113A51844CCF900FB7AA7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BF113A41844CCF900FB7AA7 /* libz.dylib */; };
 		382E563F18F2DF2A0003F31D /* advancedDocListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 382E563E18F2DF2A0003F31D /* advancedDocListViewController.m */; };
+		387F93D31902571B00F31364 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 387F93D21902571B00F31364 /* Default@2x.png */; };
 		388CC8D418BC6EED008DA9BE /* logo-6a.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D318BC6EED008DA9BE /* logo-6a.png */; };
 		388CC8D618BC6F8F008DA9BE /* Icon-Small-40.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D518BC6F8F008DA9BE /* Icon-Small-40.png */; };
 		388CC8DF18BC7217008DA9BE /* Icon-76.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8D718BC7217008DA9BE /* Icon-76.png */; };
@@ -34,6 +35,9 @@
 		388CC8E618BC7217008DA9BE /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8DE18BC7217008DA9BE /* Icon-Small.png */; };
 		388CC8E818BC74A4008DA9BE /* Icon-Small-40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8E718BC74A4008DA9BE /* Icon-Small-40@2x.png */; };
 		388CC8EA18BC753E008DA9BE /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 388CC8E918BC753E008DA9BE /* Icon@2x.png */; };
+		389C0FE71902749D001760F8 /* Icon-602x.png in Resources */ = {isa = PBXBuildFile; fileRef = 389C0FE61902749D001760F8 /* Icon-602x.png */; };
+		389C0FE9190274A6001760F8 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 389C0FE8190274A6001760F8 /* Default-568h@2x.png */; };
+		389C0FEB190274AE001760F8 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 389C0FEA190274AE001760F8 /* Default~iphone.png */; };
 		38A1CE8618F17513005A385D /* CustomIOS7AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1CE8518F17513005A385D /* CustomIOS7AlertView.m */; };
 		38A1CE8D18F17774005A385D /* NewRatingWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 38A1CE8C18F17774005A385D /* NewRatingWidget.m */; };
 		38A1CE9318F18D68005A385D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38A1CE9218F18D68005A385D /* SystemConfiguration.framework */; };
@@ -179,6 +183,7 @@
 		32CA4F630368D1EE00C91783 /* irefer2_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = irefer2_Prefix.pch; sourceTree = "<group>"; };
 		382E563D18F2DF2A0003F31D /* advancedDocListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = advancedDocListViewController.h; sourceTree = "<group>"; };
 		382E563E18F2DF2A0003F31D /* advancedDocListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = advancedDocListViewController.m; sourceTree = "<group>"; };
+		387F93D21902571B00F31364 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		388CC8D318BC6EED008DA9BE /* logo-6a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-6a.png"; sourceTree = "<group>"; };
 		388CC8D518BC6F8F008DA9BE /* Icon-Small-40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40.png"; sourceTree = "<group>"; };
 		388CC8D718BC7217008DA9BE /* Icon-76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76.png"; sourceTree = "<group>"; };
@@ -191,6 +196,9 @@
 		388CC8DE18BC7217008DA9BE /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small.png"; sourceTree = "<group>"; };
 		388CC8E718BC74A4008DA9BE /* Icon-Small-40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-40@2x.png"; sourceTree = "<group>"; };
 		388CC8E918BC753E008DA9BE /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		389C0FE61902749D001760F8 /* Icon-602x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-602x.png"; sourceTree = "<group>"; };
+		389C0FE8190274A6001760F8 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		389C0FEA190274AE001760F8 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		38A1CE8418F17513005A385D /* CustomIOS7AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomIOS7AlertView.h; path = CustomIOS7AlertView/CustomIOS7AlertView.h; sourceTree = "<group>"; };
 		38A1CE8518F17513005A385D /* CustomIOS7AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CustomIOS7AlertView.m; path = CustomIOS7AlertView/CustomIOS7AlertView.m; sourceTree = "<group>"; };
 		38A1CE8B18F17774005A385D /* NewRatingWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRatingWidget.h; sourceTree = "<group>"; };
@@ -203,9 +211,7 @@
 		38C787F418B5DC0400896788 /* irefer_icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irefer_icon-Small.png"; sourceTree = "<group>"; };
 		38C787FF18B5DDF800896788 /* irefer_icon@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "irefer_icon@2x~iphone.png"; sourceTree = "<group>"; };
 		38C7880218B5DF7A00896788 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		38C7880318B5DFF700896788 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		38C7880418B5E02500896788 /* Default3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default3.png; sourceTree = "<group>"; };
-		38C7880518B5E05500896788 /* Default1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default1.png; sourceTree = "<group>"; };
 		38C7880618B5E0B400896788 /* Default2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default2.png; sourceTree = "<group>"; };
 		38C7880718B5E44200896788 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = MyMedicalNeighbors/Images.xcassets; sourceTree = "<group>"; };
 		38C7880918B5E52D00896788 /* logo-5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo-5.png"; sourceTree = "<group>"; };
@@ -445,6 +451,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				389C0FEA190274AE001760F8 /* Default~iphone.png */,
+				389C0FE8190274A6001760F8 /* Default-568h@2x.png */,
+				389C0FE61902749D001760F8 /* Icon-602x.png */,
+				387F93D21902571B00F31364 /* Default@2x.png */,
 				388CC8E918BC753E008DA9BE /* Icon@2x.png */,
 				388CC8E718BC74A4008DA9BE /* Icon-Small-40@2x.png */,
 				388CC8D718BC7217008DA9BE /* Icon-76.png */,
@@ -460,9 +470,7 @@
 				38C7880B18B5E7FD00896788 /* Icon.png */,
 				38C7880918B5E52D00896788 /* logo-5.png */,
 				38C7880718B5E44200896788 /* Images.xcassets */,
-				38C7880318B5DFF700896788 /* Default~iphone.png */,
 				38C7880418B5E02500896788 /* Default3.png */,
-				38C7880518B5E05500896788 /* Default1.png */,
 				38C7880618B5E0B400896788 /* Default2.png */,
 				38C7880218B5DF7A00896788 /* Default.png */,
 				38C787FF18B5DDF800896788 /* irefer_icon@2x~iphone.png */,
@@ -1003,6 +1011,7 @@
 				388CC8EA18BC753E008DA9BE /* Icon@2x.png in Resources */,
 				2899E5220DE3E06400AC0155 /* guestPageViewController.xib in Resources */,
 				84C23CAD14AB720400791AFA /* aboutViewController.xib in Resources */,
+				389C0FE71902749D001760F8 /* Icon-602x.png in Resources */,
 				848FF8A014AC837300E6A766 /* activationViewController.xib in Resources */,
 				8492EC9214ADA37900B25FD4 /* pcpListViewController.xib in Resources */,
 				8492ED1914ADDF0200B25FD4 /* CustomPCPCell.xib in Resources */,
@@ -1021,7 +1030,9 @@
 				388CC8E218BC7217008DA9BE /* Icon-72@2x.png in Resources */,
 				38C787EF18B5DA4100896788 /* logo ratina.png in Resources */,
 				388CC8DF18BC7217008DA9BE /* Icon-76.png in Resources */,
+				387F93D31902571B00F31364 /* Default@2x.png in Resources */,
 				84A5A8F314B5C7A9004471BF /* customSelectCell.xib in Resources */,
+				389C0FE9190274A6001760F8 /* Default-568h@2x.png in Resources */,
 				388CC8E818BC74A4008DA9BE /* Icon-Small-40@2x.png in Resources */,
 				38C7880C18B5E7FD00896788 /* Icon.png in Resources */,
 				84D14D2114B8E60200FCD926 /* doctorListViewController.xib in Resources */,
@@ -1040,6 +1051,7 @@
 				38C787F718B5DC0400896788 /* irefer_icon-Small.png in Resources */,
 				388CC8E018BC7217008DA9BE /* Icon-76@2x.png in Resources */,
 				8455C9A114C239B400A47770 /* pracActivationViewController.xib in Resources */,
+				389C0FEB190274AE001760F8 /* Default~iphone.png in Resources */,
 				84EB0A7214C7F60A008B25BC /* 576px-Icon_Warning_Red.png in Resources */,
 				38C787F318B5DB4100896788 /* irefer_icon@2x.png in Resources */,
 				84EB0A7314C7F60A008B25BC /* orange_star.png in Resources */,
@@ -1165,7 +1177,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = irefer2_Prefix.pch;
 				INFOPLIST_FILE = "irefer2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = irefer2;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1186,7 +1198,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = irefer2_Prefix.pch;
 				INFOPLIST_FILE = "irefer2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = irefer2;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1226,7 +1238,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = irefer2_Prefix.pch;
 				INFOPLIST_FILE = "irefer2-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = iRefer;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
