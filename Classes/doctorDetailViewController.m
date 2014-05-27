@@ -11,7 +11,7 @@
 
 @implementation doctorDetailViewController
 @synthesize delegate;
-@synthesize name, speciality, degree, gender, spinner, phone, dId, dataSource, isSearchFromOnline, scrollView, basicView, rankbutton;
+@synthesize name, speciality, degree, gender, spinner, phone, dId, dataSource, isSearchFromOnline, scrollView, basicView, rankbutton,inactiveBtn;
 
 @synthesize spView, pracView, hosView, noteView, pracInfo, hosInfo, noteInfo, urankView, uprankView, alert, spinnerBg, reportBar, isReportChangeCalled;
 
@@ -50,7 +50,7 @@
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
-	
+	self.inactiveBtn.hidden = YES;
 }
 
 
@@ -59,6 +59,7 @@
 	[self.spinner startAnimating];
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
+    self.inactiveBtn.hidden = NO;
 	adapter = [SBJsonStreamParserAdapter new];
 	adapter.delegate = self;
 	parser = [SBJsonStreamParser new];
@@ -104,6 +105,7 @@
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	[self reloadView];
 	
 }
@@ -868,7 +870,7 @@
 
 - (IBAction) changeReportBtnClicked: (id)sender{
 	NSLog(@"Change report button clicked");
-	
+	//self.inactiveBtn.hidden = NO;
 	self.reportBar.hidden = NO;
 	self.reportText.text = @"";
 	NSArray *elements = [self.reportOptView subviews];
@@ -932,6 +934,7 @@
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	//[NSThread detachNewThreadSelector:@selector() toTarget:self withObject:nil];	
 }
 
@@ -958,6 +961,7 @@
                 [self.spinner stopAnimating];
                 self.spinner.hidden = YES;
                 self.spinnerBg.hidden = YES;
+                self.inactiveBtn.hidden = YES;
                 return;
             }
             else{
@@ -974,6 +978,7 @@
         [self.spinner stopAnimating];
         self.spinner.hidden = YES;
         self.spinnerBg.hidden = YES;
+        self.inactiveBtn.hidden = YES;
         return;
     }
     [self hideReferPopupWithKeyboard];
@@ -983,6 +988,7 @@
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	//[NSThread detachNewThreadSelector:@selector() toTarget:self withObject:nil];
 }
 
@@ -1159,6 +1165,7 @@
 	[self.spinner startAnimating];
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
+    self.inactiveBtn.hidden = NO;
 	[pool drain];
 }
 

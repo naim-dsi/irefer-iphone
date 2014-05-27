@@ -15,7 +15,7 @@
 
 @implementation doctorListViewController
 
-@synthesize dataSource, searchBar, listTableView, spinner, countText, insIds, hosIds, spIds, inPatient, zipCode, isSearchFromOnline, alert;
+@synthesize dataSource, searchBar, listTableView, spinner, countText, insIds, hosIds, spIds, inPatient, zipCode, isSearchFromOnline, alert, inactiveBtn;
 
 @synthesize pracIds, acoIds, countyIds, languages, userData, sortToolBar, sortOptions, sortButton, spinnerBg, totalCount, currentLimit, officeHours,isResourceSearch,resourceFlag,rank, rankBtnList, unRankedImage, rankedImage, busy, paRank;
 
@@ -36,6 +36,7 @@ int docId,rankVal;
 	parser.delegate = adapter;
 	parser.multi = YES;
 	[utils roundUpView:[[self.spinnerBg subviews] objectAtIndex:0]];
+    self.inactiveBtn.hidden = YES;
 	if (self.isResourceSearch){
         resourceFlag = 1;
     }
@@ -56,7 +57,7 @@ int docId,rankVal;
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
 		self.spinnerBg.hidden = NO;
-	
+        self.inactiveBtn.hidden = NO;
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
@@ -93,7 +94,7 @@ int docId,rankVal;
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
 		self.spinnerBg.hidden = NO;
-		
+		self.inactiveBtn.hidden = NO;
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 		
 	}
@@ -115,6 +116,7 @@ int docId,rankVal;
 				[self.spinner startAnimating];
 				self.spinner.hidden = NO;
 				self.spinnerBg.hidden = NO;
+                self.inactiveBtn.hidden = NO;
 			//}
 
 			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit resourceFlag:self.resourceFlag];
@@ -140,6 +142,7 @@ int docId,rankVal;
                 [self.spinner stopAnimating];
                 self.spinner.hidden = YES;
                 self.spinnerBg.hidden = YES;
+                self.inactiveBtn.hidden = YES;
                 [self.listTableView setHidden:NO];
                 [[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"%@",currentContent] forKey:@"doc_prev_search_content"];
             }
@@ -151,6 +154,7 @@ int docId,rankVal;
                 [self.spinner stopAnimating];
                 self.spinner.hidden = YES;
                 self.spinnerBg.hidden = YES;
+                self.inactiveBtn.hidden = YES;
                 [self.listTableView setHidden:YES];
             }
 		}
@@ -170,6 +174,7 @@ int docId,rankVal;
 	[self.spinner startAnimating];
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
+    self.inactiveBtn.hidden = NO;
 	NSLog(@"%@",url);
 
 	url = [url stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding];
@@ -214,6 +219,7 @@ int docId,rankVal;
 	[self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	[self.listTableView setHidden:NO];
 	//self.countText.text = [NSString stringWithFormat:@"%d item found", [self.dataSource count]];
 
@@ -223,6 +229,7 @@ int docId,rankVal;
     [self.spinner stopAnimating];
 	self.spinner.hidden = YES;
 	self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	[self.listTableView setHidden:YES];
     NSLog(@"Connection failed! Error - %@ ",
           [error localizedDescription]);
@@ -410,7 +417,7 @@ int docId,rankVal;
 			[self.spinner startAnimating];
 			self.spinner.hidden = NO;
 			self.spinnerBg.hidden = NO;
-			
+			self.inactiveBtn.hidden = NO;
 			[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 			[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 		}
@@ -510,6 +517,7 @@ int docId,rankVal;
     [self.spinner stopAnimating];
     self.spinner.hidden = YES;
     self.spinnerBg.hidden = YES;
+    self.inactiveBtn.hidden = YES;
 	[self dismissModalViewControllerAnimated:YES];
 }
 
@@ -950,6 +958,7 @@ int docId,rankVal;
             [self.spinner stopAnimating];
             self.spinner.hidden = YES;
             self.spinnerBg.hidden = YES;
+            self.inactiveBtn.hidden = YES;
             [self.listTableView setHidden:NO];
             //NSLog(@"url : list updated.");
 			return;
@@ -968,6 +977,7 @@ int docId,rankVal;
             [self.spinner stopAnimating];
             self.spinner.hidden = YES;
             self.spinnerBg.hidden = YES;
+            self.inactiveBtn.hidden = YES;
             [self.listTableView setHidden:NO];
             //NSLog(@"url : list updated.");
             
@@ -1011,6 +1021,7 @@ int docId,rankVal;
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
 		self.spinnerBg.hidden = NO;
+        self.inactiveBtn.hidden = NO;
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 				
@@ -1051,6 +1062,7 @@ int docId,rankVal;
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
 		self.spinnerBg.hidden = NO;
+        self.inactiveBtn.hidden = NO;
 		[[NSUserDefaults standardUserDefaults] setObject:[NSString stringWithFormat:@"empty"] forKey:@"doc_prev_search_content"];
 		[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
         
@@ -1059,6 +1071,7 @@ int docId,rankVal;
         [self.spinner stopAnimating];
         self.spinner.hidden = YES;
         self.spinnerBg.hidden = YES;
+        self.inactiveBtn.hidden = YES;
         [self.listTableView setHidden:NO];
 
         
@@ -1122,6 +1135,7 @@ int docId,rankVal;
     [rankedImage release];
 	[unRankedImage release];
 	[rankBtnList release];
+    [inactiveBtn release];
     //[isResourceSearch release];
     //[resourceFlag release];
     [super dealloc];

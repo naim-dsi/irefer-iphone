@@ -396,7 +396,7 @@
                     </subviews>
                 </scrollView>
                 <button hidden="YES" opaque="NO" alpha="0.59859156608581543" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="80">
-                    <rect key="frame" x="0.0" y="-90" width="320" height="640"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
                     <autoresizingMask key="autoresizingMask"/>
                     <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
                     <state key="normal" backgroundImage="bg.png">

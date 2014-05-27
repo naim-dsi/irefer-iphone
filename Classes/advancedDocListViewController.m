@@ -50,7 +50,7 @@
 	[self.spinner startAnimating];
 	self.spinner.hidden = NO;
 	self.spinnerBg.hidden = NO;
-	
+	self.inactiveBtn.hidden = NO;
 	[NSThread detachNewThreadSelector:@selector(doctorListThread) toTarget:self withObject:nil];
 
 }
@@ -71,6 +71,7 @@
 			[self.spinner startAnimating];
 			self.spinner.hidden = NO;
 			self.spinnerBg.hidden = NO;
+            self.inactiveBtn.hidden = NO;
 	//	}
 		
 		self.dataSource = [dao getAdvDoctorList:currentContent order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit];
@@ -87,6 +88,7 @@
 		[self.spinner stopAnimating];
 		self.spinner.hidden = YES;
 		self.spinnerBg.hidden = YES;
+        self.inactiveBtn.hidden = YES;
 		[self.listTableView setHidden:NO];
 			NSLog(@"saved prev content %@",prevContent);
 			NSLog(@"saved current content %@",currentContent);

@@ -57,6 +57,8 @@
 	UIImage *rankedImage;
     int resourceFlag;
     BOOL busy;
+    
+    IBOutlet UIButton *inactiveBtn;
 }
 
 
@@ -94,6 +96,8 @@
 @property(nonatomic, retain) UIImage *unRankedImage;
 @property(nonatomic, retain) UIImage *rankedImage;
 @property (nonatomic) int resourceFlag;
+
+@property(nonatomic, retain) IBOutlet UIButton *inactiveBtn;
 
 - (IBAction) rankUpdate: (id)sender;
 - (IBAction) hideKeyboard: (id) sender;

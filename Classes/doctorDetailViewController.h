@@ -69,6 +69,8 @@
 	UIImage *rankedImage;
     int resourceFlag;
     BOOL busy;
+    
+    IBOutlet UIButton *inactiveBtn;
 }
 @property(weak,nonatomic) id delegate;
 @property(nonatomic, retain) UILabel *name;
@@ -118,6 +120,8 @@
 @property(nonatomic, retain) UIImage *unRankedImage;
 @property(nonatomic, retain) UIImage *rankedImage;
 @property (nonatomic) int resourceFlag;
+
+@property(nonatomic, retain) IBOutlet UIButton *inactiveBtn;
 
 - (IBAction) rankButtonClicked: (id)sender;
 - (IBAction) backToDocList: (id)sender;
