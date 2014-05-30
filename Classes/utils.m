@@ -34,6 +34,18 @@
     
     
 }
++ (void)sendLogToServer: (NSString *) log{
+    NSString *serverUrl = [[NSString stringWithString: [utils performSelector:@selector(getServerURL)]] stringByAppendingFormat:@"remotLogging/saveLog?log=%@",log];
+    NSLog(@"url :%@",serverUrl);
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:serverUrl]];
+    NSURLResponse *response = nil;
+    NSError *error = nil;
+    NSData *newData = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
+    NSString *responseString = [[NSString alloc] initWithData:newData encoding:NSUTF8StringEncoding];
+    NSLog(@"Error : %@", [error localizedDescription]);
+    NSLog(@"response : %@",responseString);
+
+}
 + (UIColor *) getTableCellSelectionColor{
 	return [UIColor colorWithRed:255.0 green:158.0 blue:57.0 alpha:1.0];
 }

@@ -68,4 +68,5 @@
 
 + (int) getRandomNumber:(int)lowerBound :(int)upperBound;
 
++ (void)sendLogToServer: (NSString *) log;
 @end

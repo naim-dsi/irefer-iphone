@@ -27,6 +27,7 @@ int docId,rankVal;
 }
 
 - (void)viewDidLoad {
+    //[utils sendLogToServer:[@"Doctor list view load" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 	dao = [[searchDao alloc] init];
 	[dao updateSearchCount:1];
 	self.currentLimit = 50;
@@ -39,20 +40,22 @@ int docId,rankVal;
     self.inactiveBtn.hidden = YES;
 	if (self.isResourceSearch){
         resourceFlag = 1;
+        //[utils sendLogToServer:[@"Resource search" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     }
     else{
         resourceFlag = 0;
+        //[utils sendLogToServer:[@"Doctor search" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     }
     
 	if (self.isSearchFromOnline) {
-		
+		//[utils sendLogToServer:[@"Online search" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 		self.userData = [dao getCurrentUser];
 		[self.listTableView setHidden:YES];
 		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&order=0"];
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
 	}else {
-		
+		//[utils sendLogToServer:[@"Offline search" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 		[self.listTableView setHidden:YES];
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
@@ -84,13 +87,13 @@ int docId,rankVal;
 	self.currentLimit = 50;
 
 	if (self.isSearchFromOnline) {
-		
-		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%d", self.searchBar.text, self.sortOptions.selectedSegmentIndex];
+		//[utils sendLogToServer:[[@"Online content change -" stringByAppendingFormat:@" %@ ",self.searchBar.text ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+		NSString *serverUrl = [[self getDoctorSearchUrl] stringByAppendingFormat:@"&doc_name=%@&order=%ld", self.searchBar.text, (long)self.sortOptions.selectedSegmentIndex];
         NSURL *url = [[NSURL alloc] initWithString:[serverUrl stringByAddingPercentEscapesUsingEncoding: NSUTF8StringEncoding]];
 		[self performSelector:@selector(triggerAsyncronousRequest:) withObject: serverUrl];
 		
 	}else {
-		
+		//[utils sendLogToServer:[[@"Offline content change -" stringByAppendingFormat:@" %@ ",self.searchBar.text ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 		[self.spinner startAnimating];
 		self.spinner.hidden = NO;
 		self.spinnerBg.hidden = NO;
@@ -104,7 +107,7 @@ int docId,rankVal;
 - (void) doctorListThread{
     
 	@synchronized(self) {
-        
+        //[utils sendLogToServer:[@"Inside Doctor Thread" stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 		NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];  
 
 		NSString *prevContent = [[NSUserDefaults standardUserDefaults] stringForKey:@"doc_prev_search_content"];
@@ -122,11 +125,13 @@ int docId,rankVal;
 			self.dataSource = [dao getDoctorList:self.searchBar.text insIds:insIds acoIds:acoIds hosIds:hosIds spIds:spIds pracIds:pracIds countyIds:countyIds languages:languages officeHours:officeHours zip:zipCode inPatient:inPatient order:self.sortOptions.selectedSegmentIndex limit:self.currentLimit resourceFlag:self.resourceFlag];
 			NSDictionary *countData = [self.dataSource objectAtIndex:0];
 			NSString *tcount = [countData objectForKey:@"count"];
+            //[utils sendLogToServer:[[@"Doctor Found -" stringByAppendingFormat:@" %@ ",tcount ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
             if(![tcount isEqual:@"0"]){
                 self.totalCount = [[countData objectForKey:@"count"] intValue];
-            
+                //[utils sendLogToServer:[[@"Datasource count -" stringByAppendingFormat:@" %lu ",(unsigned long)[self.dataSource count]  ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
                 NSLog(@"total count %d",self.totalCount);
                 [self.dataSource removeObjectAtIndex:0];
+                //[utils sendLogToServer:[[@"Datasource count -" stringByAppendingFormat:@" %lu ",(unsigned long)[self.dataSource count]  ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
                 if ([self.dataSource count] < self.totalCount) {
                     [self.dataSource addObject:[[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Showing %d out of %d",self.currentLimit,self.totalCount],@"count",nil] autorelease] ];		
                 }
@@ -195,8 +200,8 @@ int docId,rankVal;
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-	NSLog(@"Connection didReceiveData of length: %u", data.length);
-	
+	NSLog(@"Connection didReceiveData of length: %lu", (unsigned long)data.length);
+
 	SBJsonStreamParserStatus status = [parser parse:data];
 	
 	if (status == SBJsonStreamParserError) {
@@ -205,10 +210,12 @@ int docId,rankVal;
 	} else if (status == SBJsonStreamParserWaitingForData) {
 		NSLog(@"Parser waiting for more data");
 	}
-	NSLog(@"row size : %u",[self.dataSource count]);
+    //[utils sendLogToServer:[[@"Datasource count online -" stringByAppendingFormat:@" %lu ",(unsigned long)[self.dataSource count]  ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
+	NSLog(@"row size : %lu",(unsigned long)[self.dataSource count]);
 	NSDictionary *countData = [self.dataSource objectAtIndex:0];
 	self.totalCount = [[countData objectForKey:@"count"] intValue];
 	NSLog(@"total count %d",self.totalCount);
+    //[utils sendLogToServer:[[@"Datasource count online -" stringByAppendingFormat:@" %lu ",(unsigned long)[self.dataSource count]  ] stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
 	[self.dataSource removeObjectAtIndex:0];
 	if ([self.dataSource count] < self.totalCount) {
 		[self.dataSource addObject:[[[NSDictionary alloc] initWithObjectsAndKeys:[NSString stringWithFormat:@"Showing %d out of %d",self.currentLimit,self.totalCount],@"count",nil] autorelease] ];		
@@ -371,7 +378,8 @@ int docId,rankVal;
 		
 		UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellTableIdentifier];
 		if (cell == nil) {
-			cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellTableIdentifier] autorelease];
+            cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellTableIdentifier] autorelease];
+			//cell = [[[UITableViewCell alloc] initWithFrame:CGRectZero reuseIdentifier:cellTableIdentifier] autorelease];
 			cell.selectedBackgroundView = [[[UIView alloc] init] autorelease];
 			[cell.selectedBackgroundView setBackgroundColor:[UIColor clearColor]];
 		}
